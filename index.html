@@ -3,420 +3,247 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PD2 S14 · Magic Arrow Amazon (Ezo) – leveling-guide</title>
+<title>PD2 S14 · MA Amazon</title>
 <style>
-:root{--bg:#0d0907;--panel:#17100b;--panel2:#20160e;--line:#3a2a1a;--line2:#5a4126;--gold:#d4a84b;--gold2:#f0cf7a;--text:#e6dccb;--dim:#a8977e;--faint:#7a6a55;--red:#b3361f;--blue:#6f8fd6;--green:#7fae5a;--rune:#e8b45a}
+:root{--bg:#0d0907;--p:#17100b;--l:#3a2a1a;--l2:#5a4126;--g:#d4a84b;--g2:#f0cf7a;--t:#e6dccb;--d:#a8977e;--f:#7a6a55;--r:#e0592f;--rn:#e8b45a}
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Georgia,"Times New Roman",serif}
-body{background:radial-gradient(ellipse at top,#1d130b 0%,var(--bg) 60%) fixed}
-.wrap{max-width:720px;margin:0 auto;padding:10px 12px 60px}
-h1{font-size:20px;color:var(--gold2);margin:6px 0 2px;letter-spacing:.03em;text-shadow:0 0 8px #000}
-h2{font-size:16px;color:var(--gold);margin:22px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--line2);letter-spacing:.05em;text-transform:uppercase}
-.sub{color:var(--dim);font-size:13px;margin:0 0 8px}
-a{color:var(--gold2)}
-nav.toc{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12px;margin:4px 0 8px}
-nav.toc a{color:var(--dim);text-decoration:none}nav.toc a:hover{color:var(--gold2)}
-.mono,.rn{font-family:Consolas,"Courier New",monospace}
-.rn{color:var(--rune)}
-#panel{max-height:70vh;overflow-y:auto;position:sticky;top:0;z-index:10;background:linear-gradient(#1a120b,#130d08);border:1px solid var(--line2);border-radius:6px;padding:8px 10px;box-shadow:0 4px 12px #000a;margin-bottom:10px}
-#panel .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px;align-items:baseline}
-#stage{color:var(--gold2);font-weight:bold}
-#count{color:var(--dim);font-size:12px}
-.bar{height:7px;background:#2a1d12;border:1px solid var(--line);border-radius:4px;margin:6px 0;overflow:hidden}
-.bar>div{height:100%;width:0;background:linear-gradient(90deg,#7a1c10,var(--red),#e0592f);transition:width .3s}
-.pl{font-size:13px;margin:2px 0}.pl b{color:var(--faint);font-weight:normal}
-.btns{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
-button{font:inherit;font-size:12px;padding:4px 9px;border-radius:4px;border:1px solid var(--line2);background:#24180e;color:var(--text);cursor:pointer}
-button:hover{border-color:var(--gold)}
-button.pri{background:#5a1a0e;border-color:#8a2a16;color:#ffe9c0}
-button.on{background:#3a2814;border-color:var(--gold);color:var(--gold2)}
-button.small{font-size:11px;padding:2px 7px}
-.filters{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 6px}
-.zone{color:var(--gold);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin:12px 0 4px;font-weight:bold}
-.step{scroll-margin-top:45vh;display:flex;gap:9px;padding:7px 9px;border:1px solid var(--line);border-radius:5px;background:var(--panel);cursor:pointer;margin-bottom:5px}
-.step:hover{border-color:var(--line2)}
-.step.cur{border-color:var(--gold);background:#2a1c0f;box-shadow:0 0 0 1px #d4a84b55 inset}
-.step.done{opacity:.5}.step.done .t{text-decoration:line-through}
-.cb{flex:0 0 18px;height:18px;margin-top:2px;border:1.5px solid var(--line2);border-radius:3px;text-align:center;line-height:15px;font-size:13px;color:#1a0f07;background:#0d0907}
-.step.done .cb{background:var(--gold);border-color:var(--gold)}
-.t{font-weight:bold;color:var(--text)}
-.m{font-size:12px;color:var(--faint)}.m .rw{color:var(--green)}
-.d{font-size:13px;color:var(--dim);margin-top:2px}
-.k-quest .m .k{color:#d9c16a}.k-craft .m .k{color:var(--rune)}.k-skill .m .k{color:var(--blue)}.k-merc .m .k{color:#c78fd6}.k-shop .m .k{color:#9fc4a0}.k-gear .m .k{color:#d08a5a}.k-farm .m .k{color:#c66}
-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--panel);border:1px solid var(--line)}
-th{color:var(--gold);text-align:left;font-weight:normal;font-size:12px;letter-spacing:.04em;border-bottom:1px solid var(--line2);padding:5px 6px;background:var(--panel2)}
-td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top}
-td:first-child{color:var(--gold2);white-space:nowrap}
-.tw{overflow-x:auto}
-.kv{display:grid;grid-template-columns:minmax(80px,auto) 1fr;gap:3px 10px;font-size:13px;background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:8px 10px;margin-top:6px}
-.kv div:nth-child(odd){color:var(--faint)}
-.note{font-size:13px;color:var(--dim);margin:6px 0}
-ol.how{padding-left:20px;margin:0}ol.how li{margin-bottom:6px}ol.how b{color:var(--gold2)}
-.warn{border:1px solid #6a3a12;background:#2a170a;color:#f0c890;padding:6px 9px;border-radius:5px;font-size:13px;margin-bottom:6px}
-ul{padding-left:18px;margin:0}ul.keys li{color:var(--text)}ul li{margin-bottom:4px;font-size:13px;color:var(--dim)}
-#msg{font-size:12px;color:var(--gold2);margin-top:4px;min-height:0}
-textarea{width:100%;height:70px;background:#0d0907;color:var(--text);border:1px solid var(--line2);font:12px Consolas,monospace;margin-top:5px;display:none}
-
-#goal{border:1px solid #8a6a2a;background:linear-gradient(#2b1e0e,#1c1309);border-radius:5px;padding:6px 9px;margin:0 0 7px}
-#goal .h{color:var(--gold2);font-weight:bold;letter-spacing:.08em;font-size:12px;text-transform:uppercase}
-#goal .gt{color:#fff3d6;font-weight:bold;font-size:15px}
-#goal .gl{font-size:12.5px;color:var(--text);margin-top:1px}#goal .gl b{color:var(--faint);font-weight:normal}
-#gatebox{border:1px solid #8a2a16;background:#2a0f08;border-radius:5px;padding:5px 9px;margin:0 0 7px;font-size:12.5px}
-#gatebox .h{color:#ff8a6a;font-weight:bold;letter-spacing:.06em;font-size:12px;text-transform:uppercase}
-.lvlrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px;font-size:12.5px;margin:4px 0 2px}
-.lvlrow input{width:46px;font:inherit;background:#0d0907;color:var(--gold2);border:1px solid var(--line2);border-radius:4px;padding:2px 4px;text-align:center}
-.lvlbox{font-size:12.5px;background:#120c07;border:1px solid var(--line);border-radius:4px;padding:4px 7px;margin-top:3px}
-.lvlbox b{color:var(--faint);font-weight:normal}
-.step.k-gate{border:1.5px solid #b3361f;background:#220c07}
-.step.k-gate .t{color:#ffb090}
-.step.k-gate.cur{border-color:#ff5a3a;box-shadow:0 0 0 1px #ff5a3a66 inset;background:#2e0f08}
-.k-gate .m .k{color:#ff7a5a;font-weight:bold}
-.gx{font-size:12.5px;margin-top:3px;color:var(--dim)}.gx b{color:#e8c08a;font-weight:normal}
-.qa{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:7px 10px;margin-bottom:6px;font-size:13px}
-.qa .q{color:var(--gold2);font-weight:bold;margin-bottom:2px}
-@media (max-width:480px){body{font-size:13px}h1{font-size:17px}td:first-child{white-space:normal}}
+html,body{margin:0;background:var(--bg);color:var(--t);font:13px/1.35 Georgia,serif}
+.w{max-width:640px;margin:0 auto;padding:0 8px 40px}
+.rn{font-family:Consolas,monospace;color:var(--rn)}
+button{font:inherit;font-size:12px;line-height:1;padding:3px 7px;border-radius:3px;border:1px solid var(--l2);background:#24180e;color:var(--t);cursor:pointer}
+button:hover{border-color:var(--g)}
+#top{position:sticky;top:0;z-index:9;background:#140d08;border-bottom:1px solid var(--l2);padding:5px 0 4px;box-shadow:0 3px 8px #000c}
+.ln{display:flex;align-items:center;gap:6px;min-height:22px}
+.ln .x{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb{color:var(--f);font-size:11px}
+#nx{color:var(--g2);font-weight:bold}
+#gate{color:#ff8a6a}
+#lvl{font-size:11.5px;color:var(--d)}
+#lvl button{padding:1px 5px;font-size:11px}
+.bar{height:3px;background:#2a1d12;margin-top:3px}.bar>div{height:100%;background:var(--r);width:0}
+#menu{display:none;flex-wrap:wrap;gap:4px;padding:4px 0}
+#menu.on{display:flex}
+#io{display:none;width:100%;height:50px;background:#0d0907;color:var(--t);border:1px solid var(--l2);font:11px Consolas,monospace}
+#msg{font-size:11px;color:var(--g2)}
+.flt{display:flex;flex-wrap:wrap;gap:3px;margin:6px 0 2px}
+.flt button.on,#menu button.on{border-color:var(--g);color:var(--g2);background:#3a2814}
+.z{color:var(--g);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin:8px 0 2px}
+.s{border-bottom:1px solid #22170e}
+.s .h{display:flex;align-items:center;gap:6px;padding:3px 2px;cursor:pointer}
+.cb{flex:0 0 15px;height:15px;border:1.5px solid var(--l2);border-radius:2px;font-size:11px;line-height:12px;text-align:center;color:#140d08}
+.s.dn{opacity:.45}.s.dn .cb{background:var(--g);border-color:var(--g)}.s.dn .tx{text-decoration:line-through}
+.s.cur{background:#2a1c0f;outline:1px solid var(--g)}
+.tx{flex:1;min-width:0}
+.lv{color:var(--f);font-size:11px}
+.ex{color:var(--f);font-size:11px;padding:0 4px;cursor:pointer;user-select:none}
+.det{display:none;padding:2px 4px 5px 23px;color:var(--d);font-size:12px}
+.s.open .det{display:block}
+.s.gt .tx{color:#ff8a6a}.s.gt .cb{border-color:#b3361f}.s.gt{border-left:2px solid #b3361f}
+.det b{color:#e8c08a;font-weight:normal}
+details{margin-top:8px;border:1px solid var(--l);border-radius:4px;background:var(--p)}
+summary{cursor:pointer;color:var(--g);padding:5px 8px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+details>div{padding:0 8px 8px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+td,th{padding:3px 4px;border-bottom:1px solid var(--l);text-align:left;vertical-align:top}
+th{color:var(--g);font-weight:normal}
+td:first-child{color:var(--g2)}
+ul{margin:0;padding-left:16px}li{margin:2px 0}
+a{color:var(--g2)}
 </style>
 </head>
 <body>
-<div class="wrap">
-<h1>PD2 S14 · Magic Arrow Amazon (Ezo)</h1>
-<p class="sub">Steg-for-steg leveling fra Den of Evil til endgame, med gear, runeord og skillpoeng fra Ezos build på hiimpd2.com. Klikk et steg for å krysse det av. Fremdriften lagres i nettleseren.</p>
-<nav class="toc"><a href="#svar">Svar</a><a href="#rute">Rute</a><a href="#levels">Level for level</a><a href="#plan">Skill/stat-plan</a><a href="#gear">Gear</a><a href="#runeord">Runeord</a><a href="#keys">Keys</a><a href="#howto">Slik gjør du</a><a href="#usikkert">Ikke verifisert</a><a href="#kilder">Kilder</a></nav>
-
-<div id="panel">
-  <div id="goal"></div>
-  <div id="gatebox"></div>
-  <div class="top"><span id="stage"></span><span id="count"></span></div>
-  <div class="bar"><div id="barfill"></div></div>
-  <div id="more"><div id="pinfo"></div>
-  <div class="lvlrow">Mitt level: <button class="small" id="lvMinus">−</button><input id="lv" type="number" min="1" max="99"><button class="small" id="lvPlus">+</button><span class="m">(skriv inn når du levler)</span></div>
-  <div class="lvlbox" id="lvbox"></div></div>
-  <div class="btns">
-    <button class="pri" id="bJump">Hopp til neste</button>
-    <button id="bMark">Kryss av neste</button>
-    <button id="bUndo">Angre siste</button>
-    <button id="bHide">Skjul fullførte</button>
-    <button class="small" id="bExport">Eksporter</button>
-    <button class="small" id="bImport">Importer</button>
-    <button class="small" id="bReset">Nullstill</button>
-    <button class="small" id="bMore">Mindre panel</button>
-  </div>
-  <textarea id="io" spellcheck="false" placeholder="Lim inn eksportert fremdrift her og trykk Importer igjen"></textarea>
-  <div id="msg"></div>
+<div class="w">
+<div id="top">
+ <div class="ln"><span class="lb">Neste</span><span class="x" id="nx"></span><button id="bOk" title="Kryss av neste">✓</button><button id="bUndo" title="Angre">↶</button><button id="bMenu" title="Meny">☰</button></div>
+ <div class="ln"><span class="lb">Mål</span><span class="x" id="goal"></span></div>
+ <div class="ln" id="gateLn"><span class="x" id="gate"></span></div>
+ <div class="ln" id="lvl"><button id="lvM">−</button><span class="x" id="lvT"></span><button id="lvP">+</button></div>
+ <div class="bar"><div id="bar"></div></div>
+ <div id="menu"><span class="flt" id="flt" style="margin:0"></span><button id="bJump">Gå til neste</button><button id="bHide">Skjul fullførte</button><button id="bExp">Eksporter</button><button id="bImp">Importer</button><button id="bReset">Nullstill</button><span id="cnt" class="lb"></span></div>
+ <textarea id="io" spellcheck="false" placeholder="Lim inn kode → Importer"></textarea>
+ <div id="msg"></div>
 </div>
-
-<h2 id="svar">Svar på spørsmålene dine</h2>
-<div id="qa"></div>
-
-<h2 id="rute">Rute og sjekkliste</h2>
-<p class="note">⛔-stegene er stopp-punkter. Der bør du stoppe og farme hvis du mangler noe, med mindre du oppfyller «OK å hoppe over».</p>
-<div class="filters" id="filters"></div>
 <div id="steps"></div>
 
-<h2 id="keys">Keys (til rune-cubing i PD2)</h2>
-<ul class="keys">
-<li><b style="color:var(--gold2)">Hvorfor:</b> I PD2 krever all rune-oppgradering i cuben en Key: 3 like runer + 1 Key gir neste rune (El → … → Lem → Pul). Fra Pul og oppover: 2 runer + 1 Key. Eksempel: <span class="rn">3 Ral + Key = Ort</span> (til Zephyr). Det er ikke lenger gems i oppskriften.</li>
-<li><b style="color:var(--gold2)">Hvor mange:</b> 1 Key per oppgradering. Ifølge spillere gir 9 stablede Ral + 1 Key 3 Ort, så ikke legg i flere enn du vil oppgradere.</li>
-<li><b style="color:var(--gold2)">Kjøp i Akt 1:</b> Akara (Gheed selger også Keys ifølge vanilla-guiden på Arreat Summit). Keys stables opp til 50 i PD2, så kjøp en full stabel med en gang. De koster lite (noen hundre gull for en stabel i vanilla/D2R).</li>
-<li><b style="color:var(--gold2)">Senere akter (vanilla-selgere):</b> Lysander (A2), Hratli (A3), Jamella (A4), Malah (A5).</li>
-<li><b style="color:var(--gold2)">Husk:</b> Runer kan være stablet i cuben når du oppgraderer, men må unstackes (Ctrl+Shift+klikk) før de settes i en socket.</li>
-</ul>
-
-<h2 id="levels">Level for level (Normal)</h2>
-<p class="note">Hvert level gir <b style="color:var(--gold2)">5 statpoeng</b> og <b style="color:var(--gold2)">1 skillpoeng</b>. Snarvei i PD2: Ctrl+klikk på en stat legger inn alle 5 poengene på én gang. Quester gir ekstra: Den of Evil +1 skill, Radament +1 skill, Izual +2 skill, Lam Esen +5 stat, Golden Bird +20 life.</p>
-<div class="tw"><table id="tlvl"><thead><tr><th>Level</th><th>5 statpoeng</th><th>1 skillpoeng</th></tr></thead><tbody></tbody></table></div>
-<p class="note">Ezo-uklarhet: notatet i planneren sier «first 2 levels in Energy», Ezos dokument sier 3 levler. Planneren viser 15 Energy ved lvl 24, altså 3 levler (lvl 2, 3 og 4). Guiden følger 3. Planneren har også 5 Dex og 5 Str ved lvl 24.</p>
-
-<h2 id="plan">Skill- og stat-plan (alle stages)</h2>
-<div class="tw"><table id="tplan"><thead><tr><th>Level</th><th>Skillpoeng</th><th>Stats</th></tr></thead><tbody></tbody></table></div>
-<p class="note">Stat-tallene er poeng du har fordelt selv, slik planneren viser dem. Skill-kravene (lvl 6 for Evade, 12 for Slow Movement og Pierce, 18 for Dodge, Decoy og Guided Arrow, 24 for Penetrate, 30 for Valkyrie) er hentet fra S14-dataene til planneren.</p>
-
-<h2 id="gear">Gear per stage</h2>
-<div class="filters" id="gtabs"></div>
-<div class="kv" id="gkv"></div>
-<p class="note" id="gnote"></p>
-
-<h2 id="runeord">Runeord i builden</h2>
-<div class="tw"><table id="trw"><thead><tr><th>Runeord</th><th>Runer (rekkefølge)</th><th>Base i builden</th><th>Lvl</th></tr></thead><tbody></tbody></table></div>
-<p class="note">Runer og rekkefølge er fra S14-runeorddataene til planneren. Peace og Purity finnes bare i PD2. Basen må være hvit eller grå (ikke magic) og ha nøyaktig riktig antall sockets. Lvl-kravet er den høyeste runen i runeordet, regnet ut fra rune-levelene på PD2-wikien.</p>
-
-<h2 id="howto">Slik gjør du</h2>
-<ol class="how" id="how"></ol>
-
-<h2 id="usikkert">Ikke verifisert</h2>
-<div class="warn">S14 startet 23.10. kl. 19:00 (norsk tid). Noe kan ha endret seg ved lansering.</div>
-<ul id="unc"></ul>
-
-<h2 id="kilder">Kilder</h2>
-<ul id="src"></ul>
+<details><summary>Level for level</summary><div><table id="tLvl"></table><p class="lb">5 stat + 1 skill per level. Ctrl+klikk = 5 poeng. Ezo: «2 eller 3» levler Energy, planner = 3 (Ene 15).</p></div></details>
+<details><summary>Gear per stage</summary><div><div class="flt" id="gT"></div><table id="tGear"></table></div></details>
+<details><summary>Runeord</summary><div><table id="tRw"></table><p class="lb">Hvit/grå base, eksakt antall sockets. Peace/Purity = PD2-only.</p></div></details>
+<details><summary>Keys / cube</summary><div><ul id="lKeys"></ul></div></details>
+<details><summary>Tips</summary><div><ul id="lTips"></ul></div></details>
+<details><summary>Ikke verifisert</summary><div><ul id="lUnc"></ul></div></details>
+<details><summary>Kilder</summary><div><ul id="lSrc"></ul></div></details>
 </div>
-
 <script>
-(function(){
-"use strict";
-var STAGES=["Early (Normal) · lvl 24","Nightmare · lvl 55","Hell (cheap gear) · lvl 75","Early Maps (mid gear) · lvl 90","S14 Endgame · lvl 96"];
-var KIND={gate:"⛔ STOPP-PUNKT",quest:"Quest",shop:"Shop/gamble",craft:"Runeord",skill:"Skill/stats",merc:"Merc",gear:"Gear",farm:"Farm"};
-function S(id,zone,stage,kind,lvl,title,detail,reward,runes){return {id:id,zone:zone,stage:stage,kind:kind,lvl:lvl,title:title,detail:detail,reward:reward||"",runes:runes||null};}
-var STEPS=[
-S("n1-den","Normal · Akt 1",0,"quest",2,"Den of Evil","Drep alle monstre i Den of Evil (fra Blood Moor). Gå tilbake til Akara.","+1 skillpoeng → Magic Arrow"),
-S("n1-stats","Normal · Akt 1",0,"skill",2,"Lvl 2–5: Energy, så Strength","Statpoeng: lvl 2, 3 og 4 gir 5 statpoeng hver, alle i Energy (totalt 15). Lvl 5: alle 5 i Strength. Fra lvl 6: Vitality. Skillpoeng: 1 per level i Magic Arrow (Den of Evil +1 → Magic Arrow 5 ved lvl 5)."),
-S("n1-shop","Normal · Akt 1",0,"shop",3,"Se etter socket-baser hos Charsi","Hvit/grå 2-socket bue (Hunter's Bow er Ezos valg, men enhver 2os bue funker for Zephyr), 2os body armor for Stealth, og en Cap med 2 sockets for Tir. Plukk opp alle runer.","",["Tir","Tal","Eth"]),
-S("n1-keys","Normal · Akt 1",0,"shop",3,"Kjøp en stabel Keys hos Akara","Du trenger 1 Key per rune-oppgradering i cuben (f.eks. 3 Ral + Key = Ort). Keys stables til 50 i PD2 og er billige. Se «Keys».",""),
-S("n1-merc","Normal · Akt 1",0,"merc",3,"Lei Fire Arrow-merc (Vigor) hos Kashya","Velg en Rogue med «Fire Arrow (Vigor)», for løpefart. Koster bare ca. 100 gull i PD2 på lvl 2–3, så du trenger ikke vente på Blood Raven. Velg Cold Arrow (Meditation) bare hvis mana er et stort problem.",""),
-S("n1-evade","Normal · Akt 1",0,"skill",6,"Lvl 6: skillpoeng i Evade","Lvl 6: skillpoenget går i Evade (1 poeng, krever lvl 6 i S14). Statpoengene går i Vitality fra nå av. Fra lvl 7 går alle skillpoeng i Magic Arrow igjen."),
-S("n1-belt","Normal · Akt 1",0,"shop",6,"Gamble et Belt hos Gheed","Gheed → Gamble → velg «Belt» (3 potion-rader). Prisen stiger med level, så gjør det tidlig. Se også etter Mana after Kill på ringer."),
-S("n1-blood","Normal · Akt 1",0,"quest",7,"Sisters' Burial Grounds (Blood Raven)","Cold Plains → Burial Grounds. Du har allerede merc, så dette er mest XP. Gir en gratis merc-ansettelse hos Kashya i vanilla.",""),
-S("n1-cain","Normal · Akt 1",0,"quest",9,"The Search for Cain","Dark Wood: les Inifuss-treet → Akara → Cairn Stones i Stony Field → Tristram, redd Cain. Ta med Wirt's Leg fra Tristram (Cow Level senere).","Gratis identifisering hos Cain"),
-S("n1-tir","Normal · Akt 1",0,"gear",10,"Tir i hjelmen","Sett Tir-runer i en Cap med 2 sockets (+2 Mana after Kill per Tir). Husk å unstacke runer først (Ctrl+Shift+klikk).","",["Tir","Tir"]),
-S("n1-countess","Normal · Akt 1",0,"farm",12,"Countess (rune-farm)","Black Marsh → Forgotten Tower → Tower Cellar Level 5. Normal-Countess dropper bare El–Ral fra rune-tabellen (gjelder også i PD2), altså ikke Ort. Ta vare på Tal, Eth, Tir og Ral (3 Ral + Key = Ort).","",["Tal","Eth","Ral"]),
-S("g1-runes","Normal · Akt 1",0,"gate",12,"⛔ STOPP: runer til Stealth + Zephyr","","",["Tal","Eth","Eth","Ral","Ral","Ral"]),
-S("n1-stealth","Normal · Akt 1",0,"craft",17,"Lag Stealth (lvl 17)","Tal + Eth i en hvit 2-socket body armor (Hard Leather Armor i builden).","",["Tal","Eth"]),
-S("n1-malus","Normal · Akt 1",0,"quest",13,"Tools of the Trade (Imbue)","Hent Horadric Malus i Barracks og gi den til Charsi. Imbue kan spares: imbued ilvl = clvl + 4, så senere gir bedre resultat.","Charsi imbuer én hvit gjenstand"),
-S("n1-andy","Normal · Akt 1",0,"quest",15,"Andariel","Catacombs Level 4. Snakk med Warriv for å reise til Akt 2."),
-S("n2-rada","Normal · Akt 2",0,"quest",16,"Radament's Lair","A2 Sewers Level 3. Les Book of Skill som han dropper.","+1 skillpoeng → Magic Arrow"),
-S("n2-staff","Normal · Akt 2",0,"quest",18,"Horadric Staff","Horadric Cube (Halls of the Dead lvl 3), Staff of Kings (Maggot Lair lvl 3), Amulet of the Viper (Claw Viper Temple lvl 2). Sett sammen i cuben."),
-S("n2-zephyr","Normal · Akt 2",0,"craft",21,"Lag Zephyr (lvl 21, når du har Ort)","Ort + Eth i en hvit 2-socket bue (Hunter's Bow i builden). Ort: 3 Ral + Key i cuben, Hellforge (A4) eller Qual-Kehk (A5).","",["Ort","Eth"]),
-S("n2-duriel","Normal · Akt 2",0,"quest",22,"Summoner → Duriel","Arcane Sanctuary: drep Summoner, åpne Canyon of the Magi, finn riktig Tal Rasha's Tomb og drep Duriel."),
-S("n3-tele","Normal · Akt 3",0,"shop",22,"Teleport-stav hos Ormus","Shop en stav med Teleport-charges til våpenbytte (W). Ezo: helst under lvl 24, da vises staven rød i butikken. Ort + våpenet i cuben reparerer og lader det opp (PD2-oppskrift)."),
-S("g2-tele","Normal · Akt 3",0,"gate",22,"⛔ STOPP i Kurast Docks: Teleport-stav + Zephyr",""),
-S("n3-bird","Normal · Akt 3",0,"quest",22,"The Golden Bird","Jade Figurine fra første unique-monster etter Kurast Docks → Meshif → Cain → Alkor. Drikk Potion of Life.","+20 life"),
-S("n3-ma20","Normal · Akt 3",0,"skill",21,"MA 20 → Inner Sight 1 + Slow Movement 1","Når Magic Arrow er 20 (rundt lvl 20–21 med Den og Radament): neste skillpoeng i Inner Sight 1, så Slow Movement 1. Ekstra poeng etter det: 1 i Critical Strike, Pierce, Dodge og Decoy."),
-S("n3-lam","Normal · Akt 3",0,"quest",24,"Lam Esen's Tome","Boka ligger i et av templene i Kurast Bazaar, Upper Kurast eller Causeway. Lever til Alkor.","+5 statpoeng → Vitality"),
-S("n3-meph","Normal · Akt 3",0,"quest",25,"Khalim's Will → Mephisto","Eye (Spider Cavern), Brain (Flayer Dungeon lvl 3), Heart (Kurast Sewers), Flail (High Council i Travincal). Cube dem, knus Compelling Orb, Durance of Hate lvl 3 → Mephisto."),
-S("n4-izual","Normal · Akt 4",0,"quest",26,"The Fallen Angel (Izual)","Plains of Despair. Snakk med Tyrael etterpå.","+2 skillpoeng"),
-S("n4-forge","Normal · Akt 4",0,"quest",27,"Hellforge","Drep Hephasto i River of Flame og knus Mephisto's Soulstone på Hellforge.","Gems + 1 tilfeldig rune (El–Amn i Normal)",["Ort"]),
-S("n4-diablo","Normal · Akt 4",0,"quest",28,"Diablo","Chaos Sanctuary: åpne de 5 seglene, drep seal-bossene og Diablo."),
-S("n5-larzuk","Normal · Akt 5",0,"quest",29,"Siege on Harrogath (Larzuk)","Drep Shenk i Bloody Foothills. Spar socket-belønningen til en god hvit base, f.eks. Breast Plate til Peace eller Long Battle Bow til merc-Purity.","Larzuk socketer én gjenstand"),
-S("n5-qual","Normal · Akt 5",0,"quest",30,"Rescue on Mount Arreat","Befri soldatene i Frigid Highlands og snakk med Qual-Kehk.","Ral + Ort + Tal",["Ort"]),
-S("n5-anya","Normal · Akt 5",0,"quest",31,"Prison of Ice (Anya)","Frozen River → Anya. Malah gir deg Thawing Potion; tin Anya, snakk med Malah.","+10 alle resistanser"),
-S("n5-nihl","Normal · Akt 5",0,"quest",32,"Nihlathak","Anyas portal → Halls of Vaught. Etterpå åpner Anya butikken sin."),
-S("n5-baal","Normal · Akt 5",0,"quest",33,"Ancients → Baal","Arreat Summit (Ancients) → Worldstone Keep → Throne of Destruction → Baal."),
-S("n5-cows","Normal · Akt 5",0,"farm",33,"Cow Level er nå åpen","Wirt's Leg + Tome of Town Portal i cuben i Rogue Encampment. I PD2 krever det at Baal er drept i denne vanskelighetsgraden."),
-S("g3-nm","Normal → Nightmare",0,"gate",33,"⛔ STOPP: klar for Nightmare?",""),
-S("nm-passives","Nightmare",1,"skill",34,"1 poeng i alle resterende passiver","Critical Strike, Pierce (lvl 12), Dodge og Decoy (lvl 18), Penetrate (lvl 24), Valkyrie (lvl 30). Så maks Valkyrie og synergiene Slow Movement og Inner Sight."),
-S("nm-dex","Nightmare",1,"skill",34,"Begynn på Dexterity","Dex hjelper AR, og Matriarchal Bow krever 187 Dex senere. Planner-mål ved lvl 55 (fordelte poeng): Str 10, Dex 100, Vit 160, Ene 15."),
-S("nm-den","Nightmare · Akt 1",1,"quest",34,"Den of Evil (NM)","Samme som i Normal.","+1 skillpoeng"),
-S("nm-countess","Nightmare · Akt 1",1,"farm",35,"Countess NM (runer til Lore/Peace/Purity)","Ta vare på Ort, Sol, Shael, Thul, Amn, Eth, Tir og Tal.","",["Sol","Shael","Thul","Amn"]),
-S("g4-nmrw","Nightmare · Akt 1",1,"gate",36,"⛔ STOPP: runer til Lore + Peace (+ Purity, Edge)","","",["Ort","Sol","Shael","Thul","Thul","Amn","Amn","Amn","Eth","Tir","Tal"]),
-S("nm-lore","Nightmare",1,"craft",27,"Lag Lore","Ort + Sol i en hvit 2-socket hjelm (Skull Cap i builden).","",["Ort","Sol"]),
-S("nm-edge","Nightmare",1,"craft",25,"Lag Edge (eller behold Zephyr)","Tir + Tal + Amn i en hvit 3-socket bue. Builden bruker Stag Bow med +1 Bow skills. Sjekk Str/Dex-kravet til basen.","",["Tir","Tal","Amn"]),
-S("nm-peace","Nightmare",1,"craft",29,"Lag Peace","Shael + Thul + Amn i en hvit 3-socket body armor (Breast Plate i builden). PD2-runeord.","",["Shael","Thul","Amn"]),
-S("nm-purity","Nightmare",1,"merc",25,"Lag Purity til mercen","Amn + Eth + Thul i en hvit 3-socket bue til Rogue-mercen (Long Battle Bow i builden). PD2-runeord.","",["Amn","Eth","Thul"]),
-S("nm-gear","Nightmare",1,"gear",40,"Fiks AR: Hsarus' belt + boots","Hsarus' Iron Stay + Iron Heel (eller Raven Frost). Skystrike er topp sent i Normal til NM om den dropper. Identifiser blå piler (kan ha +Bow skills)."),
-S("nm-rada","Nightmare · Akt 2–3",1,"quest",40,"Radament, Golden Bird og Lam Esen (NM)","Samme ruter som i Normal.","+1 skill, +20 life, +5 stats"),
-S("nm-izual","Nightmare · Akt 4",1,"quest",45,"Izual + Hellforge (NM)","Hellforge gir en rune i Sol–Um-området i NM.","+2 skillpoeng"),
-S("nm-a5","Nightmare · Akt 5",1,"quest",48,"Larzuk, Qual-Kehk og Anya (NM)","Ny socket fra Larzuk, nye Ral/Ort/Tal, og +10 alle res fra Anya.","Socket, runer, +10 res"),
-S("nm-cows","Nightmare",1,"farm",50,"NM Cows","Ezo: et godt farmsted når du er for svak for Hell. Krever at NM-Baal er drept."),
-S("g5-hell","Nightmare → Hell",1,"gate",55,"⛔ STOPP: klar for Hell?",""),
-S("h-quests","Hell",2,"quest",56,"Hell-quester for poeng og res","Den of Evil, Radament, Izual (skills), Golden Bird (life), Lam Esen (stats), Anya (+10 res). Larzuk-socketen kan brukes på Melody-basen.","+4 skill, +5 stats, +20 life, +10 res"),
-S("h-ko","Hell",2,"farm",60,"Finn 2× Ko","Én til Melody (viktigst), én til Hustle. Cube opp lavere runer: 3 Lum + Key → Ko.","",["Ko","Ko"]),
-S("g6-melody","Hell",2,"gate",60,"⛔ STOPP: Melody før du presser videre i Hell","","",["Shael","Ko","Nef"]),
-S("h-melody","Hell",2,"craft",39,"Lag Melody","Shael + Ko + Nef i en 3-socket Stag, Ashwood eller Matriarchal Bow med +2/+3 Bow skills. Ikke vent på perfekt base, kjøp en om nødvendig.","",["Shael","Ko","Nef"]),
-S("h-hustle","Hell",2,"craft",39,"Lag Hustle (armor)","Shael + Ko + Eld i en hvit 3-socket body armor (Mage Plate i builden).","",["Shael","Ko","Eld"]),
-S("h-gloves","Hell",2,"shop",65,"+3 Bow-hansker (lvl 65+)","Shop hos Anya eller Charsi. 20 IAS er best. PvP-portalen resetter butikken (Ezo)."),
-S("h-ammy","Hell",2,"shop",65,"Amulett med +Bow/Amazon skills","Gamble, eller Blood-craft +2 Amazon, ved lvl 65+."),
-S("h-ias","Hell",2,"gear",70,"86 IAS → 7 frames med Hustle","Behold 1 Large Charm med 6%+ IAS. Få Half Freeze Duration et sted (ringer, hansker, boots) med mindre du har Raven Frost."),
-S("h-cheap","Hell",2,"gear",72,"Billig Hell-gear","Basilisk's Quill (2× P. Diamond, bare om den er billig), Lore eller +skills Circlet, Goldwrap, Raven Frost, Bul-Kathos' Death Band, rare boots med FRW/res. Merc: Heavenly Garb + Purity."),
-S("h-farm","Hell",2,"farm",75,"Farm i Hell","Terror Zones (få LoD-monstre er immune mot magic), Chaos Sanctuary, Cows, Travincal."),
-S("g7-maps","Hell → Maps",2,"gate",75,"⛔ STOPP: klar for maps?",""),
-S("m-skill","Early Maps",3,"skill",76,"Multiple Shot 1 → Guided Arrow","Guided Arrow krever lvl 18 og Multiple Shot. Planner: Guided Arrow 14 ved lvl 90. Stats ved lvl 90: Str 95, Dex 165, Vit 185, Ene 15."),
-S("m-ebon","Early Maps",3,"gear",80,"Ebonbane (4× Shael)","168 IAS for 7 frames med Hustle. En ekstra Shael i Ebonbane kan erstatte 20 IAS på hanskene; Goldwrap (20%) kan dekke manglende IAS.","",["Shael","Shael","Shael","Shael"]),
-S("m-gear","Early Maps",3,"gear",85,"Mid gear","Valkyrie Wing (2× P. Topaz), Basilisk's Quill (2× P. Diamond), Verdungo's, Brilliant-craft boots (HFD, res, FRW), Blood-craft +2 Amazon amulett, 2× Bul-Kathos' Death Band (AR-corrupt)."),
-S("m-charms","Early Maps",3,"gear",88,"Charms","+1 Bow grand charms (Fletcher's) er viktigst. Gheed's Fortune. Torch og Anni til slutt."),
-S("m-merc","Early Maps",3,"merc",88,"Merc-gear","Crown of Ages, Heavenly Garb, Purity, Anvilguard Strap, Lava Gout (Enchant Fire-buff), Marrowwalk (freeze-immun), String of Ears."),
-S("m-cta","Early Maps",3,"craft",57,"CTA på swap","Call to Arms (Amn Ral Mal Ist Ohm) i et 5-socket våpen + Sigon's Guard på swap.","",["Amn","Ral","Mal","Ist","Ohm"]),
-S("e-jewels","S14 Endgame",4,"gear",92,"5% magic damage-jewels","Scintillating jewels i socket-corruptede Ebonbane, Basilisk's Quill, Valkyrie Wing og Skullder's Ire. Én av jewelene trenger 15 IAS."),
-S("e-faith","S14 Endgame",4,"merc",65,"Faith til mercen","Ohm + Jah + Lem + Eld i en 4-socket Demon Crossbow. Fanaticism capper IAS uten Shael/Hustle.","",["Ohm","Jah","Lem","Eld"]),
-S("e-chest","S14 Endgame",4,"gear",94,"Bytt ut Hustle","Skullder's Ire i builden. Alternativer: 4os Blood-craft rare med PDR, 3os Silks of the Victor eller Arkaine's."),
-S("e-final","S14 Endgame",4,"skill",96,"Sluttfordeling lvl 96","Guided Arrow 20. Stats: Str 95, Dex 175, Vit 220, Ene 0.")
+(function(){"use strict";
+var Z=["Normal · A1","Normal · A2","Normal · A3","Normal · A4","Normal · A5","Normal → NM","Nightmare","NM → Hell","Hell","Hell → Maps","Maps","Endgame"];
+var ZS=[0,0,0,0,0,0,1,1,2,2,3,4];
+// [id, zone, gate?, lvl, linje, detaljer, runer]
+var R=[
+["n1-den",0,0,2,"Den of Evil → Akara: +1 skill","Rydd hele hula. Skill → Magic Arrow."],
+["n1-stats",0,0,2,"Lvl 2–4 Energy · lvl 5 Str · så Vit","5 stat/level. 1 skill/level → Magic Arrow. Ezo uklar: 2 eller 3 lvl Energy; planner = 3."],
+["n1-shop",0,0,3,"Charsi: se etter 2os-baser","Hvit/grå: 2os bue (Zephyr), 2os armor (Stealth), 2os Cap (Tir). Ta alle runer."],
+["n1-keys",0,0,3,"Akara: kjøp Keys (stabel)","1 Key per rune-upgrade i cube. Stabel 50."],
+["n1-merc",0,0,3,"Kashya: Fire Arrow (Vigor)-merc","~100 gull. Meditation (Cold Arrow) kun ved manamangel."],
+["n1-evade",0,0,6,"Lvl 6: 1 skill → Evade","Så Magic Arrow igjen."],
+["n1-belt",0,0,6,"Gheed: gamble Belt (3 rader)","Pris stiger med level → gjør det tidlig. Ikke gamble bue: gir aldri hvite socket-baser. Bue = Zephyr → Edge → Melody. Seriøs gambling først lvl 65+ (amulett/circlet +Bow)."],
+["n1-blood",0,0,7,"Blood Raven (Burial Grounds)","XP. Merc har du allerede."],
+["n1-cain",0,0,9,"Cain: Inifuss → Cairn Stones → Tristram","Ta med Wirt's Leg (Cows senere)."],
+["n1-tir",0,0,10,"2× Tir i 2os Cap","Mana after Kill. Unstack rune: Ctrl+Shift+klikk."],
+["n1-countess",0,0,12,"Countess (Tower Cellar 5)","Normal: kun El–Ral (også PD2). Ta Tal, Eth, Tir, Ral.",["Tal","Eth","Ral"]],
+["g1-runes",0,1,12,"⛔ Runer: Stealth + Zephyr","<b>Trenger:</b> Tal, 2× Eth, 3× Ral (+Key = Ort).<br><b>Farm:</b> Countess, players 1, 6–10 runs (Tal 1:2, Eth 1:3, Ral 1:3 per run).<br><b>Skip hvis:</b> Tal+Eth i boks, eller du dreper fint. Stealth ikke kritisk; Zephyr viktigere. Maks ~10 runs.",["Tal","Eth","Eth","Ral","Ral","Ral"]],
+["n1-stealth",0,0,17,"Stealth: Tal Eth i 2os armor","Lvl 17.",["Tal","Eth"]],
+["n1-malus",0,0,13,"Malus → Charsi (spar Imbue)","Imbue senere = bedre (ilvl = clvl+4)."],
+["n1-andy",0,0,15,"Andariel → Akt 2","Catacombs 4."],
+["n2-rada",1,0,16,"Radament (Sewers 3): +1 skill","→ Magic Arrow."],
+["n2-staff",1,0,18,"Horadric Staff: Cube + Staff + Amulet","Cube: Halls of the Dead 3. Staff: Maggot Lair 3. Amulet: Claw Viper Temple 2."],
+["n2-zephyr",1,0,21,"Zephyr: Ort Eth i 2os bue","Lvl 21. Ort: 3 Ral + Key, Hellforge, Qual-Kehk.",["Ort","Eth"]],
+["n2-duriel",1,0,22,"Summoner → Tal Rasha → Duriel",""],
+["n3-tele",2,0,22,"Ormus: Teleport-stav til swap","Helst før lvl 24 (Ezo: vises rød da). Lad: Ort + stav i cube."],
+["g2-tele",2,1,22,"⛔ Teleport-stav + Zephyr?","<b>Farm:</b> refresh Ormus (ut/inn av by, nytt spill). Ort: 3 Ral + Key.<br><b>Skip hvis:</b> ~10 refresh uten stav – prøv senere. Ingen Ort – bruk magic bue (+MA/+Bow) til Ort dukker opp."],
+["n3-bird",2,0,22,"Golden Bird → Alkor: +20 life","Jade Figurine: 1. unique etter Docks → Meshif → Cain → Alkor."],
+["n3-ma20",2,0,21,"MA 20 → Inner Sight 1, Slow Mov. 1","Ekstra: 1 i Crit Strike, Pierce, Dodge, Decoy."],
+["n3-lam",2,0,24,"Lam Esen's Tome: +5 stat","Tempel i Bazaar/Upper Kurast/Causeway → Alkor."],
+["n3-meph",2,0,25,"Khalim's Will → Mephisto","Eye: Spider Cavern. Brain: Flayer Dungeon 3. Heart: Sewers. Flail: Travincal."],
+["n4-izual",3,0,26,"Izual → Tyrael: +2 skill","Plains of Despair."],
+["n4-forge",3,0,27,"Hellforge: rune El–Amn","Kan gi Ort.",["Ort"]],
+["n4-diablo",3,0,28,"Diablo (5 segl)",""],
+["n5-larzuk",4,0,29,"Shenk → Larzuk: socket (spar)","Hvit base = maks sockets. Spar til Peace-armor / merc-bue."],
+["n5-qual",4,0,30,"Qual-Kehk: Ral + Ort + Tal","Frigid Highlands.",["Ort"]],
+["n5-anya",4,0,31,"Anya: +10 all res","Frozen River. Thawing Potion fra Malah."],
+["n5-nihl",4,0,32,"Nihlathak (Halls of Vaught)","Anya-shop åpner."],
+["n5-baal",4,0,33,"Ancients → Baal",""],
+["n5-cows",4,0,33,"Cows åpne","Wirt's Leg + Tome of TP i cube, Rogue Encampment."],
+["g3-nm",5,1,33,"⛔ Klar for NM?","<b>Trenger:</b> MA 20, Zephyr, res fra Anya.<br><b>Farm:</b> Normal Cows, Countess. Shop 2os hjelm / 3os armor/buer.<br><b>Skip hvis:</b> Baal gikk lett."],
+["nm-passives",6,0,34,"1 i alle passiver → Valkyrie","Crit, Pierce, Dodge, Decoy, Penetrate (24), Valkyrie (30). Så Valk + Slow Mov. mot 20."],
+["nm-dex",6,0,34,"Stats: Dex + Vit","Mål lvl 55: Str 10, Dex 100, Vit 160. Matriarchal krever 187 Dex."],
+["nm-den",6,0,34,"Den of Evil NM: +1 skill",""],
+["nm-countess",6,0,35,"Countess NM: høyere runer","Ort, Sol, Shael, Thul, Amn.",["Sol","Shael","Thul","Amn"]],
+["g4-nmrw",6,1,36,"⛔ Runer: Lore + Peace","<b>Trenger:</b> Ort Sol · Shael Thul Amn (+ Purity, Edge).<br><b>Farm:</b> Countess NM, players 1, 15–30 runs (Ort 1:4,5, Amn 1:5,6, Thul 1:6,5, Sol 1:8,4, Shael 1:9,4). Cube opp med Key. Alt.: NM Cows.<br><b>Skip hvis:</b> Lore + Peace laget.",["Ort","Sol","Shael","Thul","Amn"]],
+["nm-lore",6,0,27,"Lore: Ort Sol i 2os hjelm","",["Ort","Sol"]],
+["nm-edge",6,0,25,"Edge: Tir Tal Amn i 3os bue","Stag Bow (+1 Bow). Sjekk Dex-krav.",["Tir","Tal","Amn"]],
+["nm-peace",6,0,29,"Peace: Shael Thul Amn i 3os armor","Breast Plate.",["Shael","Thul","Amn"]],
+["nm-purity",6,0,25,"Merc Purity: Amn Eth Thul, 3os bue","Long Battle Bow.",["Amn","Eth","Thul"]],
+["nm-gear",6,0,40,"AR: Hsarus belt+boots / Raven Frost","Skystrike = topp om den dropper. ID blå piler (+Bow)."],
+["nm-rada",6,0,40,"NM: Radament, Bird, Lam Esen","+1 skill, +20 life, +5 stat."],
+["nm-izual",6,0,45,"NM: Izual +2 skill, Hellforge","Hellforge NM: Sol–Um."],
+["nm-a5",6,0,48,"NM: Larzuk, Qual-Kehk, Anya","Socket, Ral/Ort/Tal, +10 res."],
+["nm-cows",6,0,50,"NM Cows (farm)","Ezo: når Hell er for tungt."],
+["g5-hell",7,1,55,"⛔ Klar for Hell?","<b>Trenger:</b> AR-fiks, Lore/Peace/Purity.<br><b>Farm:</b> NM Cows.<br><b>Skip hvis:</b> NM-Baal gikk lett."],
+["h-quests",8,0,56,"Hell-quester: skill, stat, life, res","Den, Radament, Izual, Bird, Lam Esen, Anya. Larzuk → Melody-base."],
+["h-ko",8,0,60,"Finn 2× Ko","Melody først. 3 Lum + Key = Ko.",["Ko","Ko"]],
+["g6-melody",8,1,60,"⛔ Melody før du presser Hell","<b>Trenger:</b> Shael Ko Nef + 3os Stag/Ashwood/Matriarchal +2/+3 Bow.<br><b>Farm:</b> Ko: 3 Lum + Key, Hell Countess (Ko 1:51). Socket: Larzuk, Ral+Amn+P.Amethyst (hvit), shard/Puzzlebox. Kjøp base ved behov.<br><b>Skip hvis:</b> Edge holder.",["Shael","Ko","Nef"]],
+["h-melody",8,0,39,"Melody: Shael Ko Nef, +3 Bow-bue","Ikke vent på perfekt base.",["Shael","Ko","Nef"]],
+["h-hustle",8,0,39,"Hustle: Shael Ko Eld i 3os armor","Mage Plate.",["Shael","Ko","Eld"]],
+["h-gloves",8,0,65,"+3 Bow / 20 IAS-hansker (65+)","Anya/Charsi. PvP-portal resetter shop."],
+["h-ammy",8,0,65,"Amulett +Bow/+Zon (65+)","Gamble (Anya/Gheed) eller Blood craft."],
+["h-ias",8,0,70,"86 IAS = 7 frames (Hustle)","LC 6%+ IAS. Half freeze et sted (eller Raven Frost)."],
+["h-cheap",8,0,72,"Hell-gear: Quill, Goldwrap, Raven, BK","Basilisk's Quill (billig), Goldwrap, Raven Frost, BK Death Band, rare boots FRW/res. Merc: Heavenly Garb."],
+["h-farm",8,0,75,"Farm: TZ, Chaos, Cows, Trav",""],
+["g7-maps",9,1,75,"⛔ Klar for maps?","<b>Trenger:</b> Melody, Hustle, 86 IAS, res, half freeze.<br><b>Farm:</b> TZ, Chaos, Cows, Trav. Shop +3/20 hansker."],
+["m-skill",10,0,76,"Multi Shot 1 → Guided Arrow","GA 14 @ lvl 90. Stats @90: Str 95, Dex 165, Vit 185."],
+["m-ebon",10,0,80,"Ebonbane, 4× Shael","168 IAS = 7 frames. Goldwrap kan dekke IAS.",["Shael","Shael","Shael","Shael"]],
+["m-gear",10,0,85,"Valk Wing, Verdungo's, 2× BK","Quill 2× P.Diamond, Brilliant boots, Blood +2 Zon."],
+["m-charms",10,0,88,"Charms: +1 Bow GCs","Gheed's. Torch + Anni sist."],
+["m-merc",10,0,88,"Merc: CoA, Garb, Lava Gout, Marrow","+ Purity, Anvilguard, String of Ears."],
+["m-cta",10,0,57,"Swap: CTA + Sigon's","Amn Ral Mal Ist Ohm, 5os.",["Amn","Ral","Mal","Ist","Ohm"]],
+["e-jewels",11,0,92,"5% magic dmg-jewels i corrupts","Ebonbane, Quill, Valk Wing, Skullder's. Én jewel m/15 IAS."],
+["e-faith",11,0,65,"Merc Faith: Ohm Jah Lem Eld","4os Demon Crossbow.",["Ohm","Jah","Lem","Eld"]],
+["e-chest",11,0,94,"Hustle → Skullder's Ire","Alt.: 4os Blood rare PDR, Silks, Arkaine's."],
+["e-final",11,0,96,"Lvl 96: GA 20","Str 95, Dex 175, Vit 220, Ene 0."]
 ];
-// Gate details: hvorfor, farm, OK å hoppe over
-var GATES={
-"g1-runes":{why:"Du trenger Tal + Eth til Stealth (lvl 17), og Eth + Ort til Zephyr (lvl 21). Ort dropper ikke fra Normal-Countess sin rune-tabell, men 3 Ral + Key i cuben gir Ort.",farm:"Countess Normal, på players 1. Omtrentlig sjanse per run: Tal 1 av 2,2, Eth 1 av 3, Ral 1 av 3,2, Tir 1 av 4,2. Regn med 6–10 runs for Tal + 2 Eth + 3 Ral. Key til cuben kjøper du hos Akara. Countess er lvl 11, så gå når du er rundt lvl 10–14.",skip:"Du har Tal + Eth + 2os armor (Stealth er klar til lvl 17), eller du dreper raskt nok og vil heller få Ort fra Hellforge/Qual-Kehk. Stealth er kjekt, men ikke kritisk. Zephyr betyr mer. Maks ca. 10 runs."},
-"g2-tele":{why:"Ezo vil ha Teleport-stav på swap, kjøpt helst før lvl 24. Zephyr bør være laget nå (lvl 21).",farm:"Teleport-stav: gå ut og inn av byen/WP, eller lag nytt spill, til Ormus har en stav med Teleport-charges. Zephyr uten Ort: 3 Ral + Key i cuben (Ral fra Countess/Act 2), eller ta Ort fra Hellforge (A4) og Qual-Kehk (A5).",skip:"Etter ca. 10 refreshes uten stav: gå videre og prøv igjen senere. Uten Ort: fortsett med beste magic bue (helst +Magic Arrow / +Bow skills) og lag Zephyr når Ort dukker opp."},
-"g3-nm":{why:"NM-monstre er mye sterkere. Du bør ha Magic Arrow 20, Zephyr (eller bedre), resistanser fra Anya og en merc som overlever.",farm:"Mangler du runer/gear: Normal Cows (åpne etter Baal), Countess for Tal/Eth/Ral, og shop Charsi/Anya for socket-baser til NM-runeordene (2os hjelm, 3os body armor, 3os buer).",skip:"Du dreper Baal uten problemer og har Zephyr. Gå rett videre; NM Countess gir bedre runer uansett."},
-"g4-nmrw":{why:"Lore (Ort Sol) og Peace (Shael Thul Amn) er de neste store oppgraderingene. Purity (Amn Eth Thul) til mercen og Edge (Tir Tal Amn) kommer i tillegg.",farm:"Countess NM, players 1. Omtrentlig per run: Ort 1 av 4,5, Amn 1 av 5,6, Thul 1 av 6,5, Sol 1 av 8,4, Shael 1 av 9,4. Regn med 15–30 runs for alt. Bruk cuben med Key (3 Ort → Thul, 3 Thul → Amn, 3 Amn → Sol, 3 Sol → Shael). NM Cows er et alternativ.",skip:"Lore + Peace er klare: lag dem og gå videre. Purity og Edge kan komme senere i NM."},
-"g5-hell":{why:"Hell krever AR, res og en merc som overlever.",farm:"NM Cows (Ezo) til du har Hsarus' belt + boots eller Raven Frost (AR) og Lore/Peace/Purity på plass.",skip:"Du klarer NM-Baal raskt, og res er brukbare etter Anya."},
-"g6-melody":{why:"Melody i en +2/+3 bue er den største oppgraderingen i Hell.",farm:"Ko: cube 3 Lum + Key → Ko (Lum fra Hell Countess / Cows), eller Hell Countess direkte (Ko omtrent 1 av 51 per run). Base: 3os Stag, Ashwood eller Matriarchal Bow med +2/+3 Bow skills. Socket med Larzuk (Hell), Ral + Amn + Perfect Amethyst (hvit base), eller Worldstone Shard/Puzzlebox. Kjøp base om nødvendig.",skip:"Du klarer Hell-aktene greit med Edge. Melody er fortsatt neste mål."},
-"g7-maps":{why:"Maps krever Hustle + 86 IAS (7 frames), resistanser og half freeze/cannot be frozen.",farm:"Terror Zones, Chaos Sanctuary, Cows og Travincal (Ezo). Shop +3/20 IAS Bow-hansker hos Anya/Charsi.",skip:"Melody, Hustle og en 6%+ IAS Large Charm er på plass."}
-};
-// Neste mål: knyttet til steg-ID
-var GOALS=[
-["n1-merc","Merc: Fire Arrow (Vigor)","ca. 100 gull (lvl 2–3)","Kashya, Rogue Encampment"],
-["n1-belt","Belt (3 potion-rader)","Gull til gamble (billigere på lav level)","Gheed → Gamble → Belt"],
-["n1-tir","Cap med 2× Tir (Mana after Kill)","2os Cap/hjelm + 2 Tir","Charsi-shop / drops; Tir fra Countess (1 av 4,2)"],
-["n1-stealth","Stealth (body armor)","Tal + Eth · hvit 2os body armor · lvl 17","Runer: Countess Normal. Base: Charsi-shop (Hard Leather Armor e.l.)"],
-["n2-zephyr","Zephyr (bue)","Ort + Eth · hvit 2os bue · lvl 21","Ort: 3 Ral + Key (cube), Hellforge A4, Qual-Kehk A5. Base: Charsi/Fara-shop eller drop"],
-["n3-tele","Teleport-stav (swap)","Gull · helst før lvl 24","Ormus, Kurast Docks (A3)"],
-["nm-lore","Lore (hjelm)","Ort + Sol · hvit 2os hjelm · lvl 27","Countess NM; base: shop eller drop"],
-["nm-peace","Peace (body armor)","Shael + Thul + Amn · hvit 3os armor · lvl 29","Countess NM; base: Breast Plate e.l. (Larzuk-socket)"],
-["nm-purity","Purity (merc-bue)","Amn + Eth + Thul · hvit 3os bue · lvl 25","Countess NM; base: Long Battle Bow e.l."],
-["nm-edge","Edge (bue)","Tir + Tal + Amn · hvit 3os bue (+1 Bow ideelt) · lvl 25","Countess NM; base: Stag Bow"],
-["nm-gear","Hsarus' belt + boots / Raven Frost","AR-fiks","Drops / trade"],
-["h-melody","Melody (bue)","Shael + Ko + Nef · 3os +2/+3 Bow bue · lvl 39","Ko: 3 Lum + Key; base: drop/kjøp + socket"],
-["h-hustle","Hustle (armor)","Shael + Ko + Eld · hvit 3os armor · lvl 39","Ko: 3 Lum + Key; base: Mage Plate e.l."],
-["h-gloves","+3 Bow / 20 IAS-hansker","lvl 65+ · gull","Anya/Charsi-shop (PvP-portal resetter)"],
-["h-ammy","+Bow/Amazon-amulett","lvl 65+ · gull","Gamble hos Anya/Gheed, eller Blood-craft"],
-["h-ias","86 IAS (7 frames)","Large Charm 6%+ IAS + Hustle + hansker","Drops / shop"],
-["m-ebon","Ebonbane (4× Shael)","Ebonbane + 4 Shael","Drop / trade"],
-["m-gear","Mid gear (Valk Wing, Verdungo's, BK-ringer)","Se gear-fanen «Maps»","Maps / trade"],
-["m-charms","+1 Bow grand charms","Fletcher's GC","Drops / reroll med perfekte gems"],
-["m-cta","Call to Arms","Amn Ral Mal Ist Ohm · 5os våpen","Trade / høye runer"],
-["e-faith","Faith (merc)","Ohm Jah Lem Eld · 4os Demon Crossbow","Trade / høye runer"],
-["e-jewels","5% magic dmg-jewels","Socket-corruptede items","Maps / trade"]
-];
-function advice(l){
- if(l<=1)return["Ingen poeng på lvl 1","—"];
- if(l<=4)return["1 skillpoeng → Magic Arrow (+1 fra Den of Evil)","5 statpoeng → Energy (totalt 15 etter lvl 4)"];
- if(l===5)return["1 skillpoeng → Magic Arrow (MA 5 med Den of Evil)","5 statpoeng → Strength"];
- if(l===6)return["1 skillpoeng → Evade","5 statpoeng → Vitality"];
- if(l<=20)return["1 skillpoeng → Magic Arrow (mot 20; Radament gir +1)","5 statpoeng → Vitality (eller krav til gear)"];
- if(l<=22)return["Når MA er 20: Inner Sight 1, så Slow Movement 1","5 statpoeng → Vitality"];
- if(l<=29)return["1 i Critical Strike, Pierce, Dodge, Decoy, Penetrate (lvl 24)","5 statpoeng → Vitality (Dex om basen krever)"];
- if(l===30)return["1 skillpoeng → Valkyrie","5 statpoeng → Dex/Vit"];
- if(l<=55)return["Valkyrie → 20, Slow Movement → 19–20","Dex og Vit mot Dex 100 / Vit 160 ved lvl 55"];
- if(l<=75)return["Inner Sight → 20, Slow Movement 20","Mot Str 67 / Dex 152 / Vit 151 ved lvl 75"];
- if(l<=90)return["Multiple Shot 1, Guided Arrow → 14","Mot Str 95 / Dex 165 / Vit 185 ved lvl 90"];
- return["Guided Arrow → 20","Mot Str 95 / Dex 175 / Vit 220 ved lvl 96"];
+var STEPS=R.map(function(r){return{id:r[0],zone:Z[r[1]],stage:ZS[r[1]],gate:!!r[2],lvl:r[3],line:r[4],det:r[5],runes:r[6]||null};});
+var GOALS=[["n1-merc","Merc Vigor","~100 g"],["n1-belt","Belt","gamble Gheed"],["n1-tir","Cap 2× Tir","2os Cap"],["n1-stealth","Stealth","Tal Eth · 2os armor · 17"],["n2-zephyr","Zephyr","Ort Eth · 2os bue · 21"],["n3-tele","Teleport-stav","Ormus · <24"],["nm-lore","Lore","Ort Sol · 2os hjelm"],["nm-peace","Peace","Shael Thul Amn · 3os armor"],["nm-purity","Purity (merc)","Amn Eth Thul · 3os bue"],["nm-edge","Edge","Tir Tal Amn · 3os bue"],["nm-gear","Hsarus / Raven","AR"],["h-melody","Melody","Shael Ko Nef · +3 bue"],["h-hustle","Hustle","Shael Ko Eld · 3os armor"],["h-gloves","+3/20 hansker","lvl 65"],["h-ammy","+Bow amulett","lvl 65"],["h-ias","86 IAS","LC 6% IAS"],["m-ebon","Ebonbane","4× Shael"],["m-gear","Valk Wing, Verdungo","maps"],["m-charms","+1 Bow GCs","maps"],["m-cta","CTA","Amn Ral Mal Ist Ohm"],["e-faith","Faith (merc)","Ohm Jah Lem Eld"],["e-jewels","5% jewels","corrupts"]];
+function adv(l){
+ if(l<=1)return"ingen poeng";
+ if(l<=4)return"5 stat → Energy · 1 skill → Magic Arrow";
+ if(l===5)return"5 stat → Str · 1 skill → Magic Arrow";
+ if(l===6)return"5 stat → Vit · 1 skill → Evade";
+ if(l<=20)return"5 stat → Vit · 1 skill → Magic Arrow";
+ if(l<=22)return"5 stat → Vit · skill → Inner Sight / Slow Mov.";
+ if(l<=29)return"5 stat → Vit · skill → passiver (1 hver)";
+ if(l===30)return"stat → Dex/Vit · skill → Valkyrie";
+ if(l<=55)return"stat → Dex/Vit · skill → Valk / Slow Mov.";
+ if(l<=75)return"stat → Str 67/Dex 152 · skill → Inner Sight";
+ if(l<=90)return"stat → Dex/Vit · skill → Guided Arrow";
+ return"stat → Vit · skill → Guided Arrow 20";
 }
-var LVL=[["2","Energy (5)","Magic Arrow"],["3","Energy (5)","Magic Arrow"],["4","Energy (5) → totalt 15","Magic Arrow"],["5","Strength (5)","Magic Arrow (+ Den of Evil = MA 5)"],["6","Vitality","Evade 1"],["7–20","Vitality (eller krav til gear)","Magic Arrow (Radament +1) → MA 20"],["21–22","Vitality","Inner Sight 1, Slow Movement 1"],["23–30","Vitality (Dex om basen krever)","1 i Critical Strike, Pierce, Dodge, Decoy; Penetrate (24); Valkyrie (30)"],["Questbonus","Lam Esen +5 → Vitality","Izual +2 → passiver / Valkyrie"]];
-var QA=[
-["Når skal jeg gamble etter bue?","Ikke i Normal. Ezos plan bruker runeord-buer (Zephyr lvl 21 → Edge → Melody), og gamble gir aldri hvite socket-baser. Bruk gullet på Belt nå, Teleport-staven i A3 og merc. Kjøp heller buer i shop: hvit 2os til Zephyr, eller en magic bue med +Magic Arrow / +Bow skills som mellomløsning. Første gang du bør gamble seriøst er lvl 65+ (Ezo): amulett med +Bow/Amazon skills hos Anya eller Gheed, og evt. circlet. Prisen stiger med level, men det gjør også ilvl."],
-["Bør jeg stoppe og farme runer til Stealth?","Kort: 6–10 Countess-runs rundt lvl 10–14 (se ⛔ STOPP i Akt 1). Mål: Tal + 2 Eth + 3 Ral (= Ort med Key til Zephyr). Ikke bli stående der lenge: Stealth er kjekt (FRW, FHR, mana regen), men ikke kritisk, og den krever lvl 17 uansett. Zephyr (lvl 21) er viktigere."],
-["Hva er neste item etter Stealth/Zephyr?","Teleport-stav fra Ormus (A3) før lvl 24. Så i Nightmare: Lore (Ort Sol, hjelm) og Peace (Shael Thul Amn, armor), Purity til mercen (Amn Eth Thul) og Edge (Tir Tal Amn, bue). Deretter Hsarus' belt + boots for AR, og i Hell Melody + Hustle."]
-];var PLAN=[["2–5","Magic Arrow til 5 (Den of Evil gir +1)","3 første levelene Energy, så 1 Strength"],["6","Evade 1","Vitality"],["7–23","Magic Arrow til 20","Vitality"],["~23–24","Inner Sight 1, Slow Movement 1","Normal-mål: Str 5, Dex 5, Vit 90, Ene 15"],["24–30","1 i Critical Strike, Pierce, Dodge, Decoy, Penetrate","Begynn på Dex"],["30–55","Valkyrie 1 → 20, Slow Movement mot 20","lvl 55: Str 10, Dex 100, Vit 160"],["55–75","Inner Sight 20, Slow Movement 20","lvl 75: Str 67, Dex 152, Vit 151"],["75–90","Multiple Shot 1, Guided Arrow 14","lvl 90: Str 95, Dex 165, Vit 185"],["90–96","Guided Arrow 20","lvl 96: Str 95, Dex 175, Vit 220, Ene 0"]];
-var GEAR=[
-{s:"Str 5 · Dex 5 · Vit 90 · Ene 15",k:"Magic Arrow 20, Evade 1, Inner Sight 1, Slow Movement 1",i:[["Våpen","Zephyr (Hunter's Bow, Ort Eth)"],["Offhand","Arrows"],["Hjelm","Cap, 2× Tir"],["Rustning","Stealth (Hard Leather Armor, Tal Eth)"],["Belte","Gamblet Belt (3 rader)"],["Swap","Long Staff of Teleport (charges)"],["Merc","Rogue Scout, Vigor"]],n:"Fra Ezo: Stats i Energy de første levelene, 1 level Strength, resten Vitality. 1 poeng i Evade så fort som mulig, resten i Magic Arrow."},
-{s:"Str 10 · Dex 100 · Vit 160 · Ene 15",k:"Magic Arrow 20, Valkyrie 20, Slow Movement 19, 1 i Evade, Inner Sight, Dodge, Critical Strike, Pierce, Penetrate, Decoy",i:[["Våpen","Edge (Stag Bow, +1 Bow skills)"],["Offhand","Magic quiver med AR (Meteoric Sharp Arrows)"],["Hjelm","Lore (Skull Cap)"],["Rustning","Peace (Breast Plate)"],["Boots + belte","Hsarus' Iron Heel + Iron Stay"],["Amulett","Crafted Hit Power-amulett (AR, pierce)"],["Swap","Long Staff of Teleport"],["Merc","Vigor Rogue med Purity (Long Battle Bow)"]],n:"Builden lister 66 skillpoeng ved lvl 55. Rekkefølgen på Valkyrie og synergiene er valgfri; Valkyrie blir svært nyttig sent i NM."},
-{s:"Str 67 · Dex 152 · Vit 151 · Ene 15",k:"Magic Arrow 20, Inner Sight 20, Slow Movement 20, Valkyrie 20, resten 1",i:[["Våpen","Melody (Matriarchal Bow, +3 Bow skills)"],["Offhand","Basilisk's Quill, 2× P. Diamond"],["Hjelm","Lore (Skull Cap)"],["Rustning","Hustle (Mage Plate)"],["Hansker","Archer's Leather Gloves of Quickness (+3 Bow, 20 IAS)"],["Boots","Rare: 30 fire res, 30 cold res, 30% FRW"],["Belte","Goldwrap"],["Amulett","Archer's Amulet (+3 Bow)"],["Ringer","Raven Frost + Bul-Kathos' Death Band"],["Charms","Quick Large Charm (7 IAS)"],["Merc","Heavenly Garb + Purity"]],n:"86 IAS gir 7 frames med Hustle."},
-{s:"Str 95 · Dex 165 · Vit 185 · Ene 15",k:"Som Hell + Multiple Shot 1, Guided Arrow 14",i:[["Våpen","Ebonbane, 4× Shael"],["Offhand","Basilisk's Quill, 2× P. Diamond"],["Hjelm","Valkyrie Wing, 2× P. Topaz"],["Rustning","Hustle (Mage Plate)"],["Hansker","+3 Bow / 20 IAS"],["Boots","Brilliant-craft: HFD, 30/30 res, 30% FRW"],["Belte","Verdungo's Hearty Cord"],["Amulett","Blood-craft +2 Amazon"],["Ringer","2× Bul-Kathos' Death Band (AR-corrupt)"],["Swap","Call to Arms + Sigon's Guard"],["Charms","8× +1 Bow GC, Gheed's Fortune, Torch, Anni"],["Merc","Crown of Ages, Heavenly Garb, Purity, Anvilguard Strap, Lava Gout, Marrowwalk, String of Ears"]],n:"168 IAS for 7 frames med Hustle. Vil du heller over i Fire/Cold Arrow, ikke oppgrader gearet mer herfra."},
-{s:"Str 95 · Dex 175 · Vit 220 · Ene 0",k:"Som Maps + Guided Arrow 20",i:[["Våpen","Ebonbane (socket-corrupt) med 5% magic dmg-jewels"],["Offhand","Basilisk's Quill (+skills-corrupt) med jewels"],["Hjelm","Valkyrie Wing (socket-corrupt) med jewels"],["Rustning","Skullder's Ire (socket-corrupt) med jewels"],["Hansker","+3 Bow / 20 IAS (AR-corrupt)"],["Boots","Brilliant-craft Chain Boots: HFD, FRW, res, MF"],["Belte","Verdungo's (replenish life-corrupt)"],["Amulett","Blood-craft +2 Amazon, res, MF"],["Ringer","2× Bul-Kathos' Death Band (MF-corrupt)"],["Swap","Call to Arms + Sigon's Guard"],["Charms","8× +1 Bow GC m/life, Torch, Anni, Gheed's, MF/vita-småcharms"],["Merc","Faith (Demon Crossbow) + resten av Maps-merc-gearet"]],n:"S14 la til 5% magic damage-jewels. Faith på mercen capper IAS uten Shael eller Hustle. Én av jewelene trenger 15 IAS."}
-];
-var RW=[["Stealth · Early","Tal Eth","2os body armor (Hard Leather Armor)","17"],["Zephyr · Early","Ort Eth","2os bue (Hunter's Bow)","21"],["Edge · NM","Tir Tal Amn","3os bue (Stag Bow, +1 Bow)","25"],["Purity · merc","Amn Eth Thul","3os bue (Long Battle Bow)","25"],["Lore · NM","Ort Sol","2os hjelm (Skull Cap)","27"],["Peace · NM","Shael Thul Amn","3os body armor (Breast Plate)","29"],["Melody · Hell","Shael Ko Nef","3os bue (Matriarchal, +3 Bow)","39"],["Hustle · Hell","Shael Ko Eld","3os body armor (Mage Plate)","39"],["Call to Arms · swap","Amn Ral Mal Ist Ohm","5os våpen","57"],["Faith · merc","Ohm Jah Lem Eld","4os Demon Crossbow","65"]];
-var HOW=[["Bue: gamble eller ikke?","Gamble gir alltid magic/rare/set/unique, aldri hvite socket-baser, så runeord-buer må komme fra shop eller drops. Gamble av bue er derfor ikke en del av planen. Gamble bare Belt nå og amulett/circlet med +Bow/Amazon skills fra lvl 65."],["Players 1 ved farming","Countess gir flest runer fra rune-tabellen på players 1 (PD2 har høyere drop-sjanse ellers, som fortrenger runer)."],["Unstacke runer (PD2)","Runer stables i PD2. Ctrl+Shift+klikk på runen for å gjøre den om til én løs rune før du setter den i en socket."],["Gamble hos Gheed","Snakk med Gheed i Rogue Encampment og velg Gamble. Du kjøper en tilfeldig magic/rare/set/unique av basen du velger. Velg Belt for 3 potion-rader. Prisen stiger med levelen din."],["Finne en 2os bue","Se etter hvite/grå buer med Socketed (2) hos Charsi. Butikken fylles på når du bytter akt eller lager nytt spill. Zephyr kan brukes i alle buer, ikke bare Hunter's Bow."],["Teleport-stav","Kjøp hos Ormus i Kurast Docks og legg den på våpenbytte (W). Ort-rune + staven i cuben lader den opp igjen."],["Larzuk socket","Etter Shenk: hvite gjenstander får maks sockets (avhenger av base og ilvl), magic får 1–2, rare/set/unique/craft får 1. Larzuk selger også Larzuk's Malus (+1 socket)."],["Socket-oppskrifter i cuben","Våpen: Ral + Amn + Perfect Amethyst. Body armor: Tal + Thul + Perfect Topaz. Hjelm: Ral + Thul + Perfect Sapphire. Bare hvite, standard/superior gjenstander."],["Cube opp runer","I PD2 trenger du en Key: 3 like runer + Key gir neste rune (til og med Lem → Pul; fra Pul trengs bare 2)."],["Cow Level","Wirt's Leg + Tome of Town Portal i cuben i Rogue Encampment, etter at Baal er drept i samme vanskelighetsgrad."]];
-var UNC=["Countess: PD2-wikien bekrefter at rune-tabellen er uendret (opp til Ral/Io/Ist i Normal/NM/Hell). Sjansene per run er vanilla-tall fra d2runes.io (players 1), og i PD2 kan de være noe lavere.","Merc-prisen (ca. 100 gull) er fra skjermbildet ditt. Hvor ofte Ormus har Teleport-stav og hvor mye den koster, har jeg ikke testet.","Keys: oppskriften (3 runer + 1 Key, fra Pul 2 + 1 Key) og stabel på 50 er bekreftet på PD2-wikien. At Akara selger Keys er bekreftet av spillere, og Gheed og de senere selgerne er fra vanilla. Prisen og at 9 stablede runer + 1 Key gir 3 nye er ikke sjekket i PD2.","Quest-belønningene er fra vanilla D2. På PD2-wikien har jeg bare bekreftet Larzuk, Imbue og Cow Level.","Hvorfor Teleport-staven bør kjøpes under lvl 24 er Ezos tips. Jeg har ikke testet det.","Ezos Google-dokument sier 3 levler i Energy. Notatet i planneren sier 2. Planner-tallene (Ene 15) stemmer med 3.","CTA-basen i planneren har koden 2ax (trolig Double Axe). Alle 5os våpen kan brukes.","Lvl-hintene i ruten er omtrentlige, og builden har ingen videoguide."];
-var SRC=[["Magic Arrow Amazon (Ezo leveling guide) – hiimpd2.com, oppdatert 21.10.2026","https://hiimpd2.com/b/MdvmHaz"],["Ezos S13 Amazon Magic Arrow Start (Google Docs)","https://docs.google.com/document/d/1UbReGCNhqeYQIgYA8ihOyGuGJ1u_lBafCK7IX9wzHIs"],["PD2-wiki: Recipes (socket, rune-upgrade, Cow Level)","https://wiki.projectdiablo2.com/wiki/Recipes"],["PD2-wiki: Runes (PD2-endringer og levels)","https://wiki.projectdiablo2.com/wiki/Runes"],["PD2-wiki: Bow and Crossbow Skills","https://wiki.projectdiablo2.com/wiki/Bow_and_Crossbow_Skills"],["Quest Rewards (vanilla) – classic.battle.net","https://classic.battle.net/diablo2exp/quests/rewards.shtml"]];
+var LVL=[["2–4","Energy","Magic Arrow"],["5","Str","Magic Arrow"],["6","Vit","Evade"],["7–20","Vit","Magic Arrow → 20"],["21–22","Vit","Inner Sight 1, Slow Mov. 1"],["23–30","Vit","Crit, Pierce, Dodge, Decoy, Penetrate, Valk"],["31–55","Dex/Vit → 100/160","Valk 20, Slow Mov."],["56–75","Str 67, Dex 152, Vit 151","Inner Sight 20"],["76–90","Str 95, Dex 165, Vit 185","Multi 1, GA 14"],["91–96","Dex 175, Vit 220","GA 20"],["Quest","Lam Esen +5","Den +1, Rada +1, Izual +2"]];
+var GEAR=[["Early",[["Våpen","Zephyr (Hunter's Bow)"],["Hjelm","Cap 2× Tir"],["Armor","Stealth (Hard Leather)"],["Belte","Gamblet Belt"],["Swap","Teleport-stav"],["Merc","Vigor"],["Stats @24","Str 5 Dex 5 Vit 90 Ene 15"]]],["NM",[["Våpen","Edge (Stag Bow +1)"],["Quiver","Magic AR-quiver"],["Hjelm","Lore (Skull Cap)"],["Armor","Peace (Breast Plate)"],["Boots/belte","Hsarus"],["Amulett","Hit Power craft"],["Merc","Purity (Long Battle Bow)"],["Stats @55","Str 10 Dex 100 Vit 160 Ene 15"]]],["Hell",[["Våpen","Melody (Matriarchal +3)"],["Quiver","Basilisk's Quill 2× P.Diamond"],["Hjelm","Lore"],["Armor","Hustle (Mage Plate)"],["Hansker","+3 Bow 20 IAS"],["Boots","Rare FRW/res"],["Belte","Goldwrap"],["Amulett","+3 Bow"],["Ringer","Raven Frost + BK"],["Charm","LC 7 IAS"],["Merc","Heavenly Garb + Purity"],["Stats @75","Str 67 Dex 152 Vit 151 Ene 15"]]],["Maps",[["Våpen","Ebonbane 4× Shael"],["Quiver","Quill 2× P.Diamond"],["Hjelm","Valkyrie Wing 2× P.Topaz"],["Armor","Hustle"],["Hansker","+3/20"],["Boots","Brilliant craft HFD"],["Belte","Verdungo's"],["Amulett","Blood +2 Zon"],["Ringer","2× BK (AR)"],["Swap","CTA + Sigon's"],["Charms","8× +1 Bow GC, Gheed's, Torch, Anni"],["Merc","CoA, Garb, Purity, Anvilguard, Lava Gout, Marrowwalk, SoE"],["Stats @90","Str 95 Dex 165 Vit 185 Ene 15"]]],["Endgame",[["Våpen/quiver/hjelm/armor","Ebonbane, Quill, Valk Wing, Skullder's – socket-corrupt + 5% magic jewels"],["Hansker","+3/20 (AR)"],["Boots","Brilliant craft"],["Belte","Verdungo's"],["Amulett","Blood +2 Zon"],["Ringer","2× BK (MF)"],["Swap","CTA + Sigon's"],["Charms","8× +1 Bow GC life, Torch, Anni, Gheed's"],["Merc","Faith (Demon Crossbow)"],["Stats @96","Str 95 Dex 175 Vit 220 Ene 0"]]]];
+var RW=[["Stealth","Tal Eth","2os armor","17"],["Zephyr","Ort Eth","2os bue","21"],["Edge","Tir Tal Amn","3os bue","25"],["Purity (merc)","Amn Eth Thul","3os bue","25"],["Lore","Ort Sol","2os hjelm","27"],["Peace","Shael Thul Amn","3os armor","29"],["Melody","Shael Ko Nef","3os bue +3","39"],["Hustle","Shael Ko Eld","3os armor","39"],["CTA","Amn Ral Mal Ist Ohm","5os våpen","57"],["Faith (merc)","Ohm Jah Lem Eld","4os Demon Xbow","65"]];
+var KEYS=["3 runer + Key → neste (til Pul). Fra Pul: 2 + Key.","3 Ral + Key = Ort · 3 Lum + Key = Ko.","Akara (A1) · Lysander A2 · Hratli A3 · Jamella A4 · Malah A5.","Stabel 50. 9 stablede + 1 Key = 3 nye (spillere).","Unstack før socket: Ctrl+Shift+klikk."];
+var TIPS=["Gamble: aldri hvite baser → ikke for bue. Belt nå, amulett/circlet 65+.","2os bue: Charsi-shop, refresh ved aktbytte/nytt spill. Alle buer funker.","Larzuk: hvit = maks sockets · magic 1–2 · rare/unique 1. Malus: +1 socket.","Cube-socket: våpen Ral+Amn+P.Ame · armor Tal+Thul+P.Topaz · hjelm Ral+Thul+P.Sapph.","Countess: players 1 gir flest runer.","Cows: Wirt's Leg + Tome of TP, etter Baal samme vansk.grad."];
+var UNC=["Countess-sjanser = vanilla-tall (d2runes.io). Tabell bekreftet uendret i PD2.","Quest-belønninger fra vanilla.","Teleport-stav < lvl 24: Ezos tips, ikke testet.","Key-pris og 9+1-stabling ikke sjekket i PD2.","CTA-base «2ax» (Double Axe?)."];
+var SRC=[["Ezos build (hiimpd2)","https://hiimpd2.com/b/MdvmHaz"],["Ezos dokument","https://docs.google.com/document/d/1UbReGCNhqeYQIgYA8ihOyGuGJ1u_lBafCK7IX9wzHIs"],["PD2 Recipes","https://wiki.projectdiablo2.com/wiki/Recipes"],["PD2 Runes","https://wiki.projectdiablo2.com/wiki/Runes"],["PD2 Monsters (Countess)","https://wiki.projectdiablo2.com/wiki/Monsters"]];
 
-var KEY="pd2-s14-ezo-magic-arrow-v1", UIKEY=KEY+"-ui";
-var storageOk=true;
-function load(k,def){try{var s=localStorage.getItem(k);return s?JSON.parse(s):def;}catch(e){storageOk=false;return def;}}
-function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){storageOk=false;}}
-var state=load(KEY,{done:{},hist:[]});
-if(!state||typeof state!=="object")state={done:{},hist:[]};
-state.done=state.done||{};state.hist=state.hist||[];
-var ui=load(UIKEY,{filter:"alle",hide:false,gear:0});if(!ui||typeof ui!=="object")ui={filter:"alle",hide:false,gear:0};if(!ui.lvl)ui.lvl=3;
-function persist(){save(KEY,state);save(UIKEY,ui);}
-
+var KEY="pd2-s14-ezo-magic-arrow-v1",UIK=KEY+"-ui";
+function ld(k,d){try{var s=localStorage.getItem(k);return s?JSON.parse(s):d;}catch(e){return d;}}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+var st=ld(KEY,{done:{},hist:[]});if(!st||typeof st!=="object")st={};st.done=st.done||{};st.hist=st.hist||[];
+var ui=ld(UIK,{});if(!ui||typeof ui!=="object")ui={};ui.filter=ui.filter||"alle";ui.lvl=ui.lvl||3;ui.gear=ui.gear||0;
+var open={};
+function save(){sv(KEY,st);sv(UIK,ui);}
+function $(i){return document.getElementById(i);}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
-function $(id){return document.getElementById(id);}
-function current(){for(var i=0;i<STEPS.length;i++)if(!state.done[STEPS[i].id])return STEPS[i];return null;}
-function msg(t){$("msg").textContent=t;if(t)setTimeout(function(){if($("msg").textContent===t)$("msg").textContent="";},4000);}
-function toggle(id){state.done[id]=!state.done[id];if(state.done[id])state.hist.push(id);else state.hist=state.hist.filter(function(x){return x!==id;});if(state.hist.length>200)state.hist=state.hist.slice(-200);persist();render();}
-
-function stepById(id){for(var i=0;i<STEPS.length;i++)if(STEPS[i].id===id)return STEPS[i];return null;}
-function nextGoal(){for(var i=0;i<GOALS.length;i++)if(!state.done[GOALS[i][0]])return GOALS[i];return null;}
-function nextGate(){for(var i=0;i<STEPS.length;i++){var s=STEPS[i];if(s.kind==="gate"&&!state.done[s.id])return s;}return null;}
-function renderTop(){
- var g=nextGoal(),gh='<div class="h">🎯 Neste mål</div>';
- if(g){var st=stepById(g[0]);
-  gh+='<div class="gt">'+esc(g[1])+'</div><div class="gl"><b>Trenger: </b>'+esc(g[2])+'</div><div class="gl"><b>Hvor: </b>'+esc(g[3])+'</div>';
-  if(st&&st.runes)gh+='<div class="gl"><b>Runer: </b><span class="rn">'+esc(st.runes.join(" + "))+'</span></div>';
-  gh+='<div class="gl"><a href="#step-'+g[0]+'" data-jump="'+g[0]+'">Vis steget i ruten</a></div>';
- } else gh+='<div class="gt">Alle mål nådd!</div>';
- $("goal").innerHTML=gh;
- var gt=nextGate(),c=current();
- if(gt){var G=GATES[gt.id]||{};
-  $("gatebox").style.display="block";
-  $("gatebox").innerHTML='<div class="h">'+(c&&c.id===gt.id?'⛔ Du er ved et stopp-punkt nå':'⛔ Neste stopp-punkt')+'</div><div>'+esc(gt.title.replace("⛔ ",""))+' <span class="m">('+esc(gt.zone)+', ca. lvl '+gt.lvl+')</span></div>'+(c&&c.id===gt.id?'<div class="gl"><b>OK å hoppe over hvis: </b>'+esc(G.skip||"")+'</div>':'')+'<div class="gl"><a href="#step-'+gt.id+'" data-jump="'+gt.id+'">Vis stopp-punktet</a></div>';
- } else $("gatebox").style.display="none";
- var lv=Number(ui.lvl)||2;$("lv").value=lv;var a=advice(lv);
- $("lvbox").innerHTML='<b>Lvl '+lv+' → statpoeng: </b>'+esc(a[1])+'<br><b>Lvl '+lv+' → skillpoeng: </b>'+esc(a[0]);
-}
-function renderPanel(){
- renderTop();
- var n=0;STEPS.forEach(function(s){if(state.done[s.id])n++;});
- var pct=Math.round(n/STEPS.length*100),c=current();
- $("stage").textContent=c?STAGES[c.stage]:"Alt fullført!";
- $("count").textContent=n+"/"+STEPS.length+" steg · "+pct+"%";
- $("barfill").style.width=pct+"%";
- var h="";
- if(c){var a=advice(c.lvl);
-  h+='<div class="pl"><b>Neste: </b>'+esc(c.title)+' <span class="m">('+esc(c.zone)+', ca. lvl '+c.lvl+')</span></div>';
-  h+='';
-  var up=STEPS.filter(function(s){return !state.done[s.id]&&(s.kind==="craft"||s.kind==="merc")&&s.runes;}).slice(0,3);
-  if(up.length)h+='<div class="pl"><b>Runer til neste runeord: </b>'+up.map(function(s){return esc(s.title.replace("Lag ",""))+' <span class="rn">'+esc(s.runes.join(" + "))+'</span>';}).join(" · ")+'</div>';
- }
- if(!storageOk)h+='<div class="pl" style="color:#f0a070">Nettleseren blokkerer lagring, så fremdriften lagres ikke. Bruk Eksporter.</div>';
- $("pinfo").innerHTML=h;
- $("more").style.display=ui.compact?"none":"block";$("bMore").textContent=ui.compact?"Mer i panelet":"Mindre panel";
- $("bHide").textContent=ui.hide?"Vis fullførte":"Skjul fullførte";
+function cur(){for(var i=0;i<STEPS.length;i++)if(!st.done[STEPS[i].id])return STEPS[i];return null;}
+function goal(){for(var i=0;i<GOALS.length;i++)if(!st.done[GOALS[i][0]])return GOALS[i];return null;}
+function gateNext(){for(var i=0;i<STEPS.length;i++)if(STEPS[i].gate&&!st.done[STEPS[i].id])return STEPS[i];return null;}
+function msg(t){$("msg").textContent=t;setTimeout(function(){if($("msg").textContent===t)$("msg").textContent="";},3000);}
+function tog(id){st.done[id]=!st.done[id];if(st.done[id])st.hist.push(id);else st.hist=st.hist.filter(function(x){return x!==id;});st.hist=st.hist.slice(-200);save();render();}
+function top(){
+ var c=cur(),g=goal(),gt=gateNext(),n=0;STEPS.forEach(function(s){if(st.done[s.id])n++;});
+ $("nx").textContent=c?c.line:"Ferdig!";$("nx").title=c?c.zone+" · lvl "+c.lvl:"";
+ $("goal").innerHTML=g?'<b style="color:var(--t)">'+esc(g[1])+'</b> <span class="lb">— '+esc(g[2])+'</span>':"–";
+ var gi=gt?STEPS.indexOf(gt):-1,ci=c?STEPS.indexOf(c):-1;
+ if(gt&&gi-ci<=6){$("gateLn").style.display="flex";$("gate").textContent=(gi===ci?"⛔ NÅ: ":"⛔ Snart: ")+gt.line.replace("⛔ ","")+(gi===ci?" (▸ i lista)":"");}else $("gateLn").style.display="none";
+ $("lvT").textContent="Lvl "+ui.lvl+": "+adv(ui.lvl);
+ $("bar").style.width=Math.round(n/STEPS.length*100)+"%";
+ $("cnt").textContent=n+"/"+STEPS.length;
  $("bHide").className=ui.hide?"on":"";
 }
-function renderSteps(){
- var c=current(),last="",h="";
+function list(){
+ var c=cur(),h="",last="";
  STEPS.forEach(function(s){
   if(ui.filter!=="alle"&&String(s.stage)!==ui.filter)return;
-  var d=!!state.done[s.id];if(ui.hide&&d)return;
-  if(s.zone!==last){h+='<div class="zone">'+esc(s.zone)+'</div>';last=s.zone;}
-  h+='<div class="step k-'+s.kind+(d?' done':'')+(c&&c.id===s.id?' cur':'')+'" id="step-'+s.id+'" data-id="'+s.id+'" role="checkbox" aria-checked="'+d+'" tabindex="0">'+
-   '<div class="cb">'+(d?'✓':'')+'</div><div style="min-width:0"><div class="t">'+esc(s.title)+'</div>'+
-   '<div class="m"><span class="k">'+KIND[s.kind]+'</span> · ca. lvl '+s.lvl+(s.reward?' · <span class="rw">Belønning: '+esc(s.reward)+'</span>':'')+'</div>'+
-   (s.detail?'<div class="d">'+esc(s.detail)+'</div>':'')+(s.kind==="gate"&&GATES[s.id]?'<div class="gx"><b>Hvorfor: </b>'+esc(GATES[s.id].why)+'</div><div class="gx"><b>Farm: </b>'+esc(GATES[s.id].farm)+'</div><div class="gx"><b>OK å hoppe over hvis: </b>'+esc(GATES[s.id].skip)+'</div>'+(/g1|g2|g4|g6/.test(s.id)?'<div class="gx"><a href="#keys">Om Keys og rune-cubing →</a></div>':''):'')+(s.runes?'<div class="m">'+(s.kind==="gate"?'Trenger':'Runer')+': <span class="rn">'+esc(s.runes.join(" + "))+'</span></div>':'')+'</div></div>';
+  var d=!!st.done[s.id];if(ui.hide&&d)return;
+  if(s.zone!==last){h+='<div class="z">'+esc(s.zone)+'</div>';last=s.zone;}
+  var hasDet=s.det||s.runes;
+  h+='<div class="s'+(s.gate?' gt':'')+(d?' dn':'')+(c&&c.id===s.id?' cur':'')+(open[s.id]?' open':'')+'" id="step-'+s.id+'" data-id="'+s.id+'">'+
+   '<div class="h"><span class="cb">'+(d?'✓':'')+'</span><span class="tx">'+esc(s.line)+'</span><span class="lv">'+s.lvl+'</span>'+(hasDet?'<span class="ex" data-ex="1">'+(open[s.id]?'▾':'▸')+'</span>':'')+'</div>'+
+   (hasDet?'<div class="det">'+(s.gate?s.det:esc(s.det))+(s.runes?(s.det?'<br>':'')+'<span class="rn">'+esc(s.runes.join(" "))+'</span>':'')+'</div>':'')+'</div>';
  });
  $("steps").innerHTML=h;
- var f=[["alle","Alle"],["0","Normal"],["1","NM"],["2","Hell"],["3","Maps"],["4","Endgame"]];
- $("filters").innerHTML=f.map(function(o){return '<button data-f="'+o[0]+'" class="'+(ui.filter===o[0]?'on':'')+'">'+o[1]+'</button>';}).join("");
+ var f=[["alle","Alle"],["0","Normal"],["1","NM"],["2","Hell"],["3","Maps"],["4","End"]];
+ $("flt").innerHTML=f.map(function(o){return'<button data-f="'+o[0]+'" class="'+(ui.filter===o[0]?'on':'')+'">'+o[1]+'</button>';}).join("");
 }
-function renderGear(){
- var names=["Early","NM","Hell","Maps","Endgame"],g=GEAR[ui.gear]||GEAR[0];
- $("gtabs").innerHTML=names.map(function(n,i){return '<button data-g="'+i+'" class="'+(ui.gear===i?'on':'')+'">'+n+'</button>';}).join("");
- var rows=[["Stage",STAGES[ui.gear]],["Stats",g.s],["Skills",g.k]].concat(g.i);
- $("gkv").innerHTML=rows.map(function(r){return '<div>'+esc(r[0])+'</div><div>'+esc(r[1])+'</div>';}).join("");
- $("gnote").textContent=g.n;
+function render(){top();list();}
+function tbl(rows,head){return(head?'<tr>'+head.map(function(x){return'<th>'+x+'</th>';}).join("")+'</tr>':'')+rows.map(function(r){return'<tr>'+r.map(function(x){return'<td>'+esc(x)+'</td>';}).join("")+'</tr>';}).join("");}
+function gear(){$("gT").innerHTML=GEAR.map(function(g,i){return'<button data-g="'+i+'" class="'+(ui.gear===i?'on':'')+'">'+g[0]+'</button>';}).join("");$("tGear").innerHTML=tbl(GEAR[ui.gear][1]);}
+function stat(){
+ $("tLvl").innerHTML=tbl(LVL,["Lvl","5 stat","1 skill"]);
+ $("tRw").innerHTML=tbl(RW,["Runeord","Runer","Base","Lvl"]);
+ function ul(id,a){$(id).innerHTML=a.map(function(t){return'<li>'+esc(t)+'</li>';}).join("");}
+ ul("lKeys",KEYS);ul("lTips",TIPS);ul("lUnc",UNC);
+ $("lSrc").innerHTML=SRC.map(function(s){return'<li><a href="'+s[1]+'" target="_blank" rel="noopener">'+esc(s[0])+'</a></li>';}).join("");
+ gear();
 }
-function render(){renderPanel();renderSteps();}
-function renderStatic(){
- $("tlvl").tBodies[0].innerHTML=LVL.map(function(r){return '<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td></tr>';}).join("");
- $("qa").innerHTML=QA.map(function(r){return '<div class="qa"><div class="q">'+esc(r[0])+'</div>'+esc(r[1])+'</div>';}).join("");
- $("tplan").tBodies[0].innerHTML=PLAN.map(function(r){return '<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td></tr>';}).join("");
- $("trw").tBodies[0].innerHTML=RW.map(function(r){return '<tr><td>'+esc(r[0])+'</td><td class="rn">'+esc(r[1])+'</td><td>'+esc(r[2])+'</td><td>'+esc(r[3])+'</td></tr>';}).join("");
- $("how").innerHTML=HOW.map(function(r){return '<li><b>'+esc(r[0])+'.</b> '+esc(r[1])+'</li>';}).join("");
- $("unc").innerHTML=UNC.map(function(t){return '<li>'+esc(t)+'</li>';}).join("");
- $("src").innerHTML=SRC.map(function(r){return '<li><a href="'+r[1]+'" target="_blank" rel="noopener">'+esc(r[0])+'</a></li>';}).join("");
-}
-
-$("steps").addEventListener("click",function(e){if(e.target.closest("a"))return;var el=e.target.closest(".step");if(el)toggle(el.getAttribute("data-id"));});
-$("steps").addEventListener("keydown",function(e){if(e.key===" "||e.key==="Enter"){var el=e.target.closest(".step");if(el){e.preventDefault();toggle(el.getAttribute("data-id"));}}});
-$("filters").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;ui.filter=b.getAttribute("data-f");persist();render();});
-$("gtabs").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;ui.gear=Number(b.getAttribute("data-g"));persist();renderGear();});
-$("bJump").onclick=function(){var c=current();if(!c)return;if(ui.filter!=="alle"&&String(c.stage)!==ui.filter)ui.filter="alle";ui.hide=false;persist();render();var el=$("step-"+c.id);if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"center"});};
-$("bMark").onclick=function(){var c=current();if(c)toggle(c.id);};
-$("bUndo").onclick=function(){var id=state.hist.pop();if(id){state.done[id]=false;persist();render();msg("Angret: "+(STEPS.filter(function(s){return s.id===id;})[0]||{title:id}).title);}else msg("Ingenting å angre.");};
-$("bMore").onclick=function(){ui.compact=!ui.compact;persist();renderPanel();};
-$("bHide").onclick=function(){ui.hide=!ui.hide;persist();render();};
-$("bReset").onclick=function(){if(confirm("Nullstille alle avkrysninger?")){state={done:{},hist:[]};persist();render();msg("Fremdriften er nullstilt.");}};
-$("bExport").onclick=function(){
- var code=JSON.stringify({v:1,done:Object.keys(state.done).filter(function(k){return state.done[k];})});
- var io=$("io");io.style.display="block";io.value=code;io.select();
- var ok=false;try{ok=document.execCommand("copy");}catch(e){}
- if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(code).then(function(){msg("Kopiert til utklippstavlen.");},function(){msg(ok?"Kopiert.":"Kopier teksten i feltet.");});}else msg(ok?"Kopiert.":"Kopier teksten i feltet.");
-};
-$("bImport").onclick=function(){
- var io=$("io");
- if(io.style.display!=="block"||!io.value.trim()){io.style.display="block";io.value="";io.focus();msg("Lim inn koden i feltet og trykk Importer igjen.");return;}
- try{var d=JSON.parse(io.value.trim());var list=Array.isArray(d)?d:d.done;if(!Array.isArray(list))throw new Error("format");
-  var valid={};STEPS.forEach(function(s){valid[s.id]=1;});var nd={},n=0;list.forEach(function(id){if(valid[id]){nd[id]=true;n++;}});
-  state={done:nd,hist:[]};persist();render();io.style.display="none";msg("Importerte "+n+" steg.");
- }catch(e){msg("Kunne ikke lese koden.");}
-};
-document.addEventListener("click",function(e){var a=e.target.closest("[data-jump]");if(!a)return;e.preventDefault();var id=a.getAttribute("data-jump");var s=stepById(id);if(s&&ui.filter!=="alle"&&String(s.stage)!==ui.filter)ui.filter="alle";ui.hide=false;persist();render();var el=$("step-"+id);if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"center"});});
-function setLv(v){v=Math.max(1,Math.min(99,Math.round(Number(v)||1)));ui.lvl=v;persist();renderTop();}
-$("lv").addEventListener("change",function(){setLv(this.value);});
-$("lvMinus").onclick=function(){setLv((Number(ui.lvl)||2)-1);};
-$("lvPlus").onclick=function(){setLv((Number(ui.lvl)||2)+1);};
-window.addEventListener("storage",function(e){if(e.key===KEY){state=load(KEY,state);render();}});
-window.__pd2={nextGoal:nextGoal,nextGate:nextGate,state:function(){return state;},STEPS:STEPS,toggle:toggle,current:current,KEY:KEY};
-renderStatic();renderGear();render();
+$("steps").addEventListener("click",function(e){var el=e.target.closest(".s");if(!el)return;var id=el.getAttribute("data-id");
+ if(e.target.closest("[data-ex]")||e.target.closest(".det")){open[id]=!open[id];list();return;}tog(id);});
+$("flt").addEventListener("click",function(e){var b=e.target.closest("button");if(b){ui.filter=b.getAttribute("data-f");save();list();}});
+$("gT").addEventListener("click",function(e){var b=e.target.closest("button");if(b){ui.gear=+b.getAttribute("data-g");save();gear();}});
+$("bOk").onclick=function(){var c=cur();if(c)tog(c.id);};
+$("bUndo").onclick=function(){var id=st.hist.pop();if(id){st.done[id]=false;save();render();msg("Angret");}};
+$("bMenu").onclick=function(){$("menu").classList.toggle("on");};
+$("bJump").onclick=function(){var c=cur();if(!c)return;ui.filter="alle";ui.hide=false;save();render();var el=$("step-"+c.id);if(el&&el.scrollIntoView)el.scrollIntoView({block:"center"});};
+$("bHide").onclick=function(){ui.hide=!ui.hide;save();render();};
+$("bReset").onclick=function(){if(confirm("Nullstille alt?")){st={done:{},hist:[]};save();render();}};
+$("bExp").onclick=function(){var c=JSON.stringify({v:1,done:Object.keys(st.done).filter(function(k){return st.done[k];})});var io=$("io");io.style.display="block";io.value=c;io.select();try{document.execCommand("copy");}catch(e){}if(navigator.clipboard)navigator.clipboard.writeText(c).catch(function(){});msg("Kopiert");};
+$("bImp").onclick=function(){var io=$("io");if(io.style.display!=="block"||!io.value.trim()){io.style.display="block";io.value="";io.focus();msg("Lim inn, trykk Importer");return;}
+ try{var d=JSON.parse(io.value.trim()),l=Array.isArray(d)?d:d.done;if(!Array.isArray(l))throw 0;var ok={};STEPS.forEach(function(s){ok[s.id]=1;});var nd={},n=0;l.forEach(function(i){if(ok[i]){nd[i]=true;n++;}});st={done:nd,hist:[]};save();render();io.style.display="none";msg("Importert "+n);}catch(e){msg("Ugyldig kode");}};
+function setLv(v){ui.lvl=Math.max(1,Math.min(99,v));save();top();}
+$("lvM").onclick=function(){setLv(ui.lvl-1);};$("lvP").onclick=function(){setLv(ui.lvl+1);};
+window.addEventListener("storage",function(e){if(e.key===KEY){st=ld(KEY,st);render();}});
+window.__pd2={state:function(){return st;},current:cur,nextGoal:goal,nextGate:gateNext,KEY:KEY,STEPS:STEPS};
+stat();render();
 })();
 </script>
 </body>

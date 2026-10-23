@@ -3,79 +3,224 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PD2 S14 · MA Amazon</title>
+<meta name="theme-color" content="#0a0706">
+<title>PD2 S14 · Magic Arrow Amazon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0d0907;--p:#17100b;--l:#3a2a1a;--l2:#5a4126;--g:#d4a84b;--g2:#f0cf7a;--t:#e6dccb;--d:#a8977e;--f:#7a6a55;--r:#e0592f;--rn:#e8b45a}
+:root{
+ --bg:#0a0706;--ink:#ece3d3;--ink2:#b9ab95;--ink3:#7d7060;--ink4:#544a3f;
+ --gold:#d9b25f;--gold2:#f3d68b;--gold3:#8f6f33;--goldA:rgba(217,178,95,.16);--hair:rgba(217,178,95,.22);--hair2:rgba(217,178,95,.38);
+ --ember:#e2552b;--blood:#a3231a;
+ --card:rgba(255,240,215,.028);--card2:rgba(255,240,215,.05);
+ --fd:"Cinzel","Trajan Pro","Palatino Linotype","Book Antiqua",Georgia,serif;
+ --fu:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+ --ease:cubic-bezier(.2,.7,.2,1);
+ --c-quest:#e6c46a;--c-craft:#f0b552;--c-skill:#8fb1ff;--c-merc:#c99bf0;--c-shop:#8fd0a2;--c-gear:#e0956a;--c-farm:#d6797a;--c-gate:#ff7a52;
+}
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--t);font:13px/1.35 Georgia,serif}
-.w{max-width:640px;margin:0 auto;padding:0 8px 40px}
-.rn{font-family:Consolas,monospace;color:var(--rn)}
-button{font:inherit;font-size:12px;line-height:1;padding:3px 7px;border-radius:3px;border:1px solid var(--l2);background:#24180e;color:var(--t);cursor:pointer}
-button:hover{border-color:var(--g)}
-#top{position:sticky;top:0;z-index:9;background:#140d08;border-bottom:1px solid var(--l2);padding:5px 0 4px;box-shadow:0 3px 8px #000c}
-.ln{display:flex;align-items:center;gap:6px;min-height:22px}
-.ln .x{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.lb{color:var(--f);font-size:11px}
-#nx{color:var(--g2);font-weight:bold}
-#gate{color:#ff8a6a}
-#lvl{font-size:11.5px;color:var(--d)}
-#lvl button{padding:1px 5px;font-size:11px}
-.bar{height:3px;background:#2a1d12;margin-top:3px}.bar>div{height:100%;background:var(--r);width:0}
-#menu{display:none;flex-wrap:wrap;gap:4px;padding:4px 0}
-#menu.on{display:flex}
-#io{display:none;width:100%;height:50px;background:#0d0907;color:var(--t);border:1px solid var(--l2);font:11px Consolas,monospace}
-#msg{font-size:11px;color:var(--g2)}
-.flt{display:flex;flex-wrap:wrap;gap:3px;margin:6px 0 2px}
-.flt button.on,#menu button.on{border-color:var(--g);color:var(--g2);background:#3a2814}
-.z{color:var(--g);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin:8px 0 2px}
-.s{border-bottom:1px solid #22170e}
-.s .h{display:flex;align-items:center;gap:6px;padding:3px 2px;cursor:pointer}
-.cb{flex:0 0 15px;height:15px;border:1.5px solid var(--l2);border-radius:2px;font-size:11px;line-height:12px;text-align:center;color:#140d08}
-.s.dn{opacity:.45}.s.dn .cb{background:var(--g);border-color:var(--g)}.s.dn .tx{text-decoration:line-through}
-.s.cur{background:#2a1c0f;outline:1px solid var(--g)}
-.tx{flex:1;min-width:0}
-.lv{color:var(--f);font-size:11px}
-.ex{color:var(--f);font-size:11px;padding:0 4px;cursor:pointer;user-select:none}
-.det{display:none;padding:2px 4px 5px 23px;color:var(--d);font-size:12px}
-.s.open .det{display:block}
-.s.gt .tx{color:#ff8a6a}.s.gt .cb{border-color:#b3361f}.s.gt{border-left:2px solid #b3361f}
-.det b{color:#e8c08a;font-weight:normal}
-details{margin-top:8px;border:1px solid var(--l);border-radius:4px;background:var(--p)}
-summary{cursor:pointer;color:var(--g);padding:5px 8px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
-details>div{padding:0 8px 8px}
-table{width:100%;border-collapse:collapse;font-size:12px}
-td,th{padding:3px 4px;border-bottom:1px solid var(--l);text-align:left;vertical-align:top}
-th{color:var(--g);font-weight:normal}
-td:first-child{color:var(--g2)}
-ul{margin:0;padding-left:16px}li{margin:2px 0}
-a{color:var(--g2)}
+html{background:var(--bg);-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);font:400 13px/1.42 var(--fu);font-feature-settings:"cv11","ss01";
+ background:
+  radial-gradient(120% 60% at 50% -10%,rgba(176,92,34,.20),transparent 60%),
+  radial-gradient(80% 50% at 100% 110%,rgba(120,30,18,.16),transparent 60%),
+  radial-gradient(60% 40% at 0% 60%,rgba(90,60,30,.10),transparent 70%),
+  linear-gradient(#0d0907,#080605);
+ background-attachment:fixed;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.07;mix-blend-mode:overlay;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(130% 90% at 50% 40%,transparent 55%,rgba(0,0,0,.55))}
+.w{position:relative;z-index:1;max-width:620px;margin:0 auto;padding:0 10px 48px}
+button{font:inherit;color:inherit;cursor:pointer}
+
+/* ---------- Header ---------- */
+#top{position:sticky;top:0;z-index:20;margin:0 -10px;padding:10px 12px 9px;
+ background:linear-gradient(180deg,rgba(26,18,12,.86),rgba(14,10,8,.78));
+ -webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);
+ border-bottom:1px solid var(--hair);box-shadow:0 10px 30px -12px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,220,160,.06)}
+#top:after{content:"";position:absolute;left:12%;right:12%;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.55}
+.row{display:flex;align-items:center;gap:8px;min-width:0}
+.cap{font:600 9.5px/1 var(--fu);letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);flex:0 0 auto}
+.nx{flex:1;min-width:0;font:600 14.5px/1.25 var(--fu);color:#fff6e4;letter-spacing:-.005em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{flex:0 0 auto;width:30px;height:30px;display:grid;place-items:center;border-radius:9px;border:1px solid var(--hair);
+ background:linear-gradient(180deg,rgba(255,230,180,.06),rgba(255,230,180,.015));color:var(--gold2);transition:all .18s var(--ease)}
+.ib:hover{border-color:var(--hair2);background:rgba(217,178,95,.12);transform:translateY(-1px);box-shadow:0 4px 14px -6px rgba(217,178,95,.5)}
+.ib:active{transform:translateY(0)}
+.ib.pri{background:linear-gradient(180deg,#e6c06e,#b98d3e);color:#1a1108;border-color:#f1d48d;box-shadow:0 0 0 1px rgba(0,0,0,.3),0 4px 16px -6px rgba(230,190,100,.7)}
+.ib.pri:hover{filter:brightness(1.08)}
+.ib svg{width:15px;height:15px}
+.goal{margin-top:7px;gap:7px}
+.gname{font:600 13px/1.2 var(--fd);color:var(--gold2);letter-spacing:.04em;white-space:nowrap}
+.gneed{flex:1;min-width:0;display:flex;flex-wrap:wrap;gap:3px 4px;align-items:center;color:var(--ink2);font-size:11.5px}
+.gneed .sep{color:var(--ink4)}
+.gate{margin-top:7px;padding:5px 9px;border-radius:9px;font:500 11.5px/1.3 var(--fu);color:#ffc2a6;
+ background:linear-gradient(100deg,rgba(163,35,26,.38),rgba(226,85,43,.12) 70%,transparent);border:1px solid rgba(226,85,43,.28);display:none;align-items:center;gap:7px}
+.gate svg{width:13px;height:13px;flex:0 0 auto;color:var(--c-gate)}
+.gate.now{box-shadow:0 0 18px -6px rgba(226,85,43,.8);animation:ember 2.4s ease-in-out infinite}
+@keyframes ember{50%{box-shadow:0 0 22px -4px rgba(226,85,43,.95)}}
+.lvl{margin-top:7px;gap:6px;font-size:11.5px;color:var(--ink2)}
+.lvctl{display:inline-flex;align-items:center;border:1px solid var(--hair);border-radius:999px;overflow:hidden;flex:0 0 auto;background:rgba(0,0,0,.25)}
+.lvctl button{border:0;background:transparent;color:var(--gold2);width:22px;height:20px;font-size:13px;line-height:1;transition:background .15s}
+.lvctl button:hover{background:var(--goldA)}
+.lvctl span{font:600 11px/20px var(--fu);font-variant-numeric:tabular-nums;color:#fff1d3;padding:0 4px;min-width:42px;text-align:center;border-left:1px solid var(--hair);border-right:1px solid var(--hair)}
+.lvhint{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lvhint b{color:var(--ink);font-weight:500}
+.prog{position:relative;margin-top:9px;height:4px;border-radius:99px;background:rgba(255,230,180,.07);overflow:visible}
+.prog .fill{position:absolute;inset:0 auto 0 0;border-radius:99px;background:linear-gradient(90deg,#7e1d12,var(--ember) 35%,var(--gold) 80%,var(--gold2));box-shadow:0 0 10px rgba(226,120,50,.55);transition:width .5s var(--ease)}
+.prog .mk{position:absolute;top:-3px;width:1px;height:10px;background:rgba(243,214,139,.35)}
+.prog .mk i{position:absolute;top:11px;left:50%;transform:translateX(-50%);font:600 8px/1 var(--fu);letter-spacing:.12em;color:var(--ink4);font-style:normal;text-transform:uppercase;white-space:nowrap}
+.prog .mk.on{background:var(--gold2)}.prog .mk.on i{color:var(--gold)}
+.pspace{height:10px}
+#menu{display:none;flex-wrap:wrap;gap:5px;margin-top:9px;padding-top:9px;border-top:1px solid rgba(217,178,95,.12)}
+#menu.on{display:flex;animation:fadeIn .2s var(--ease)}
+.pill{border:1px solid var(--hair);background:rgba(255,230,180,.03);color:var(--ink2);border-radius:999px;padding:4px 10px;font:500 11px/1.2 var(--fu);transition:all .15s var(--ease)}
+.pill:hover{color:var(--ink);border-color:var(--hair2)}
+.pill.on{color:#1a1108;background:linear-gradient(180deg,#e6c06e,#b98d3e);border-color:#f1d48d}
+.pill.warn:hover{border-color:rgba(226,85,43,.5);color:#ffb59a}
+#cnt{margin-left:auto;font:600 10.5px/24px var(--fu);font-variant-numeric:tabular-nums;color:var(--ink3);letter-spacing:.06em}
+#io{display:none;width:100%;margin-top:7px;height:52px;resize:vertical;background:rgba(0,0,0,.4);color:var(--ink);border:1px solid var(--hair);border-radius:8px;padding:6px 8px;font:11px/1.3 ui-monospace,Consolas,monospace}
+#msg{font-size:11px;color:var(--gold2);min-height:0;margin-top:3px}
+#msg:empty{display:none}
+
+/* ---------- Act headers ---------- */
+.act{display:flex;align-items:center;gap:10px;margin:20px 2px 8px}
+.act:before,.act:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--hair2))}
+.act:after{background:linear-gradient(90deg,var(--hair2),transparent)}
+.act .dm{width:6px;height:6px;transform:rotate(45deg);background:var(--gold);box-shadow:0 0 8px rgba(217,178,95,.7);flex:0 0 auto}
+.act .t{font:600 13px/1 var(--fd);letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);white-space:nowrap}
+.act .d{font:500 9.5px/1 var(--fu);letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);white-space:nowrap}
+
+/* ---------- Steps ---------- */
+#steps{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.s{position:relative;border-radius:11px;background:var(--card);border:1px solid rgba(255,235,200,.045);transition:background .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease),box-shadow .25s var(--ease),opacity .3s var(--ease)}
+.s:hover{background:var(--card2);border-color:rgba(217,178,95,.16);transform:translateY(-1px)}
+.s .h{display:flex;align-items:center;gap:9px;padding:8px 10px 8px 9px;cursor:pointer;min-height:38px}
+.tx{flex:1;min-width:0;font:500 13px/1.3 var(--fu);color:var(--ink);transition:font-size .2s var(--ease),color .2s}
+.rw{color:var(--gold2);font-weight:600}
+.ic{flex:0 0 auto;width:20px;height:20px;border-radius:6px;display:grid;place-items:center;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.05)}
+.ic svg{width:12px;height:12px}
+.k-quest .ic{color:var(--c-quest)}.k-craft .ic{color:var(--c-craft)}.k-skill .ic{color:var(--c-skill)}.k-merc .ic{color:var(--c-merc)}.k-shop .ic{color:var(--c-shop)}.k-gear .ic{color:var(--c-gear)}.k-farm .ic{color:var(--c-farm)}.k-gate .ic{color:var(--c-gate)}
+.lv{flex:0 0 auto;font:600 10.5px/1 var(--fu);font-variant-numeric:tabular-nums;letter-spacing:.02em;color:var(--ink2);padding:4px 7px;border-radius:999px;background:rgba(217,178,95,.07);border:1px solid rgba(217,178,95,.14)}
+.chev{flex:0 0 auto;width:22px;height:22px;display:grid;place-items:center;border-radius:6px;color:var(--ink3);transition:transform .25s var(--ease),color .15s,background .15s}
+.chev:hover{color:var(--gold2);background:var(--goldA)}
+.chev svg{width:11px;height:11px}
+.s.open .chev{transform:rotate(90deg);color:var(--gold2)}
+.chev.no{visibility:hidden}
+
+/* checkbox: gold ring */
+.cb{flex:0 0 auto;position:relative;width:19px;height:19px;border-radius:50%;border:1.5px solid rgba(217,178,95,.55);background:radial-gradient(circle at 35% 30%,rgba(255,230,170,.08),rgba(0,0,0,.3));transition:all .25s var(--ease)}
+.s .h:hover .cb{border-color:var(--gold2);box-shadow:0 0 0 3px rgba(217,178,95,.12)}
+.cb svg{position:absolute;inset:2px;width:12px;height:12px;color:#1a1108}
+.cb path{stroke-dasharray:20;stroke-dashoffset:20;transition:stroke-dashoffset .35s var(--ease) .05s}
+.s.dn .cb{border-color:#f1d48d;background:radial-gradient(circle at 35% 30%,#ffe7a8,#c9973f 70%,#8f6a2a);box-shadow:0 0 10px -2px rgba(230,190,100,.6)}
+.s.dn .cb path{stroke-dashoffset:0}
+.k-gate .cb{border-color:rgba(255,122,82,.6)}
+
+/* done */
+.s.dn{opacity:.5;background:transparent;border-color:transparent}
+.s.dn .h{min-height:28px;padding-top:4px;padding-bottom:4px}
+.s.dn .tx{font-size:11.5px;color:var(--ink3)}
+.s.dn .rw{color:var(--ink3)}
+.s.dn .lv,.s.dn .ic{opacity:.6}
+.s.dn:hover{opacity:.85}
+
+/* current */
+.s.cur{background:linear-gradient(100deg,rgba(217,178,95,.13),rgba(217,178,95,.035) 60%,rgba(255,240,215,.03));border-color:rgba(243,214,139,.45);
+ box-shadow:0 0 0 1px rgba(243,214,139,.08),0 0 22px -6px rgba(230,180,90,.55),inset 0 1px 0 rgba(255,235,190,.08)}
+.s.cur:before{content:"";position:absolute;left:-1px;top:8px;bottom:8px;width:3px;border-radius:0 3px 3px 0;background:linear-gradient(180deg,var(--gold2),var(--gold3));box-shadow:0 0 10px rgba(243,214,139,.8)}
+.s.cur .h{min-height:44px}
+.s.cur .tx{font-size:14px;font-weight:600;color:#fff6e4}
+.s.cur .lv{color:#1a1108;background:linear-gradient(180deg,#f0cf7a,#c39545);border-color:#f6dc98}
+
+/* gate card */
+.s.k-gate{background:linear-gradient(105deg,rgba(150,32,22,.30),rgba(226,85,43,.09) 55%,rgba(40,10,6,.25));border-color:rgba(226,85,43,.26)}
+.s.k-gate:hover{border-color:rgba(255,122,82,.45)}
+.s.k-gate .tx{color:#ffc9b0}
+.s.k-gate .lv{color:#ffc2a6;background:rgba(226,85,43,.12);border-color:rgba(226,85,43,.25)}
+.s.k-gate.cur{border-color:rgba(255,140,100,.6);box-shadow:0 0 24px -6px rgba(226,85,43,.8)}
+.s.k-gate.cur:before{background:linear-gradient(180deg,#ffb08a,#c2361c);box-shadow:0 0 10px rgba(255,120,80,.8)}
+.s.k-gate.cur .lv{color:#2a0b05;background:linear-gradient(180deg,#ffb08a,#e2552b);border-color:#ffc2a6}
+.s.k-gate.dn{background:transparent;border-color:transparent}
+
+/* details */
+.det{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s var(--ease)}
+.det>div{overflow:hidden}
+.det .in{padding:0 12px 10px 39px;color:var(--ink2);font-size:12px;line-height:1.5}
+.s.open .det{grid-template-rows:1fr}
+.det b{color:var(--gold);font-weight:600;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-right:4px}
+.k-gate .det b{color:#ff9a76}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.rn{display:inline-flex;align-items:center;font:700 10px/1 var(--fd);letter-spacing:.08em;color:var(--gold2);padding:3px 7px 3px 6px;border-radius:5px;
+ background:linear-gradient(180deg,rgba(217,178,95,.20),rgba(120,85,30,.18));border:1px solid rgba(217,178,95,.38);box-shadow:inset 0 1px 0 rgba(255,235,180,.15),0 1px 2px rgba(0,0,0,.4);text-transform:uppercase}
+.rn:before{content:"";width:4px;height:4px;margin-right:5px;transform:rotate(45deg);background:var(--gold);opacity:.8}
+
+/* ---------- Reference ---------- */
+.refh{margin:30px 2px 8px}
+details{margin-top:6px;border-radius:11px;background:var(--card);border:1px solid rgba(255,235,200,.05);transition:border-color .2s}
+details[open]{border-color:var(--hair)}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 12px;font:600 11.5px/1 var(--fd);letter-spacing:.16em;text-transform:uppercase;color:var(--gold2)}
+summary::-webkit-details-marker{display:none}
+summary:before{content:"";width:5px;height:5px;transform:rotate(45deg);border:1px solid var(--gold);transition:transform .25s var(--ease),background .2s}
+details[open] summary:before{transform:rotate(225deg);background:var(--gold)}
+summary:hover{color:#fff1d3}
+details>div{padding:0 12px 12px;animation:fadeIn .25s var(--ease)}
+.kv{display:flex;flex-direction:column}
+.kv .r{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,235,200,.05);font-size:12px}
+.kv .r:last-child{border-bottom:0}
+.kv .k{flex:0 0 34%;color:var(--ink3);font-weight:500}
+.kv .v{flex:1;color:var(--ink)}
+.kv.c3 .k{flex-basis:20%;color:var(--gold2);font-variant-numeric:tabular-nums}
+.kv .v2{flex:1;color:var(--ink2)}
+.kv .hd{font:600 9.5px/1 var(--fu);letter-spacing:.14em;text-transform:uppercase;color:var(--ink4);padding:2px 0 6px}
+.seg{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.note{color:var(--ink3);font-size:11.5px;margin:8px 0 0}
+ul.ls{margin:0;padding:0;list-style:none}
+ul.ls li{position:relative;padding:5px 0 5px 14px;font-size:12px;color:var(--ink2);border-bottom:1px solid rgba(255,235,200,.04)}
+ul.ls li:last-child{border-bottom:0}
+ul.ls li:before{content:"";position:absolute;left:1px;top:11px;width:4px;height:4px;transform:rotate(45deg);background:var(--gold3)}
+a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(243,214,139,.3)}a:hover{border-color:var(--gold2)}
+.foot{margin-top:22px;text-align:center;font:500 9.5px/1 var(--fu);letter-spacing:.2em;text-transform:uppercase;color:var(--ink4)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}
+@keyframes pop{50%{transform:scale(1.18)}}
+.s.justdone .cb{animation:pop .35s var(--ease)}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
+@media (max-width:420px){.nx{font-size:13.5px}.tx{font-size:12.5px}.s.cur .tx{font-size:13.5px}}
 </style>
 </head>
 <body>
 <div class="w">
-<div id="top">
- <div class="ln"><span class="lb">Neste</span><span class="x" id="nx"></span><button id="bOk" title="Kryss av neste">✓</button><button id="bUndo" title="Angre">↶</button><button id="bMenu" title="Meny">☰</button></div>
- <div class="ln"><span class="lb">Mål</span><span class="x" id="goal"></span></div>
- <div class="ln" id="gateLn"><span class="x" id="gate"></span></div>
- <div class="ln" id="lvl"><button id="lvM">−</button><span class="x" id="lvT"></span><button id="lvP">+</button></div>
- <div class="bar"><div id="bar"></div></div>
- <div id="menu"><span class="flt" id="flt" style="margin:0"></span><button id="bJump">Gå til neste</button><button id="bHide">Skjul fullførte</button><button id="bExp">Eksporter</button><button id="bImp">Importer</button><button id="bReset">Nullstill</button><span id="cnt" class="lb"></span></div>
+<header id="top">
+ <div class="row"><span class="cap">Neste</span><span class="nx" id="nx"></span>
+  <button class="ib pri" id="bOk" title="Kryss av neste" aria-label="Kryss av neste"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg></button>
+  <button class="ib" id="bUndo" title="Angre" aria-label="Angre"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3.5L2.5 6.5l3 3"/><path d="M2.8 6.5H10a3.5 3.5 0 010 7H7"/></svg></button>
+  <button class="ib" id="bMenu" title="Meny" aria-label="Meny"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 4.5h10M3 8h10M3 11.5h10"/></svg></button>
+ </div>
+ <div class="row goal"><span class="cap">Mål</span><span class="gname" id="gname"></span><span class="gneed" id="gneed"></span></div>
+ <div class="gate" id="gate"></div>
+ <div class="row lvl"><span class="lvctl"><button id="lvM" aria-label="Lavere level">−</button><span id="lvN"></span><button id="lvP" aria-label="Høyere level">+</button></span><span class="lvhint" id="lvT"></span></div>
+ <div class="prog" id="prog"><div class="fill" id="bar"></div></div><div class="pspace"></div>
+ <div id="menu"><span class="seg" id="flt" style="margin:0;display:contents"></span><button class="pill" id="bJump">Gå til neste</button><button class="pill" id="bHide">Skjul fullførte</button><button class="pill" id="bExp">Eksporter</button><button class="pill" id="bImp">Importer</button><button class="pill warn" id="bReset">Nullstill</button><span id="cnt"></span></div>
  <textarea id="io" spellcheck="false" placeholder="Lim inn kode → Importer"></textarea>
  <div id="msg"></div>
-</div>
+</header>
+
 <div id="steps"></div>
 
-<details><summary>Level for level</summary><div><table id="tLvl"></table><p class="lb">5 stat + 1 skill per level. Ctrl+klikk = 5 poeng. Ezo: «2 eller 3» levler Energy, planner = 3 (Ene 15).</p></div></details>
-<details><summary>Gear per stage</summary><div><div class="flt" id="gT"></div><table id="tGear"></table></div></details>
-<details><summary>Runeord</summary><div><table id="tRw"></table><p class="lb">Hvit/grå base, eksakt antall sockets. Peace/Purity = PD2-only.</p></div></details>
-<details><summary>Keys / cube</summary><div><ul id="lKeys"></ul></div></details>
-<details><summary>Tips</summary><div><ul id="lTips"></ul></div></details>
-<details><summary>Ikke verifisert</summary><div><ul id="lUnc"></ul></div></details>
-<details><summary>Kilder</summary><div><ul id="lSrc"></ul></div></details>
+<div class="act refh"><span class="dm"></span><span class="t">Oppslag</span></div>
+<details><summary>Level for level</summary><div><div class="kv c3" id="tLvl"></div><p class="note">5 stat + 1 skill per level · Ctrl+klikk = 5 poeng · Ezo: «2 eller 3» lvl Energy, planner = 3.</p></div></details>
+<details><summary>Gear per stage</summary><div><div class="seg" id="gT"></div><div class="kv" id="tGear"></div></div></details>
+<details><summary>Runeord</summary><div><div class="kv c3" id="tRw"></div><p class="note">Hvit/grå base · eksakt antall sockets · Peace/Purity = PD2-only.</p></div></details>
+<details><summary>Keys &amp; cube</summary><div><ul class="ls" id="lKeys"></ul></div></details>
+<details><summary>Tips</summary><div><ul class="ls" id="lTips"></ul></div></details>
+<details><summary>Ikke verifisert</summary><div><ul class="ls" id="lUnc"></ul></div></details>
+<details><summary>Kilder</summary><div><ul class="ls" id="lSrc"></ul></div></details>
+<div class="foot">PD2 Season 14 · Magic Arrow Amazon · Ezo</div>
 </div>
 <script>
 (function(){"use strict";
 var Z=["Normal · A1","Normal · A2","Normal · A3","Normal · A4","Normal · A5","Normal → NM","Nightmare","NM → Hell","Hell","Hell → Maps","Maps","Endgame"];
+var ZT=[["Akt I","Normal"],["Akt II","Normal"],["Akt III","Normal"],["Akt IV","Normal"],["Akt V","Normal"],["Overgang","Normal → Nightmare"],["Nightmare","Akt I–V"],["Overgang","Nightmare → Hell"],["Hell","Akt I–V"],["Overgang","Hell → Maps"],["Maps","Early · mid gear"],["Endgame","Season 14"]];
 var ZS=[0,0,0,0,0,0,1,1,2,2,3,4];
 // [id, zone, gate?, lvl, linje, detaljer, runer]
 var R=[
@@ -151,7 +296,8 @@ var R=[
 ["e-chest",11,0,94,"Hustle → Skullder's Ire","Alt.: 4os Blood rare PDR, Silks, Arkaine's."],
 ["e-final",11,0,96,"Lvl 96: GA 20","Str 95, Dex 175, Vit 220, Ene 0."]
 ];
-var STEPS=R.map(function(r){return{id:r[0],zone:Z[r[1]],stage:ZS[r[1]],gate:!!r[2],lvl:r[3],line:r[4],det:r[5],runes:r[6]||null};});
+var KIND={"n1-den":"quest","n1-stats":"skill","n1-shop":"shop","n1-keys":"shop","n1-merc":"merc","n1-evade":"skill","n1-belt":"shop","n1-blood":"quest","n1-cain":"quest","n1-tir":"gear","n1-countess":"farm","g1-runes":"gate","n1-stealth":"craft","n1-malus":"quest","n1-andy":"quest","n2-rada":"quest","n2-staff":"quest","n2-zephyr":"craft","n2-duriel":"quest","n3-tele":"shop","g2-tele":"gate","n3-bird":"quest","n3-ma20":"skill","n3-lam":"quest","n3-meph":"quest","n4-izual":"quest","n4-forge":"quest","n4-diablo":"quest","n5-larzuk":"quest","n5-qual":"quest","n5-anya":"quest","n5-nihl":"quest","n5-baal":"quest","n5-cows":"farm","g3-nm":"gate","nm-passives":"skill","nm-dex":"skill","nm-den":"quest","nm-countess":"farm","g4-nmrw":"gate","nm-lore":"craft","nm-edge":"craft","nm-peace":"craft","nm-purity":"merc","nm-gear":"gear","nm-rada":"quest","nm-izual":"quest","nm-a5":"quest","nm-cows":"farm","g5-hell":"gate","h-quests":"quest","h-ko":"farm","g6-melody":"gate","h-melody":"craft","h-hustle":"craft","h-gloves":"shop","h-ammy":"shop","h-ias":"gear","h-cheap":"gear","h-farm":"farm","g7-maps":"gate","m-skill":"skill","m-ebon":"gear","m-gear":"gear","m-charms":"gear","m-merc":"merc","m-cta":"craft","e-jewels":"gear","e-faith":"merc","e-chest":"gear","e-final":"skill"};
+var STEPS=R.map(function(r){return{id:r[0],zi:r[1],zone:Z[r[1]],stage:ZS[r[1]],gate:!!r[2],kind:KIND[r[0]]||"quest",lvl:r[3],line:r[4].replace(/^⛔ /,""),det:r[5],runes:r[6]||null};});
 var GOALS=[["n1-merc","Merc Vigor","~100 g"],["n1-belt","Belt","gamble Gheed"],["n1-tir","Cap 2× Tir","2os Cap"],["n1-stealth","Stealth","Tal Eth · 2os armor · 17"],["n2-zephyr","Zephyr","Ort Eth · 2os bue · 21"],["n3-tele","Teleport-stav","Ormus · <24"],["nm-lore","Lore","Ort Sol · 2os hjelm"],["nm-peace","Peace","Shael Thul Amn · 3os armor"],["nm-purity","Purity (merc)","Amn Eth Thul · 3os bue"],["nm-edge","Edge","Tir Tal Amn · 3os bue"],["nm-gear","Hsarus / Raven","AR"],["h-melody","Melody","Shael Ko Nef · +3 bue"],["h-hustle","Hustle","Shael Ko Eld · 3os armor"],["h-gloves","+3/20 hansker","lvl 65"],["h-ammy","+Bow amulett","lvl 65"],["h-ias","86 IAS","LC 6% IAS"],["m-ebon","Ebonbane","4× Shael"],["m-gear","Valk Wing, Verdungo","maps"],["m-charms","+1 Bow GCs","maps"],["m-cta","CTA","Amn Ral Mal Ist Ohm"],["e-faith","Faith (merc)","Ohm Jah Lem Eld"],["e-jewels","5% jewels","corrupts"]];
 function adv(l){
  if(l<=1)return"ingen poeng";
@@ -175,65 +321,90 @@ var TIPS=["Gamble: aldri hvite baser → ikke for bue. Belt nå, amulett/circlet
 var UNC=["Countess-sjanser = vanilla-tall (d2runes.io). Tabell bekreftet uendret i PD2.","Quest-belønninger fra vanilla.","Teleport-stav < lvl 24: Ezos tips, ikke testet.","Key-pris og 9+1-stabling ikke sjekket i PD2.","CTA-base «2ax» (Double Axe?)."];
 var SRC=[["Ezos build (hiimpd2)","https://hiimpd2.com/b/MdvmHaz"],["Ezos dokument","https://docs.google.com/document/d/1UbReGCNhqeYQIgYA8ihOyGuGJ1u_lBafCK7IX9wzHIs"],["PD2 Recipes","https://wiki.projectdiablo2.com/wiki/Recipes"],["PD2 Runes","https://wiki.projectdiablo2.com/wiki/Runes"],["PD2 Monsters (Countess)","https://wiki.projectdiablo2.com/wiki/Monsters"]];
 
+
+var ICON={
+ quest:'<path d="M8 1.5l6.5 6.5L8 14.5 1.5 8z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="8" cy="10.8" r=".9" fill="currentColor"/>',
+ craft:'<path d="M8 1.5l5.6 3.25v6.5L8 14.5l-5.6-3.25v-6.5z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5v7M5.5 6.5L8 8.5l2.5-2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>',
+ skill:'<path d="M8 1.5l1.7 4.8L14.5 8l-4.8 1.7L8 14.5l-1.7-4.8L1.5 8l4.8-1.7z" fill="currentColor"/>',
+ merc:'<path d="M3 13L13 3M9 3h4v4M3 9.5L6.5 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+ shop:'<circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="8" r="2.6" fill="none" stroke="currentColor" stroke-width="1.3"/>',
+ gear:'<path d="M8 1.5l5.5 2v4.2c0 3.3-2.4 5.7-5.5 6.8C4.9 13.4 2.5 11 2.5 7.7V3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>',
+ farm:'<path d="M13 8a5 5 0 11-1.5-3.6M13 2.5v2.8h-2.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+ gate:'<path d="M8 1.5c.6 2.4 4.5 4 4.5 7.6A4.5 4.5 0 018 13.8a4.5 4.5 0 01-4.5-4.7c0-1.7 1-2.7 1.8-3.5.2 1.3.8 2 1.6 2.4C6.7 5.6 7.2 3.4 8 1.5z" fill="currentColor"/>'
+};
+function svg(k,cls){return'<svg viewBox="0 0 16 16"'+(cls?' class="'+cls+'"':'')+'>'+(ICON[k]||ICON.quest)+'</svg>';}
+var CHK='<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.3l2.3 2.2L9.6 3.6"/></svg>';
+var CHEV='<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 2.5L8 6l-3.5 3.5"/></svg>';
+var RUNES="El|Eld|Tir|Nef|Eth|Ith|Tal|Ral|Ort|Thul|Amn|Sol|Shael|Dol|Hel|Io|Lum|Ko|Fal|Lem|Pul|Um|Mal|Ist|Gul|Vex|Ohm|Lo|Sur|Ber|Jah|Cham|Zod";
+var RX=new RegExp("\\b("+RUNES+")\\b(?! Rasha)","g");
+var RUNESET={};RUNES.split("|").forEach(function(r){RUNESET[r]=1;});
+
 var KEY="pd2-s14-ezo-magic-arrow-v1",UIK=KEY+"-ui";
 function ld(k,d){try{var s=localStorage.getItem(k);return s?JSON.parse(s):d;}catch(e){return d;}}
 function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
 var st=ld(KEY,{done:{},hist:[]});if(!st||typeof st!=="object")st={};st.done=st.done||{};st.hist=st.hist||[];
 var ui=ld(UIK,{});if(!ui||typeof ui!=="object")ui={};ui.filter=ui.filter||"alle";ui.lvl=ui.lvl||3;ui.gear=ui.gear||0;
-var open={};
+var open={},just=null;
 function save(){sv(KEY,st);sv(UIK,ui);}
 function $(i){return document.getElementById(i);}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function rw(s){return esc(s).replace(RX,'<span class="rw">$1</span>');}
+function chip(r){return'<span class="rn">'+esc(r)+'</span>';}
 function cur(){for(var i=0;i<STEPS.length;i++)if(!st.done[STEPS[i].id])return STEPS[i];return null;}
 function goal(){for(var i=0;i<GOALS.length;i++)if(!st.done[GOALS[i][0]])return GOALS[i];return null;}
 function gateNext(){for(var i=0;i<STEPS.length;i++)if(STEPS[i].gate&&!st.done[STEPS[i].id])return STEPS[i];return null;}
 function msg(t){$("msg").textContent=t;setTimeout(function(){if($("msg").textContent===t)$("msg").textContent="";},3000);}
-function tog(id){st.done[id]=!st.done[id];if(st.done[id])st.hist.push(id);else st.hist=st.hist.filter(function(x){return x!==id;});st.hist=st.hist.slice(-200);save();render();}
+function tog(id){st.done[id]=!st.done[id];if(st.done[id]){st.hist.push(id);just=id;}else st.hist=st.hist.filter(function(x){return x!==id;});st.hist=st.hist.slice(-200);save();render();just=null;}
+function needHtml(t){return t.split(" · ").map(function(part){var w=part.split(" ");if(w.length&&w.every(function(x){return RUNESET[x];}))return w.map(chip).join("");return'<span>'+esc(part)+'</span>';}).join('<span class="sep">·</span>');}
+function lvHint(t){var p=t.split(" · ");return p.map(function(x){return x.replace(/^(\d+ )?(stat|skill)/,"<b>$&</b>");}).join(' <span style="color:var(--ink4)">·</span> ');}
+var STAGEN=["Normal","NM","Hell","Maps","End"];
+function markers(){var h='<div class="fill" id="bar"></div>',seen={};STEPS.forEach(function(s,i){if(!seen[s.stage]){seen[s.stage]=1;if(i>0)h+='<span class="mk" data-st="'+s.stage+'" style="left:'+(i/STEPS.length*100)+'%"><i>'+STAGEN[s.stage]+'</i></span>';}});$("prog").innerHTML=h;}
 function top(){
  var c=cur(),g=goal(),gt=gateNext(),n=0;STEPS.forEach(function(s){if(st.done[s.id])n++;});
- $("nx").textContent=c?c.line:"Ferdig!";$("nx").title=c?c.zone+" · lvl "+c.lvl:"";
- $("goal").innerHTML=g?'<b style="color:var(--t)">'+esc(g[1])+'</b> <span class="lb">— '+esc(g[2])+'</span>':"–";
- var gi=gt?STEPS.indexOf(gt):-1,ci=c?STEPS.indexOf(c):-1;
- if(gt&&gi-ci<=6){$("gateLn").style.display="flex";$("gate").textContent=(gi===ci?"⛔ NÅ: ":"⛔ Snart: ")+gt.line.replace("⛔ ","")+(gi===ci?" (▸ i lista)":"");}else $("gateLn").style.display="none";
- $("lvT").textContent="Lvl "+ui.lvl+": "+adv(ui.lvl);
- $("bar").style.width=Math.round(n/STEPS.length*100)+"%";
- $("cnt").textContent=n+"/"+STEPS.length;
- $("bHide").className=ui.hide?"on":"";
+ $("nx").innerHTML=c?rw(c.line):"Alt fullført";$("nx").title=c?c.zone+" · lvl "+c.lvl:"";
+ $("gname").textContent=g?g[1]:"—";$("gneed").innerHTML=g?needHtml(g[2]):"";
+ var gi=gt?STEPS.indexOf(gt):-1,ci=c?STEPS.indexOf(c):-1,el=$("gate");
+ if(gt&&gi-ci<=6){el.style.display="flex";el.className="gate"+(gi===ci?" now":"");el.innerHTML=svg("gate")+'<span><b style="font-weight:700;letter-spacing:.1em;font-size:9.5px;text-transform:uppercase;margin-right:6px">'+(gi===ci?"Stopp nå":"Stopp snart")+'</b>'+rw(gt.line)+'</span>';}else el.style.display="none";
+ $("lvN").textContent="Lvl "+ui.lvl;$("lvT").innerHTML=lvHint(adv(ui.lvl));
+ var pct=n/STEPS.length*100;$("bar").style.width=pct+"%";
+ Array.prototype.forEach.call(document.querySelectorAll(".mk"),function(m){m.classList.toggle("on",parseFloat(m.style.left)<=pct);});
+ $("cnt").textContent=n+" / "+STEPS.length;$("bHide").className="pill"+(ui.hide?" on":"");
+ var f=[["alle","Alle"],["0","Normal"],["1","NM"],["2","Hell"],["3","Maps"],["4","End"]];
+ $("flt").innerHTML=f.map(function(o){return'<button class="pill'+(ui.filter===o[0]?' on':'')+'" data-f="'+o[0]+'">'+o[1]+'</button>';}).join("");
 }
 function list(){
- var c=cur(),h="",last="";
+ var c=cur(),h="",last=-1;
  STEPS.forEach(function(s){
   if(ui.filter!=="alle"&&String(s.stage)!==ui.filter)return;
   var d=!!st.done[s.id];if(ui.hide&&d)return;
-  if(s.zone!==last){h+='<div class="z">'+esc(s.zone)+'</div>';last=s.zone;}
-  var hasDet=s.det||s.runes;
-  h+='<div class="s'+(s.gate?' gt':'')+(d?' dn':'')+(c&&c.id===s.id?' cur':'')+(open[s.id]?' open':'')+'" id="step-'+s.id+'" data-id="'+s.id+'">'+
-   '<div class="h"><span class="cb">'+(d?'✓':'')+'</span><span class="tx">'+esc(s.line)+'</span><span class="lv">'+s.lvl+'</span>'+(hasDet?'<span class="ex" data-ex="1">'+(open[s.id]?'▾':'▸')+'</span>':'')+'</div>'+
-   (hasDet?'<div class="det">'+(s.gate?s.det:esc(s.det))+(s.runes?(s.det?'<br>':'')+'<span class="rn">'+esc(s.runes.join(" "))+'</span>':'')+'</div>':'')+'</div>';
+  if(s.zi!==last){h+='<div class="act"><span class="dm"></span><span class="t">'+esc(ZT[s.zi][0])+'</span><span class="d">'+esc(ZT[s.zi][1])+'</span></div>';last=s.zi;}
+  var has=!!(s.det||s.runes);
+  h+='<div class="s k-'+s.kind+(d?' dn':'')+(c&&c.id===s.id?' cur':'')+(open[s.id]?' open':'')+(just===s.id?' justdone':'')+'" id="step-'+s.id+'" data-id="'+s.id+'">'+
+   '<div class="h" role="checkbox" aria-checked="'+d+'" tabindex="0"><span class="cb">'+CHK+'</span><span class="ic">'+svg(s.kind)+'</span><span class="tx">'+rw(s.line)+'</span><span class="lv">'+s.lvl+'</span><span class="chev'+(has?'':' no')+'" data-ex="1">'+CHEV+'</span></div>'+
+   (has?'<div class="det"><div><div class="in">'+(s.gate?s.det:esc(s.det))+(s.runes?'<div class="chips">'+s.runes.map(chip).join("")+'</div>':'')+'</div></div></div>':'')+'</div>';
  });
  $("steps").innerHTML=h;
- var f=[["alle","Alle"],["0","Normal"],["1","NM"],["2","Hell"],["3","Maps"],["4","End"]];
- $("flt").innerHTML=f.map(function(o){return'<button data-f="'+o[0]+'" class="'+(ui.filter===o[0]?'on':'')+'">'+o[1]+'</button>';}).join("");
 }
 function render(){top();list();}
-function tbl(rows,head){return(head?'<tr>'+head.map(function(x){return'<th>'+x+'</th>';}).join("")+'</tr>':'')+rows.map(function(r){return'<tr>'+r.map(function(x){return'<td>'+esc(x)+'</td>';}).join("")+'</tr>';}).join("");}
-function gear(){$("gT").innerHTML=GEAR.map(function(g,i){return'<button data-g="'+i+'" class="'+(ui.gear===i?'on':'')+'">'+g[0]+'</button>';}).join("");$("tGear").innerHTML=tbl(GEAR[ui.gear][1]);}
+function kv(rows,cls,head){return(head?'<div class="r hd"><span class="k">'+head[0]+'</span><span class="v">'+head[1]+'</span>'+(head[2]?'<span class="v2">'+head[2]+'</span>':'')+'</div>':'')+rows.map(function(r){return'<div class="r"><span class="k">'+esc(r[0])+'</span><span class="v">'+rw(r[1])+'</span>'+(r.length>2?'<span class="v2">'+esc(r.slice(2).join(" · lvl "))+'</span>':'')+'</div>';}).join("");}
+function gear(){$("gT").innerHTML=GEAR.map(function(g,i){return'<button class="pill'+(ui.gear===i?' on':'')+'" data-g="'+i+'">'+g[0]+'</button>';}).join("");$("tGear").innerHTML=kv(GEAR[ui.gear][1]);}
 function stat(){
- $("tLvl").innerHTML=tbl(LVL,["Lvl","5 stat","1 skill"]);
- $("tRw").innerHTML=tbl(RW,["Runeord","Runer","Base","Lvl"]);
- function ul(id,a){$(id).innerHTML=a.map(function(t){return'<li>'+esc(t)+'</li>';}).join("");}
+ $("tLvl").innerHTML=kv(LVL,"",["Lvl","5 stat","1 skill"]);
+ $("tRw").innerHTML=RW.map(function(r){return'<div class="r"><span class="k" style="flex-basis:30%">'+esc(r[0])+'</span><span class="v">'+r[1].split(" ").map(chip).join(" ")+'</span><span class="v2" style="flex:0 0 30%">'+esc(r[2])+' · '+r[3]+'</span></div>';}).join("");
+ function ul(id,a){$(id).innerHTML=a.map(function(t){return'<li>'+rw(t)+'</li>';}).join("");}
  ul("lKeys",KEYS);ul("lTips",TIPS);ul("lUnc",UNC);
  $("lSrc").innerHTML=SRC.map(function(s){return'<li><a href="'+s[1]+'" target="_blank" rel="noopener">'+esc(s[0])+'</a></li>';}).join("");
  gear();
 }
 $("steps").addEventListener("click",function(e){var el=e.target.closest(".s");if(!el)return;var id=el.getAttribute("data-id");
- if(e.target.closest("[data-ex]")||e.target.closest(".det")){open[id]=!open[id];list();return;}tog(id);});
-$("flt").addEventListener("click",function(e){var b=e.target.closest("button");if(b){ui.filter=b.getAttribute("data-f");save();list();}});
+ if(e.target.closest("[data-ex]")||e.target.closest(".det")){if(el.querySelector(".det")){open[id]=!open[id];el.classList.toggle("open",!!open[id]);}return;}tog(id);});
+$("steps").addEventListener("keydown",function(e){if(e.key===" "||e.key==="Enter"){var el=e.target.closest(".s");if(el){e.preventDefault();tog(el.getAttribute("data-id"));}}});
+$("flt").addEventListener("click",function(e){var b=e.target.closest("button");if(b){ui.filter=b.getAttribute("data-f");save();render();}});
 $("gT").addEventListener("click",function(e){var b=e.target.closest("button");if(b){ui.gear=+b.getAttribute("data-g");save();gear();}});
 $("bOk").onclick=function(){var c=cur();if(c)tog(c.id);};
 $("bUndo").onclick=function(){var id=st.hist.pop();if(id){st.done[id]=false;save();render();msg("Angret");}};
 $("bMenu").onclick=function(){$("menu").classList.toggle("on");};
-$("bJump").onclick=function(){var c=cur();if(!c)return;ui.filter="alle";ui.hide=false;save();render();var el=$("step-"+c.id);if(el&&el.scrollIntoView)el.scrollIntoView({block:"center"});};
+$("bJump").onclick=function(){var c=cur();if(!c)return;ui.filter="alle";ui.hide=false;save();render();var el=$("step-"+c.id);if(el&&el.scrollIntoView)el.scrollIntoView({block:"center",behavior:"smooth"});};
 $("bHide").onclick=function(){ui.hide=!ui.hide;save();render();};
 $("bReset").onclick=function(){if(confirm("Nullstille alt?")){st={done:{},hist:[]};save();render();}};
 $("bExp").onclick=function(){var c=JSON.stringify({v:1,done:Object.keys(st.done).filter(function(k){return st.done[k];})});var io=$("io");io.style.display="block";io.value=c;io.select();try{document.execCommand("copy");}catch(e){}if(navigator.clipboard)navigator.clipboard.writeText(c).catch(function(){});msg("Kopiert");};
@@ -243,7 +414,7 @@ function setLv(v){ui.lvl=Math.max(1,Math.min(99,v));save();top();}
 $("lvM").onclick=function(){setLv(ui.lvl-1);};$("lvP").onclick=function(){setLv(ui.lvl+1);};
 window.addEventListener("storage",function(e){if(e.key===KEY){st=ld(KEY,st);render();}});
 window.__pd2={state:function(){return st;},current:cur,nextGoal:goal,nextGate:gateNext,KEY:KEY,STEPS:STEPS};
-stat();render();
+markers();stat();render();
 })();
 </script>
 </body>

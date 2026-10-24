@@ -184,6 +184,55 @@ a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(243,214,1
 @keyframes fadeIn{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}
 @keyframes pop{50%{transform:scale(1.18)}}
 .s.justdone .cb{animation:pop .35s var(--ease)}
+
+/* ---------- v5: Build overlay ---------- */
+.lvl{align-items:flex-start}
+.lvhint{white-space:normal;overflow:visible;line-height:1.45;padding-top:1px;cursor:pointer}
+.lvhint b{color:var(--gold);font:600 9.5px/1 var(--fu);letter-spacing:.12em;text-transform:uppercase;margin-right:3px}
+.lvhint .sn,.lt .sn{color:#fff1d3;font-weight:600}
+.lvhint .to,.lt .to{color:var(--ink3);font-size:10.5px;margin:0 5px 0 2px;font-variant-numeric:tabular-nums}
+.qt{display:inline-block;font:600 9.5px/1 var(--fu);color:#c99bf0;padding:2px 5px;border-radius:4px;background:rgba(201,155,240,.1);border:1px solid rgba(201,155,240,.25);margin-left:2px}
+.dt{color:var(--ink4);margin:0 2px}
+#bo{position:fixed;inset:0;z-index:60;display:none;background:rgba(4,3,2,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+#bo.on{display:block;animation:fadeIn .2s var(--ease)}
+.bp{position:relative;max-width:620px;height:100%;margin:0 auto;display:flex;flex-direction:column;
+ background:radial-gradient(120% 40% at 50% 0%,rgba(176,92,34,.18),transparent 60%),linear-gradient(#15100c,#0a0706);border-left:1px solid var(--hair);border-right:1px solid var(--hair);box-shadow:0 0 60px rgba(0,0,0,.8)}
+.bh{padding:12px 12px 8px;border-bottom:1px solid var(--hair);position:relative}
+.bh:after{content:"";position:absolute;left:12%;right:12%;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.55}
+.bt{font:700 16px/1 var(--fd);letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);flex:1}
+.bt small{display:block;margin-top:5px;font:500 9.5px/1 var(--fu);letter-spacing:.16em;color:var(--ink3)}
+#bTabs{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+#bBody{flex:1;overflow:auto;padding:10px 12px 30px;overscroll-behavior:contain}
+.tree{display:flex;align-items:center;gap:8px;margin:14px 0 6px}
+.tree span{font:600 10.5px/1 var(--fd);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.tree:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--hair2),transparent)}
+.skr{display:grid;grid-template-columns:minmax(0,1fr) 64px 24px;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid rgba(255,235,200,.04)}
+.skr.z{opacity:.4}
+.skn span{display:block;font:600 12.5px/1.2 var(--fu);color:#fff1d3}
+.skn i{display:block;font:400 10.5px/1.25 var(--fu);color:var(--ink3);font-style:normal;margin-top:1px}
+.skb{height:5px;border-radius:9px;background:rgba(255,230,180,.07);overflow:hidden}
+.skb b{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#7e1d12,var(--ember) 40%,var(--gold2));box-shadow:0 0 8px rgba(226,120,50,.5)}
+.skv{font:700 14px/1 var(--fd);color:var(--gold2);text-align:right;font-variant-numeric:tabular-nums}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.tile{padding:9px 6px 8px;text-align:center;border-radius:10px;background:linear-gradient(180deg,rgba(217,178,95,.10),rgba(217,178,95,.02));border:1px solid var(--hair)}
+.tile i{display:block;font:600 9px/1 var(--fu);letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);font-style:normal}
+.tile b{display:block;font:700 22px/1.1 var(--fd);color:#fff1d3;margin:5px 0 3px}
+.tile span{display:block;font-size:9.5px;color:var(--ink3)}
+.kv.st5 .k{flex:0 0 30%}.kv.st5 .v{flex:1;text-align:right;font-variant-numeric:tabular-nums}
+.kv.st5 .hd .v{text-align:right}
+.mine{margin-top:12px;padding:8px 10px;border-radius:9px;font-size:11.5px;color:var(--ink2);background:linear-gradient(100deg,rgba(217,178,95,.12),transparent);border:1px solid var(--hair)}
+.mine b{color:var(--gold2);margin-right:6px;font-weight:600}.mine i{color:var(--ink4);font-style:normal}
+.uv{display:inline-grid;place-items:center;width:14px;height:14px;border-radius:50%;font:700 9px/1 var(--fu);color:#2a0b05;background:linear-gradient(180deg,#ffb08a,#e2552b);vertical-align:1px;margin-right:2px;cursor:help}
+.rwl{display:flex;flex-direction:column;gap:5px;margin-bottom:8px}
+.rwc{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:7px 9px;border-radius:9px;background:var(--card2);border:1px solid rgba(217,178,95,.14)}
+.rwn{font:600 12.5px/1 var(--fd);letter-spacing:.06em;color:var(--gold2);min-width:84px}
+.rwb{margin-left:auto;font-size:10.5px;color:var(--ink3)}
+.lt{display:flex;flex-direction:column}
+.lr{display:grid;grid-template-columns:28px minmax(0,1fr);gap:1px 8px;padding:5px 4px;border-bottom:1px solid rgba(255,235,200,.04);cursor:pointer;border-radius:6px;font-size:12px}
+.lr:hover{background:var(--card2)}
+.lr.on{background:linear-gradient(100deg,rgba(217,178,95,.16),transparent);box-shadow:inset 2px 0 0 var(--gold2)}
+.ln{grid-row:span 2;font:700 12px/1.3 var(--fd);color:var(--gold);text-align:right;font-variant-numeric:tabular-nums}
+.ls2{color:var(--ink3);font-size:11px}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
 @media (max-width:420px){.nx{font-size:13.5px}.tx{font-size:12.5px}.s.cur .tx{font-size:13.5px}}
 </style>
@@ -194,6 +243,7 @@ a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(243,214,1
  <div class="row"><span class="cap">Neste</span><span class="nx" id="nx"></span>
   <button class="ib pri" id="bOk" title="Kryss av neste" aria-label="Kryss av neste"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg></button>
   <button class="ib" id="bUndo" title="Angre" aria-label="Angre"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3.5L2.5 6.5l3 3"/><path d="M2.8 6.5H10a3.5 3.5 0 010 7H7"/></svg></button>
+  <button class="ib" id="bBuild" title="Build" aria-label="Build"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 2.5l7.5 7.5M2.5 2.5h3l6 6M13.5 2.5L6 10M13.5 2.5h-3L4.5 8.5"/><path d="M8.6 11.4l2 2M7.4 11.4l-2 2M11.6 9.6l1.9 1.9-2 2-1.9-1.9M4.4 9.6l-1.9 1.9 2 2 1.9-1.9"/></svg></button>
   <button class="ib" id="bMenu" title="Meny" aria-label="Meny"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 4.5h10M3 8h10M3 11.5h10"/></svg></button>
  </div>
  <div class="row goal"><span class="cap">Mål</span><span class="gname" id="gname"></span><span class="gneed" id="gneed"></span></div>
@@ -208,13 +258,14 @@ a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(243,214,1
 <div id="steps"></div>
 
 <div class="act refh"><span class="dm"></span><span class="t">Oppslag</span></div>
-<details><summary>Level for level</summary><div><div class="kv c3" id="tLvl"></div><p class="note">5 stat + 1 skill per level · Ctrl+klikk = 5 poeng · Ezo: «2 eller 3» lvl Energy, planner = 3.</p></div></details>
+<details><summary>Level for level</summary><div><div class="kv c3" id="tLvl"></div><p class="note">5 stat + 1 skill per level · Ctrl+klikk = 5 poeng · <a href="#" id="bAll">Alle levels 1–99 →</a></p></div></details>
 <details><summary>Gear per stage</summary><div><div class="seg" id="gT"></div><div class="kv" id="tGear"></div></div></details>
 <details><summary>Runeord</summary><div><div class="kv c3" id="tRw"></div><p class="note">Hvit/grå base · eksakt antall sockets · Peace/Purity = PD2-only.</p></div></details>
 <details><summary>Keys &amp; cube</summary><div><ul class="ls" id="lKeys"></ul></div></details>
 <details><summary>Tips</summary><div><ul class="ls" id="lTips"></ul></div></details>
 <details><summary>Ikke verifisert</summary><div><ul class="ls" id="lUnc"></ul></div></details>
 <details><summary>Kilder</summary><div><ul class="ls" id="lSrc"></ul></div></details>
+<div id="bo" role="dialog" aria-modal="true" aria-label="Build"><div class="bp"><div class="bh"><div class="row"><div class="bt">⚔ Build<small>Ezo · Magic Arrow Amazon · S14</small></div><button class="ib" id="bX" title="Lukk (Esc)" aria-label="Lukk"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg></button></div><div id="bTabs"></div></div><div id="bBody"></div></div></div>
 <div class="foot">PD2 Season 14 · Magic Arrow Amazon · Ezo</div>
 </div>
 <script>
@@ -225,7 +276,7 @@ var ZS=[0,0,0,0,0,0,1,1,2,2,3,4];
 // [id, zone, gate?, lvl, linje, detaljer, runer]
 var R=[
 ["n1-den",0,0,2,"Den of Evil → Akara: +1 skill","Rydd hele hula. Skill → Magic Arrow."],
-["n1-stats",0,0,2,"Lvl 2–4 Energy · lvl 5 Str · så Vit","5 stat/level. 1 skill/level → Magic Arrow. Ezo uklar: 2 eller 3 lvl Energy; planner = 3."],
+["n1-stats",0,0,2,"Lvl 2–4 Energy · 5 Str · 6 Dex · så Vit","5 stat/level: Energy 15 (lvl 2–4), Str 5 (lvl 5), Dex 5 (lvl 6, Hunter's Bow), Vit 7–24. Ezo-tekst: 2 lvl Energy; planner = 3. Se ⚔ Build."],
 ["n1-shop",0,0,3,"Charsi: se etter 2os-baser","Hvit/grå: 2os bue (Zephyr), 2os armor (Stealth), 2os Cap (Tir). Ta alle runer."],
 ["n1-keys",0,0,3,"Akara: kjøp Keys (stabel)","1 Key per rune-upgrade i cube. Stabel 50."],
 ["n1-merc",0,0,3,"Kashya: Fire Arrow (Vigor)-merc","~100 gull. Meditation (Cold Arrow) kun ved manamangel."],
@@ -246,7 +297,7 @@ var R=[
 ["n3-tele",2,0,22,"Ormus: Teleport-stav til swap","Helst før lvl 24 (Ezo: vises rød da). Lad: Ort + stav i cube."],
 ["g2-tele",2,1,22,"⛔ Teleport-stav + Zephyr?","<b>Farm:</b> refresh Ormus (ut/inn av by, nytt spill). Ort: 3 Ral + Key.<br><b>Skip hvis:</b> ~10 refresh uten stav – prøv senere. Ingen Ort – bruk magic bue (+MA/+Bow) til Ort dukker opp."],
 ["n3-bird",2,0,22,"Golden Bird → Alkor: +20 life","Jade Figurine: 1. unique etter Docks → Meshif → Cain → Alkor."],
-["n3-ma20",2,0,21,"MA 20 → Inner Sight 1, Slow Mov. 1","Ekstra: 1 i Crit Strike, Pierce, Dodge, Decoy."],
+["n3-ma20",2,0,21,"MA 20 → Inner Sight 1, Slow Movement 1","Lvl 21 Inner Sight · 22 Slow Movement · 23 Critical Strike · 24 Pierce · 25 Penetrate · 26 Dodge + Decoy + Slow Movement."],
 ["n3-lam",2,0,24,"Lam Esen's Tome: +5 stat","Tempel i Bazaar/Upper Kurast/Causeway → Alkor."],
 ["n3-meph",2,0,25,"Khalim's Will → Mephisto","Eye: Spider Cavern. Brain: Flayer Dungeon 3. Heart: Sewers. Flail: Travincal."],
 ["n4-izual",3,0,26,"Izual → Tyrael: +2 skill","Plains of Despair."],
@@ -259,8 +310,8 @@ var R=[
 ["n5-baal",4,0,33,"Ancients → Baal",""],
 ["n5-cows",4,0,33,"Cows åpne","Wirt's Leg + Tome of TP i cube, Rogue Encampment."],
 ["g3-nm",5,1,33,"⛔ Klar for NM?","<b>Trenger:</b> MA 20, Zephyr, res fra Anya.<br><b>Farm:</b> Normal Cows, Countess. Shop 2os hjelm / 3os armor/buer.<br><b>Skip hvis:</b> Baal gikk lett."],
-["nm-passives",6,0,34,"1 i alle passiver → Valkyrie","Crit, Pierce, Dodge, Decoy, Penetrate (24), Valkyrie (30). Så Valk + Slow Mov. mot 20."],
-["nm-dex",6,0,34,"Stats: Dex + Vit","Mål lvl 55: Str 10, Dex 100, Vit 160. Matriarchal krever 187 Dex."],
+["nm-passives",6,0,34,"Valkyrie +1/lvl → 20 · quest-poeng → Slow Movement","Critical Strike, Pierce, Penetrate, Dodge, Decoy = 1 hver (lvl 23–26). Valkyrie lvl 30–49. Slow Movement 20, så Inner Sight 20 (Hell)."],
+["nm-dex",6,0,34,"Stats: Dex 3 + Vit 2 per level","Lvl 26–55. Mål lvl 55: Str 10, Dex 100, Vit ~155–160. Matriarchal krever 187 Dex."],
 ["nm-den",6,0,34,"Den of Evil NM: +1 skill",""],
 ["nm-countess",6,0,35,"Countess NM: høyere runer","Ort, Sol, Shael, Thul, Amn.",["Sol","Shael","Thul","Amn"]],
 ["g4-nmrw",6,1,36,"⛔ Runer: Lore + Peace","<b>Trenger:</b> Ort Sol · Shael Thul Amn (+ Purity, Edge).<br><b>Farm:</b> Countess NM, players 1, 15–30 runs (Ort 1:4,5, Amn 1:5,6, Thul 1:6,5, Sol 1:8,4, Shael 1:9,4). Cube opp med Key. Alt.: NM Cows.<br><b>Skip hvis:</b> Lore + Peace laget.",["Ort","Sol","Shael","Thul","Amn"]],
@@ -299,26 +350,86 @@ var R=[
 var KIND={"n1-den":"quest","n1-stats":"skill","n1-shop":"shop","n1-keys":"shop","n1-merc":"merc","n1-evade":"skill","n1-belt":"shop","n1-blood":"quest","n1-cain":"quest","n1-tir":"gear","n1-countess":"farm","g1-runes":"gate","n1-stealth":"craft","n1-malus":"quest","n1-andy":"quest","n2-rada":"quest","n2-staff":"quest","n2-zephyr":"craft","n2-duriel":"quest","n3-tele":"shop","g2-tele":"gate","n3-bird":"quest","n3-ma20":"skill","n3-lam":"quest","n3-meph":"quest","n4-izual":"quest","n4-forge":"quest","n4-diablo":"quest","n5-larzuk":"quest","n5-qual":"quest","n5-anya":"quest","n5-nihl":"quest","n5-baal":"quest","n5-cows":"farm","g3-nm":"gate","nm-passives":"skill","nm-dex":"skill","nm-den":"quest","nm-countess":"farm","g4-nmrw":"gate","nm-lore":"craft","nm-edge":"craft","nm-peace":"craft","nm-purity":"merc","nm-gear":"gear","nm-rada":"quest","nm-izual":"quest","nm-a5":"quest","nm-cows":"farm","g5-hell":"gate","h-quests":"quest","h-ko":"farm","g6-melody":"gate","h-melody":"craft","h-hustle":"craft","h-gloves":"shop","h-ammy":"shop","h-ias":"gear","h-cheap":"gear","h-farm":"farm","g7-maps":"gate","m-skill":"skill","m-ebon":"gear","m-gear":"gear","m-charms":"gear","m-merc":"merc","m-cta":"craft","e-jewels":"gear","e-faith":"merc","e-chest":"gear","e-final":"skill"};
 var STEPS=R.map(function(r){return{id:r[0],zi:r[1],zone:Z[r[1]],stage:ZS[r[1]],gate:!!r[2],kind:KIND[r[0]]||"quest",lvl:r[3],line:r[4].replace(/^⛔ /,""),det:r[5],runes:r[6]||null};});
 var GOALS=[["n1-merc","Merc Vigor","~100 g"],["n1-belt","Belt","gamble Gheed"],["n1-tir","Cap 2× Tir","2os Cap"],["n1-stealth","Stealth","Tal Eth · 2os armor · 17"],["n2-zephyr","Zephyr","Ort Eth · 2os bue · 21"],["n3-tele","Teleport-stav","Ormus · <24"],["nm-lore","Lore","Ort Sol · 2os hjelm"],["nm-peace","Peace","Shael Thul Amn · 3os armor"],["nm-purity","Purity (merc)","Amn Eth Thul · 3os bue"],["nm-edge","Edge","Tir Tal Amn · 3os bue"],["nm-gear","Hsarus / Raven","AR"],["h-melody","Melody","Shael Ko Nef · +3 bue"],["h-hustle","Hustle","Shael Ko Eld · 3os armor"],["h-gloves","+3/20 hansker","lvl 65"],["h-ammy","+Bow amulett","lvl 65"],["h-ias","86 IAS","LC 6% IAS"],["m-ebon","Ebonbane","4× Shael"],["m-gear","Valk Wing, Verdungo","maps"],["m-charms","+1 Bow GCs","maps"],["m-cta","CTA","Amn Ral Mal Ist Ohm"],["e-faith","Faith (merc)","Ohm Jah Lem Eld"],["e-jewels","5% jewels","corrupts"]];
-function adv(l){
- if(l<=1)return"ingen poeng";
- if(l<=4)return"5 stat → Energy · 1 skill → Magic Arrow";
- if(l===5)return"5 stat → Str · 1 skill → Magic Arrow";
- if(l===6)return"5 stat → Vit · 1 skill → Evade";
- if(l<=20)return"5 stat → Vit · 1 skill → Magic Arrow";
- if(l<=22)return"5 stat → Vit · skill → Inner Sight / Slow Mov.";
- if(l<=29)return"5 stat → Vit · skill → passiver (1 hver)";
- if(l===30)return"stat → Dex/Vit · skill → Valkyrie";
- if(l<=55)return"stat → Dex/Vit · skill → Valk / Slow Mov.";
- if(l<=75)return"stat → Str 67/Dex 152 · skill → Inner Sight";
- if(l<=90)return"stat → Dex/Vit · skill → Guided Arrow";
- return"stat → Vit · skill → Guided Arrow 20";
+// ---------- v5: Build-plan (generert, deterministisk) ----------
+var SK={magic_arrow:["Magic Arrow",1,[],"b"],multiple_shot:["Multiple Shot",6,["magic_arrow"],"b"],guided_arrow:["Guided Arrow",18,["multiple_shot","magic_arrow"],"b"],
+ inner_sight:["Inner Sight",1,[],"p"],critical_strike:["Critical Strike",1,[],"p"],evade:["Evade",6,[],"p"],slow_movement:["Slow Movement",12,["inner_sight"],"p"],pierce:["Pierce",12,["critical_strike"],"p"],
+ dodge:["Dodge",18,["evade","slow_movement","inner_sight"],"p"],decoy:["Decoy",18,["slow_movement","inner_sight"],"p"],penetrate:["Penetrate",24,["pierce","critical_strike"],"p"],valkyrie:["Valkyrie",30,["decoy","slow_movement","inner_sight"],"p"]};
+var SKORD=["magic_arrow","multiple_shot","guided_arrow","inner_sight","slow_movement","critical_strike","evade","pierce","dodge","decoy","penetrate","valkyrie"];
+var RULES=[["magic_arrow",5],["evade",1],["magic_arrow",20],["inner_sight",1],["slow_movement",1],["critical_strike",1],["pierce",1],["penetrate",1],["dodge",1],["decoy",1],["valkyrie",20],["slow_movement",20],["inner_sight",20],["multiple_shot",1],["guided_arrow",20],["decoy",4]];
+var QSK={3:[1,"Den of Evil"],16:[1,"Radament"],26:[2,"Izual"],34:[1,"Den NM"],40:[1,"Radament NM"],45:[2,"Izual NM"],56:[1,"Den Hell"],57:[1,"Radament Hell"],60:[2,"Izual Hell"]};
+var LAM={24:["Vit","Lam Esen"],40:["Dex","Lam Esen NM"],58:["Dex","Lam Esen Hell"]};
+var STN=["Str","Dex","Vit","Energy"];
+function statRule(l){
+ if(l<2)return[];if(l<=4)return[[3,5]];if(l===5)return[[0,5]];if(l===6)return[[1,5]];if(l<=24)return[[2,5]];if(l===25)return[[0,5]];
+ if(l<=55)return[[1,3],[2,2]];if(l<=66)return[[0,5]];if(l===67)return[[0,2],[1,3]];if(l<=75)return[[1,5]];if(l<=81)return[[0,4],[2,1]];if(l===82)return[[0,4],[1,1]];if(l<=95)return[[1,2],[2,3]];return[[2,5]];
 }
-var LVL=[["2–4","Energy","Magic Arrow"],["5","Str","Magic Arrow"],["6","Vit","Evade"],["7–20","Vit","Magic Arrow → 20"],["21–22","Vit","Inner Sight 1, Slow Mov. 1"],["23–30","Vit","Crit, Pierce, Dodge, Decoy, Penetrate, Valk"],["31–55","Dex/Vit → 100/160","Valk 20, Slow Mov."],["56–75","Str 67, Dex 152, Vit 151","Inner Sight 20"],["76–90","Str 95, Dex 165, Vit 185","Multi 1, GA 14"],["91–96","Dex 175, Vit 220","GA 20"],["Quest","Lam Esen +5","Den +1, Rada +1, Izual +2"]];
+var STWHY=[[4,"Energy: 3 levels = 15 (mana tidlig)"],[5,"Str: litt for gear"],[6,"Dex: Hunter's Bow (Zephyr)"],[24,"Vit: overlevelse"],[25,"Str 10: Breast Plate (Peace)"],[55,"Dex 3 + Vit 2 · mål NM: Dex 100"],[66,"Str: Mage Plate (Hustle) / Matriarchal Bow"],[67,"Str 67 nådd → Dex"],[75,"Dex: skade + bue-krav"],[82,"Str 95 for maps-gear"],[95,"Dex 175 / Vit"],[99,"Vit"]];
+function why(l){for(var i=0;i<STWHY.length;i++)if(l<=STWHY[i][0])return STWHY[i][1];return"";}
+var PLAN=(function(){var s={},t=[0,0,0,0],out=[];SKORD.forEach(function(k){s[k]=0;});
+ function ok(k,l){var d=SK[k];if(s[k]>=20)return false;if(l<d[1]+s[k])return false;for(var i=0;i<d[2].length;i++)if(!s[d[2][i]])return false;return true;}
+ for(var l=1;l<=99;l++){var n=l>1?1:0,q=QSK[l],add={},ord=[];if(q)n+=q[0];
+  for(var p=0;p<n;p++){for(var r=0;r<RULES.length;r++){var k=RULES[r][0];if(s[k]<RULES[r][1]&&ok(k,l)){s[k]++;if(!add[k]){add[k]=0;ord.push(k);}add[k]++;break;}}}
+  var sr=statRule(l).slice(),lam=LAM[l];sr.forEach(function(x){t[x[0]]+=x[1];});if(lam)t[STN.indexOf(lam[0])]+=5;
+  out[l]={l:l,sk:ord.map(function(k){return[k,add[k],s[k]];}),q:q,st:sr,lam:lam,tot:t.slice(),sks:JSON.parse(JSON.stringify(s))};}
+ return out;})();
+function skTxt(p,html){if(!p.sk.length)return"ingen skillpoeng";return p.sk.map(function(x){var t=SK[x[0]][0]+" +"+x[1];return html?'<span class="sn">'+esc(t)+'</span><span class="to">→'+x[2]+'</span>':t+" (→"+x[2]+")";}).join(html?' ':' , ');}
+function stTxt(p){var a=p.st.map(function(x){return STN[x[0]]+" "+x[1];});if(p.lam)a.push("Lam Esen +5 "+p.lam[0]);return a.length?a.join(" · "):"ingen statpoeng";}
+function adv(l){var p=PLAN[l];if(l<2)return'<b>Lvl 1</b> ingen poeng ennå';
+ return'<b>Skill</b> '+skTxt(p,true)+(p.q?' <span class="qt">+'+p.q[0]+' '+esc(p.q[1])+'</span>':'')+' <span class="dt">·</span> <b>Stat</b> '+esc(stTxt(p));}
+// Planner-stages (Ezo, hiimpd2 MdvmHaz) – kildeverdier
+var STG=[{n:"Early",d:"Normal",l:24,st:[5,5,90,15],q:"uten quest",sk:{magic_arrow:20,evade:1,inner_sight:1,slow_movement:1}},
+ {n:"NM",d:"Nightmare",l:55,st:[10,100,160,15],q:"alle quester",sk:{magic_arrow:20,evade:1,inner_sight:1,slow_movement:19,dodge:1,critical_strike:1,pierce:1,penetrate:1,decoy:1,valkyrie:20}},
+ {n:"Hell",d:"Hell",l:75,st:[67,152,151,15],q:"alle quester",sk:{magic_arrow:20,evade:1,inner_sight:20,slow_movement:20,dodge:1,critical_strike:1,pierce:1,penetrate:1,decoy:1,valkyrie:20}},
+ {n:"Maps",d:"Early maps",l:90,st:[95,165,185,15],q:"alle quester",sk:{magic_arrow:20,evade:1,inner_sight:20,slow_movement:20,dodge:1,critical_strike:1,pierce:1,penetrate:1,decoy:1,valkyrie:20,multiple_shot:1,guided_arrow:14}},
+ {n:"Endgame",d:"S14",l:96,st:[95,175,220,0],q:"alle quester · respec",sk:{magic_arrow:20,evade:1,inner_sight:20,slow_movement:20,dodge:1,critical_strike:1,pierce:1,penetrate:1,decoy:1,valkyrie:20,multiple_shot:1,guided_arrow:20}}];
+var BASE=[20,25,20,15];
+var PRW=[["Stealth","Zephyr"],["Lore","Peace","Edge","Purity"],["Melody","Hustle"],["CTA"],["Faith"]];
+var MERC=[["Type","Rogue Scout (Vigor) · Kashya A1"],["Skills","Vigor-aura, Fire Arrow, Exploding Arrow"],["Alternativ","Meditation-rogue hvis mana er trangt (Ezo)"],["Early","Ingen krav – bare hold den i live"],["NM","Purity i Long Battle Bow"],["Hell","+ Heavenly Garb"],["Maps","Crown of Ages, Heavenly Garb, Purity, Anvilguard Strap, Lava Gout (Enchant Fire), Marrowwalk (freeze-immun), String of Ears"],["Endgame","Purity → Faith (Demon Crossbow) – capper IAS uten Shael/Hustle"]];
+var SKWHY={magic_arrow:"Hovedskill",multiple_shot:"Bare krav for GA",guided_arrow:"Synergi +20% magic/lvl",inner_sight:"Synergi +20% magic/lvl",slow_movement:"Synergi +20% magic/lvl",critical_strike:"1 · krav + Valk-synergi",evade:"1 · krav for Dodge",pierce:"1 · Valk-synergi",dodge:"1 · forsvar",decoy:"1 · krav + Valk +20%",penetrate:"1 · Valk +40 AR",valkyrie:"Tank / damage"};
+function range(k){var a=0,b=0;for(var l=1;l<=96;l++){PLAN[l].sk.forEach(function(x){if(x[0]===k){if(!a)a=l;b=l;}});}return a?(a===b?"lvl "+a:"lvl "+a+"–"+b):"";}
+function bSkills(){var g=STG[ui.bst],h='<div class="seg">'+STG.map(function(s,i){return'<button class="pill'+(ui.bst===i?' on':'')+'" data-bst="'+i+'">'+s.n+' · '+s.l+'</button>';}).join("")+'</div>';
+ var sum=0;Object.keys(g.sk).forEach(function(k){sum+=g.sk[k];});
+ [["b","Bow and Crossbow"],["p","Passive and Magic"]].forEach(function(t){h+='<div class="tree"><span>'+t[1]+'</span></div>';
+  SKORD.filter(function(k){return SK[k][3]===t[0];}).forEach(function(k){var v=g.sk[k]||0;
+   h+='<div class="skr'+(v?'':' z')+'"><div class="skn"><span>'+SK[k][0]+'</span><i>'+SKWHY[k]+(v?' · '+range(k):'')+'</i></div><div class="skb"><b style="width:'+(v/20*100)+'%"></b></div><span class="skv">'+v+'</span></div>';});});
+ h+='<div class="tree"><span>Javelin and Spear</span></div><p class="note" style="margin:0">0 poeng.</p>';
+ h+='<p class="note">Planner lvl '+g.l+' · '+g.q+' · '+sum+' poeng. '+(ui.bst===1?'<span class="uv">!</span> Planneren regner med Hell-quester (+4) allerede i NM; i praksis har du Slow Movement ~15 ved lvl 55.':'')+'</p>';
+ var me=PLAN[ui.lvl].sks,a=SKORD.filter(function(k){return me[k];}).map(function(k){return SK[k][0]+" "+me[k];});
+ h+='<div class="mine"><b>Din lvl '+ui.lvl+'</b> '+(a.length?esc(a.join(" · ")):"–")+'</div>';return h;}
+function bStats(){var h='<div class="tiles">',f=STG[4];
+ ["Str","Dex","Vit","Energy"].forEach(function(n,i){h+='<div class="tile"><i>'+n+'</i><b>'+f.st[i]+'</b><span>+'+BASE[i]+' base = '+(f.st[i]+BASE[i])+'</span></div>';});
+ h+='</div><p class="note" style="margin-top:4px">Fordelte poeng ved lvl 96 (planner). Base-stats = vanilla Amazon <span class="uv" title="Ikke verifisert i PD2">?</span></p>';
+ h+='<div class="kv st5"><div class="r hd"><span class="k">Stage</span><span class="v">Str</span><span class="v">Dex</span><span class="v">Vit</span><span class="v">Ene</span></div>'+STG.map(function(s){return'<div class="r"><span class="k">'+s.n+' '+s.l+'</span>'+s.st.map(function(x){return'<span class="v">'+x+'</span>';}).join("")+'</div>';}).join("")+'</div>';
+ h+='<div class="tree"><span>Regler</span></div><ul class="ls">'+
+  ['<b>Energy</b> lvl 2–4 = 3 levels = <b>15</b>. Ezos tekst sier 2 levels (10) – planner 3.',
+   '<b>Str</b> bare til gear: 10 → Breast Plate (Peace) · 67 → Mage Plate / Matriarchal Bow (87 m/base) · 95 i maps.',
+   '<b>Dex</b> resten mot skade · Matriarchal krever 187 (gear hjelper).',
+   '<b>Vit</b> alt annet · Normal nesten bare Vit.',
+   '<b>Lam Esen</b> +5 hver vansk.grad → Vit (N), Dex (NM/Hell).',
+   '<b>Endgame</b> Ene 0 + Vit 220 = respec (Token of Absolution) flytter 15 Energy → Vit.'].map(function(t){return'<li>'+t+'</li>';}).join("")+'</ul>';
+ h+='<div class="tree"><span>Per level-range</span></div><div class="kv c3">'+ranges("st").map(function(r){return'<div class="r"><span class="k">'+r[0]+'</span><span class="v">'+esc(r[1])+'</span><span class="v2">'+esc(why(r[2]))+'</span></div>';}).join("")+'</div>';
+ var t=PLAN[ui.lvl].tot;h+='<div class="mine"><b>Din lvl '+ui.lvl+'</b> Str '+t[0]+' · Dex '+t[1]+' · Vit '+t[2]+' · Ene '+t[3]+' <i>(fordelt, inkl. Lam Esen)</i></div>';
+ return h;}
+function ranges(kind){var out=[],a=2,prev=null;for(var l=2;l<=100;l++){var p=PLAN[l],v=p?(kind==="st"?p.st.map(function(x){return STN[x[0]]+" "+x[1];}).join(" · "):""):null;
+  if(v!==prev){if(prev!==null)out.push([a===l-1?String(a):a+"–"+(l-1),prev,l-1]);a=l;prev=v;}}return out;}
+function bGear(){var i=ui.gear,h='<div class="seg">'+GEAR.map(function(g,j){return'<button class="pill'+(i===j?' on':'')+'" data-bg="'+j+'">'+g[0]+'</button>';}).join("")+'</div>';
+ h+='<div class="rwl">'+PRW[i].map(function(n){var r=RW.filter(function(x){return x[0].indexOf(n)===0;})[0];return r?'<div class="rwc"><span class="rwn">'+esc(r[0])+'</span><span class="chips" style="margin:0">'+r[1].split(" ").map(chip).join("")+'</span><span class="rwb">'+esc(r[2])+' · lvl '+r[3]+'</span></div>':'';}).join("")+'</div>';
+ h+='<div class="kv">'+kv(GEAR[i][1])+'</div>';return h;}
+function bMerc(){return'<div class="kv">'+kv(MERC)+'</div><p class="note">Fra Ezos planner (merc per stage).</p>';}
+function bLvl(){var h='<div class="lt">';for(var l=2;l<=99;l++){var p=PLAN[l];h+='<div class="lr'+(l===ui.lvl?' on':'')+'" data-l="'+l+'"><span class="ln">'+l+'</span><span class="ls1">'+skTxt(p,true)+(p.q?' <span class="qt">+'+p.q[0]+' '+esc(p.q[1])+'</span>':'')+'</span><span class="ls2">'+esc(stTxt(p))+'</span></div>';}
+ return h+'</div><p class="note">Quest-levels er antatt (Den 3, Radament 16, Izual 26 …). Tar du questen senere, flytter poenget seg dit. Klikk en rad = sett level.</p>';}
+var BT=[["skills","Skills"],["stats","Stats"],["gear","Gear"],["merc","Merc"],["lvl","1–99"]];
+function bRender(){var t=ui.btab||"skills";$("bTabs").innerHTML=BT.map(function(b){return'<button class="pill'+(t===b[0]?' on':'')+'" data-bt="'+b[0]+'">'+b[1]+'</button>';}).join("");
+ $("bBody").innerHTML=t==="skills"?bSkills():t==="stats"?bStats():t==="gear"?bGear():t==="merc"?bMerc():bLvl();
+ if(t==="lvl"){var el=$("bBody").querySelector(".lr.on");if(el)el.scrollIntoView({block:"center"});}}
+function bOpen(tab){if(tab)ui.btab=tab;save();$("bo").classList.add("on");document.body.style.overflow="hidden";bRender();}
+function bClose(){$("bo").classList.remove("on");document.body.style.overflow="";}
+
 var GEAR=[["Early",[["Våpen","Zephyr (Hunter's Bow)"],["Hjelm","Cap 2× Tir"],["Armor","Stealth (Hard Leather)"],["Belte","Gamblet Belt"],["Swap","Teleport-stav"],["Merc","Vigor"],["Stats @24","Str 5 Dex 5 Vit 90 Ene 15"]]],["NM",[["Våpen","Edge (Stag Bow +1)"],["Quiver","Magic AR-quiver"],["Hjelm","Lore (Skull Cap)"],["Armor","Peace (Breast Plate)"],["Boots/belte","Hsarus"],["Amulett","Hit Power craft"],["Merc","Purity (Long Battle Bow)"],["Stats @55","Str 10 Dex 100 Vit 160 Ene 15"]]],["Hell",[["Våpen","Melody (Matriarchal +3)"],["Quiver","Basilisk's Quill 2× P.Diamond"],["Hjelm","Lore"],["Armor","Hustle (Mage Plate)"],["Hansker","+3 Bow 20 IAS"],["Boots","Rare FRW/res"],["Belte","Goldwrap"],["Amulett","+3 Bow"],["Ringer","Raven Frost + BK"],["Charm","LC 7 IAS"],["Merc","Heavenly Garb + Purity"],["Stats @75","Str 67 Dex 152 Vit 151 Ene 15"]]],["Maps",[["Våpen","Ebonbane 4× Shael"],["Quiver","Quill 2× P.Diamond"],["Hjelm","Valkyrie Wing 2× P.Topaz"],["Armor","Hustle"],["Hansker","+3/20"],["Boots","Brilliant craft HFD"],["Belte","Verdungo's"],["Amulett","Blood +2 Zon"],["Ringer","2× BK (AR)"],["Swap","CTA + Sigon's"],["Charms","8× +1 Bow GC, Gheed's, Torch, Anni"],["Merc","CoA, Garb, Purity, Anvilguard, Lava Gout, Marrowwalk, SoE"],["Stats @90","Str 95 Dex 165 Vit 185 Ene 15"]]],["Endgame",[["Våpen/quiver/hjelm/armor","Ebonbane, Quill, Valk Wing, Skullder's – socket-corrupt + 5% magic jewels"],["Hansker","+3/20 (AR)"],["Boots","Brilliant craft"],["Belte","Verdungo's"],["Amulett","Blood +2 Zon"],["Ringer","2× BK (MF)"],["Swap","CTA + Sigon's"],["Charms","8× +1 Bow GC life, Torch, Anni, Gheed's"],["Merc","Faith (Demon Crossbow)"],["Stats @96","Str 95 Dex 175 Vit 220 Ene 0"]]]];
 var RW=[["Stealth","Tal Eth","2os armor","17"],["Zephyr","Ort Eth","2os bue","21"],["Edge","Tir Tal Amn","3os bue","25"],["Purity (merc)","Amn Eth Thul","3os bue","25"],["Lore","Ort Sol","2os hjelm","27"],["Peace","Shael Thul Amn","3os armor","29"],["Melody","Shael Ko Nef","3os bue +3","39"],["Hustle","Shael Ko Eld","3os armor","39"],["CTA","Amn Ral Mal Ist Ohm","5os våpen","57"],["Faith (merc)","Ohm Jah Lem Eld","4os Demon Xbow","65"]];
 var KEYS=["3 runer + Key → neste (til Pul). Fra Pul: 2 + Key.","3 Ral + Key = Ort · 3 Lum + Key = Ko.","Akara (A1) · Lysander A2 · Hratli A3 · Jamella A4 · Malah A5.","Stabel 50. 9 stablede + 1 Key = 3 nye (spillere).","Unstack før socket: Ctrl+Shift+klikk."];
 var TIPS=["Gamble: aldri hvite baser → ikke for bue. Belt nå, amulett/circlet 65+.","2os bue: Charsi-shop, refresh ved aktbytte/nytt spill. Alle buer funker.","Larzuk: hvit = maks sockets · magic 1–2 · rare/unique 1. Malus: +1 socket.","Cube-socket: våpen Ral+Amn+P.Ame · armor Tal+Thul+P.Topaz · hjelm Ral+Thul+P.Sapph.","Countess: players 1 gir flest runer.","Cows: Wirt's Leg + Tome of TP, etter Baal samme vansk.grad."];
-var UNC=["Countess-sjanser = vanilla-tall (d2runes.io). Tabell bekreftet uendret i PD2.","Quest-belønninger fra vanilla.","Teleport-stav < lvl 24: Ezos tips, ikke testet.","Key-pris og 9+1-stabling ikke sjekket i PD2.","CTA-base «2ax» (Double Axe?)."];
+var UNC=["Lvl 97–99: Ezos plan er full ved 96 – de 3 ekstra poengene i Decoy (Valkyrie +20% phys/lvl) er mitt forslag.","Quest-levels i level-planen er antatt (Den 3, Radament 16, Izual 26, NM 34/40/45, Hell 56–60).","Stats mellom stage-punktene (f.eks. Dex fra lvl 26, Str 56–67) er min interpolasjon – planneren gir bare lvl 24/55/75/90/96.","Planner Hell: Vit 151 < NM 160 og Dex 152 – guiden holder Vit 155 og lander på Dex 148.","Base-stats og Str/Dex-krav på baser (Breast Plate 30, Mage Plate 55, Matriarchal 87/187) = vanilla-tall.","Countess-sjanser = vanilla-tall (d2runes.io). Tabell bekreftet uendret i PD2.","Quest-belønninger fra vanilla.","Teleport-stav < lvl 24: Ezos tips, ikke testet.","Key-pris og 9+1-stabling ikke sjekket i PD2.","CTA-base «2ax» (Double Axe?)."];
 var SRC=[["Ezos build (hiimpd2)","https://hiimpd2.com/b/MdvmHaz"],["Ezos dokument","https://docs.google.com/document/d/1UbReGCNhqeYQIgYA8ihOyGuGJ1u_lBafCK7IX9wzHIs"],["PD2 Recipes","https://wiki.projectdiablo2.com/wiki/Recipes"],["PD2 Runes","https://wiki.projectdiablo2.com/wiki/Runes"],["PD2 Monsters (Countess)","https://wiki.projectdiablo2.com/wiki/Monsters"]];
 
 
@@ -343,7 +454,7 @@ var KEY="pd2-s14-ezo-magic-arrow-v1",UIK=KEY+"-ui";
 function ld(k,d){try{var s=localStorage.getItem(k);return s?JSON.parse(s):d;}catch(e){return d;}}
 function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
 var st=ld(KEY,{done:{},hist:[]});if(!st||typeof st!=="object")st={};st.done=st.done||{};st.hist=st.hist||[];
-var ui=ld(UIK,{});if(!ui||typeof ui!=="object")ui={};ui.filter=ui.filter||"alle";ui.lvl=ui.lvl||3;ui.gear=ui.gear||0;
+var ui=ld(UIK,{});if(!ui||typeof ui!=="object")ui={};ui.filter=ui.filter||"alle";ui.lvl=ui.lvl||3;ui.gear=ui.gear||0;if(typeof ui.bst!=="number")ui.bst=4;
 var open={},just=null;
 function save(){sv(KEY,st);sv(UIK,ui);}
 function $(i){return document.getElementById(i);}
@@ -365,7 +476,7 @@ function top(){
  $("gname").textContent=g?g[1]:"—";$("gneed").innerHTML=g?needHtml(g[2]):"";
  var gi=gt?STEPS.indexOf(gt):-1,ci=c?STEPS.indexOf(c):-1,el=$("gate");
  if(gt&&gi-ci<=6){el.style.display="flex";el.className="gate"+(gi===ci?" now":"");el.innerHTML=svg("gate")+'<span><b style="font-weight:700;letter-spacing:.1em;font-size:9.5px;text-transform:uppercase;margin-right:6px">'+(gi===ci?"Stopp nå":"Stopp snart")+'</b>'+rw(gt.line)+'</span>';}else el.style.display="none";
- $("lvN").textContent="Lvl "+ui.lvl;$("lvT").innerHTML=lvHint(adv(ui.lvl));
+ $("lvN").textContent="Lvl "+ui.lvl;$("lvT").innerHTML=adv(ui.lvl);
  var pct=n/STEPS.length*100;$("bar").style.width=pct+"%";
  Array.prototype.forEach.call(document.querySelectorAll(".mk"),function(m){m.classList.toggle("on",parseFloat(m.style.left)<=pct);});
  $("cnt").textContent=n+" / "+STEPS.length;$("bHide").className="pill"+(ui.hide?" on":"");
@@ -388,8 +499,11 @@ function list(){
 function render(){top();list();}
 function kv(rows,cls,head){return(head?'<div class="r hd"><span class="k">'+head[0]+'</span><span class="v">'+head[1]+'</span>'+(head[2]?'<span class="v2">'+head[2]+'</span>':'')+'</div>':'')+rows.map(function(r){return'<div class="r"><span class="k">'+esc(r[0])+'</span><span class="v">'+rw(r[1])+'</span>'+(r.length>2?'<span class="v2">'+esc(r.slice(2).join(" · lvl "))+'</span>':'')+'</div>';}).join("");}
 function gear(){$("gT").innerHTML=GEAR.map(function(g,i){return'<button class="pill'+(ui.gear===i?' on':'')+'" data-g="'+i+'">'+g[0]+'</button>';}).join("");$("tGear").innerHTML=kv(GEAR[ui.gear][1]);}
+function lvlRanges(){var out=[],a=2,prev=null;for(var l=2;l<=100;l++){var p=PLAN[l],v=p?(p.sk.map(function(x){return SK[x[0]][0];}).join(", ")+"|"+p.st.map(function(x){return STN[x[0]]+" "+x[1];}).join(" · ")):null;
+ if(v!==prev){if(prev!==null)out.push([a===l-1?String(a):a+"–"+(l-1)].concat(prev.split("|")));a=l;prev=v;}}
+ return'<div class="r hd"><span class="k">Lvl</span><span class="v">Skill</span><span class="v2">Stat</span></div>'+out.map(function(r){return'<div class="r"><span class="k">'+r[0]+'</span><span class="v">'+esc(r[1])+'</span><span class="v2">'+esc(r[2])+'</span></div>';}).join("");}
 function stat(){
- $("tLvl").innerHTML=kv(LVL,"",["Lvl","5 stat","1 skill"]);
+ $("tLvl").innerHTML=lvlRanges();
  $("tRw").innerHTML=RW.map(function(r){return'<div class="r"><span class="k" style="flex-basis:30%">'+esc(r[0])+'</span><span class="v">'+r[1].split(" ").map(chip).join(" ")+'</span><span class="v2" style="flex:0 0 30%">'+esc(r[2])+' · '+r[3]+'</span></div>';}).join("");
  function ul(id,a){$(id).innerHTML=a.map(function(t){return'<li>'+rw(t)+'</li>';}).join("");}
  ul("lKeys",KEYS);ul("lTips",TIPS);ul("lUnc",UNC);
@@ -410,10 +524,15 @@ $("bReset").onclick=function(){if(confirm("Nullstille alt?")){st={done:{},hist:[
 $("bExp").onclick=function(){var c=JSON.stringify({v:1,done:Object.keys(st.done).filter(function(k){return st.done[k];})});var io=$("io");io.style.display="block";io.value=c;io.select();try{document.execCommand("copy");}catch(e){}if(navigator.clipboard)navigator.clipboard.writeText(c).catch(function(){});msg("Kopiert");};
 $("bImp").onclick=function(){var io=$("io");if(io.style.display!=="block"||!io.value.trim()){io.style.display="block";io.value="";io.focus();msg("Lim inn, trykk Importer");return;}
  try{var d=JSON.parse(io.value.trim()),l=Array.isArray(d)?d:d.done;if(!Array.isArray(l))throw 0;var ok={};STEPS.forEach(function(s){ok[s.id]=1;});var nd={},n=0;l.forEach(function(i){if(ok[i]){nd[i]=true;n++;}});st={done:nd,hist:[]};save();render();io.style.display="none";msg("Importert "+n);}catch(e){msg("Ugyldig kode");}};
-function setLv(v){ui.lvl=Math.max(1,Math.min(99,v));save();top();}
+function setLv(v){ui.lvl=Math.max(1,Math.min(99,v));save();top();if($("bo").classList.contains("on"))bRender();}
+$("bBuild").onclick=function(){bOpen();};$("bX").onclick=bClose;$("lvT").onclick=function(){bOpen("lvl");};$("bAll").onclick=function(e){e.preventDefault();bOpen("lvl");};
+$("bo").addEventListener("click",function(e){if(e.target===$("bo")){bClose();return;}var b=e.target.closest("[data-bt],[data-bst],[data-bg],[data-l]");if(!b)return;
+ if(b.hasAttribute("data-bt"))ui.btab=b.getAttribute("data-bt");else if(b.hasAttribute("data-bst"))ui.bst=+b.getAttribute("data-bst");else if(b.hasAttribute("data-bg")){ui.gear=+b.getAttribute("data-bg");gear();}else{ui.lvl=+b.getAttribute("data-l");top();}
+ save();var sc=$("bBody").scrollTop;bRender();if(!b.hasAttribute("data-bt"))$("bBody").scrollTop=sc;});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&$("bo").classList.contains("on"))bClose();});
 $("lvM").onclick=function(){setLv(ui.lvl-1);};$("lvP").onclick=function(){setLv(ui.lvl+1);};
 window.addEventListener("storage",function(e){if(e.key===KEY){st=ld(KEY,st);render();}});
-window.__pd2={state:function(){return st;},current:cur,nextGoal:goal,nextGate:gateNext,KEY:KEY,STEPS:STEPS};
+window.__pd2={PLAN:PLAN,STG:STG,openBuild:bOpen,state:function(){return st;},current:cur,nextGoal:goal,nextGate:gateNext,KEY:KEY,STEPS:STEPS};
 markers();stat();render();
 })();
 </script>

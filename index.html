@@ -233,6 +233,51 @@ a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(243,214,1
 .lr.on{background:linear-gradient(100deg,rgba(217,178,95,.16),transparent);box-shadow:inset 2px 0 0 var(--gold2)}
 .ln{grid-row:span 2;font:700 12px/1.3 var(--fd);color:var(--gold);text-align:right;font-variant-numeric:tabular-nums}
 .ls2{color:var(--ink3);font-size:11px}
+
+/* ---------- v6: skill-trær ---------- */
+.sw{margin-bottom:8px}.sw .pill{padding:4px 9px;font-variant-numeric:tabular-nums}
+.ttabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:6px}
+.ttab{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:7px 9px;border-radius:9px;border:1px solid rgba(217,178,95,.14);background:rgba(255,230,180,.025);color:var(--ink2);font:600 10px/1.1 var(--fd);letter-spacing:.1em;text-transform:uppercase;text-align:left;transition:all .18s var(--ease)}
+.ttab b{font:700 13px/1 var(--fd);color:var(--ink3);font-variant-numeric:tabular-nums}
+.ttab:hover{border-color:var(--hair2);color:var(--ink)}
+.ttab.on{color:var(--gold2);border-color:rgba(243,214,139,.5);background:linear-gradient(180deg,rgba(217,178,95,.16),rgba(217,178,95,.04));box-shadow:0 0 16px -6px rgba(230,180,90,.6)}
+.ttab.on b{color:#fff1d3}
+.tgrid{position:relative;margin:8px auto 0;max-width:380px;border-radius:12px;padding:0;
+ background:radial-gradient(90% 60% at 50% 0%,rgba(217,178,95,.06),transparent 70%),repeating-linear-gradient(0deg,transparent 0 83px,rgba(217,178,95,.035) 83px 84px);border:1px solid rgba(217,178,95,.10);box-sizing:content-box;padding:14px 0 4px}
+.tl{position:absolute;left:0;top:14px;width:100%;height:calc(100% - 18px);overflow:visible;pointer-events:none}
+.ed{fill:none;stroke:rgba(185,171,149,.22);stroke-width:1.5;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.ed.u{stroke:rgba(217,178,95,.32)}
+.ed.on{stroke:var(--gold);filter:drop-shadow(0 0 3px rgba(230,180,90,.7))}
+.tn{position:absolute;transform:translateX(-50%);margin-top:14px;width:96px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:0;border:0;background:none;color:var(--ink)}
+.tn.in:before{content:"";position:absolute;top:-7px;left:50%;margin-left:-4px;border:4px solid transparent;border-top:5px solid rgba(185,171,149,.4);border-bottom:0}
+.tn.in.has:before{border-top-color:var(--gold)}
+.ti{position:relative;width:44px;height:44px;display:grid;place-items:center;border-radius:10px;color:#e9dcc4;
+ background:linear-gradient(160deg,#2a1e15,#120c08);border:1px solid rgba(217,178,95,.30);box-shadow:inset 0 1px 0 rgba(255,230,180,.10),inset 0 -8px 14px rgba(0,0,0,.45),0 3px 10px -4px rgba(0,0,0,.9);transition:all .18s var(--ease)}
+.ti svg{width:22px;height:22px}
+.tn:hover .ti{border-color:var(--gold2);transform:translateY(-1px)}
+.tn.has .ti{color:#fff1d3;border-color:rgba(217,178,95,.55)}
+.tn.main .ti{color:#2a1808;background:radial-gradient(circle at 40% 30%,#ffe7a8,#d9a94f 55%,#8f6a2a);border-color:#f6dc98;box-shadow:0 0 0 1px rgba(0,0,0,.4),0 0 18px -2px rgba(240,190,90,.75),inset 0 1px 0 rgba(255,250,220,.6)}
+.tn.off{opacity:.32;filter:grayscale(1)}
+.tn.off:hover{opacity:.6}
+.tn.sel .ti{outline:2px solid var(--gold2);outline-offset:2px}
+.bd{position:absolute;right:-7px;bottom:-6px;min-width:19px;height:17px;padding:0 4px;border-radius:9px;font:700 10.5px/17px var(--fu);font-style:normal;font-variant-numeric:tabular-nums;text-align:center;color:#1a1108;background:linear-gradient(180deg,#f0cf7a,#c39545);border:1px solid #f6dc98;box-shadow:0 2px 6px rgba(0,0,0,.6)}
+.tn:not(.has) .bd{color:var(--ink3);background:#1c140e;border-color:rgba(217,178,95,.3)}
+.tn.main .bd{background:linear-gradient(180deg,#fff1c4,#f0c766)}
+.tn2{font:600 10px/1.15 var(--fu);color:var(--ink2);white-space:nowrap;letter-spacing:.01em}
+.tn.has .tn2{color:#fff1d3}.tn.main .tn2{color:var(--gold2)}
+.tsum{display:flex;justify-content:center;gap:6px;margin-top:8px;font-size:11px;color:var(--ink3)}.tsum b{color:var(--gold2);font:700 13px/1 var(--fd)}
+.tdet{margin-top:10px;padding:10px 11px;border-radius:11px;background:var(--card2);border:1px solid var(--hair);animation:fadeIn .2s var(--ease)}
+.tdet.main{border-color:rgba(243,214,139,.45);box-shadow:0 0 18px -8px rgba(230,180,90,.7)}
+.ti.sm{width:34px;height:34px;flex:0 0 auto}.ti.sm svg{width:18px;height:18px}
+.tdn{font:600 14px/1.1 var(--fd);letter-spacing:.05em;color:var(--gold2)}
+.tdr{font-size:10.5px;color:var(--ink3);margin-top:3px}
+.tdo{margin:8px 0 0;font-size:12px;color:var(--ink2);line-height:1.45}
+.tst{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin-top:8px}
+.tst span{text-align:center;padding:4px 0;border-radius:6px;background:rgba(0,0,0,.25);border:1px solid rgba(255,235,200,.05)}
+.tst span.on{border-color:rgba(243,214,139,.45);background:rgba(217,178,95,.12)}
+.tst i{display:block;font:600 8.5px/1 var(--fu);letter-spacing:.1em;color:var(--ink3);font-style:normal}
+.tst b{display:block;font:700 13px/1.2 var(--fd);color:#fff1d3;margin-top:2px}
+.tdl{margin-top:8px;font-size:11.5px;color:var(--ink2)}.tdl b{color:var(--gold);font:600 9.5px/1 var(--fu);letter-spacing:.12em;text-transform:uppercase;margin-right:5px}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
 @media (max-width:420px){.nx{font-size:13.5px}.tx{font-size:12.5px}.s.cur .tx{font-size:13.5px}}
 </style>
@@ -387,15 +432,67 @@ var PRW=[["Stealth","Zephyr"],["Lore","Peace","Edge","Purity"],["Melody","Hustle
 var MERC=[["Type","Rogue Scout (Vigor) · Kashya A1"],["Skills","Vigor-aura, Fire Arrow, Exploding Arrow"],["Alternativ","Meditation-rogue hvis mana er trangt (Ezo)"],["Early","Ingen krav – bare hold den i live"],["NM","Purity i Long Battle Bow"],["Hell","+ Heavenly Garb"],["Maps","Crown of Ages, Heavenly Garb, Purity, Anvilguard Strap, Lava Gout (Enchant Fire), Marrowwalk (freeze-immun), String of Ears"],["Endgame","Purity → Faith (Demon Crossbow) – capper IAS uten Shael/Hustle"]];
 var SKWHY={magic_arrow:"Hovedskill",multiple_shot:"Bare krav for GA",guided_arrow:"Synergi +20% magic/lvl",inner_sight:"Synergi +20% magic/lvl",slow_movement:"Synergi +20% magic/lvl",critical_strike:"1 · krav + Valk-synergi",evade:"1 · krav for Dodge",pierce:"1 · Valk-synergi",dodge:"1 · forsvar",decoy:"1 · krav + Valk +20%",penetrate:"1 · Valk +40 AR",valkyrie:"Tank / damage"};
 function range(k){var a=0,b=0;for(var l=1;l<=96;l++){PLAN[l].sk.forEach(function(x){if(x[0]===k){if(!a)a=l;b=l;}});}return a?(a===b?"lvl "+a:"lvl "+a+"–"+b):"";}
-function bSkills(){var g=STG[ui.bst],h='<div class="seg">'+STG.map(function(s,i){return'<button class="pill'+(ui.bst===i?' on':'')+'" data-bst="'+i+'">'+s.n+' · '+s.l+'</button>';}).join("")+'</div>';
- var sum=0;Object.keys(g.sk).forEach(function(k){sum+=g.sk[k];});
- [["b","Bow and Crossbow"],["p","Passive and Magic"]].forEach(function(t){h+='<div class="tree"><span>'+t[1]+'</span></div>';
-  SKORD.filter(function(k){return SK[k][3]===t[0];}).forEach(function(k){var v=g.sk[k]||0;
-   h+='<div class="skr'+(v?'':' z')+'"><div class="skn"><span>'+SK[k][0]+'</span><i>'+SKWHY[k]+(v?' · '+range(k):'')+'</i></div><div class="skb"><b style="width:'+(v/20*100)+'%"></b></div><span class="skv">'+v+'</span></div>';});});
- h+='<div class="tree"><span>Javelin and Spear</span></div><p class="note" style="margin:0">0 poeng.</p>';
- h+='<p class="note">Planner lvl '+g.l+' · '+g.q+' · '+sum+' poeng. '+(ui.bst===1?'<span class="uv">!</span> Planneren regner med Hell-quester (+4) allerede i NM; i praksis har du Slow Movement ~15 ved lvl 55.':'')+'</p>';
- var me=PLAN[ui.lvl].sks,a=SKORD.filter(function(k){return me[k];}).map(function(k){return SK[k][0]+" "+me[k];});
- h+='<div class="mine"><b>Din lvl '+ui.lvl+'</b> '+(a.length?esc(a.join(" · ")):"–")+'</div>';return h;}
+// ---------- v6: skill-trær (PD2 S14-layout: tab/rad/kolonne fra hiimpd2-data, sjekket mot in-game-bilder) ----------
+var TS=[["magic_arrow","Magic Arrow","Magic Arrow",3,1,2,1],["cold_arrow","Cold Arrow","Cold Arrow",3,2,1,6],["multiple_shot","Multiple Shot","Multi Shot",3,2,2,6],["fire_arrow","Fire Arrow","Fire Arrow",3,2,3,6],["ice_arrow","Ice Arrow","Ice Arrow",3,3,1,12],["guided_arrow","Guided Arrow","Guided",3,4,2,18],["exploding_arrow","Exploding Arrow","Exploding",3,4,3,18],["strafe","Strafe","Strafe",3,5,2,24],["freezing_arrow","Freezing Arrow","Freezing",3,6,1,30],["immolation_arrow","Immolation Arrow","Immolation",3,6,3,30],
+ ["inner_sight","Inner Sight","Inner Sight",2,1,1,1],["critical_strike","Critical Strike","Crit Strike",2,1,3,1],["evade","Evade","Evade",2,2,2,6],["slow_movement","Slow Movement","Slow Mov.",2,3,1,12],["pierce","Pierce","Pierce",2,3,3,12],["decoy","Decoy","Decoy",2,4,1,18],["dodge","Dodge","Dodge",2,4,2,18],["penetrate","Penetrate","Penetrate",2,5,3,24],["valkyrie","Valkyrie","Valkyrie",2,6,1,30],
+ ["jab","Jab","Jab",1,1,1,1],["poison_javelin","Poison Javelin","Poison Jav",1,1,3,1],["javelin_and_spear_mastery","Javelin and Spear Mastery","Jav Mastery",1,2,1,6],["power_strike","Power Strike","Power Strike",1,2,2,6],["lightning_bolt","Lightning Bolt","L. Bolt",1,3,3,12],["fend","Fend","Fend",1,4,1,18],["charged_strike","Charged Strike","Charged",1,4,2,18],["plague_javelin","Plague Javelin","Plague Jav",1,4,3,18],["lightning_strike","Lightning Strike","L. Strike",1,6,2,30],["lightning_fury","Lightning Fury","L. Fury",1,6,3,30]];
+var TE=[["magic_arrow","cold_arrow"],["magic_arrow","multiple_shot"],["magic_arrow","fire_arrow"],["cold_arrow","ice_arrow"],["ice_arrow","freezing_arrow"],["multiple_shot","guided_arrow"],["guided_arrow","strafe"],["fire_arrow","exploding_arrow"],["exploding_arrow","immolation_arrow"],
+ ["inner_sight","slow_movement"],["slow_movement","decoy"],["slow_movement","dodge"],["evade","dodge"],["critical_strike","pierce"],["pierce","penetrate"],["decoy","valkyrie"],
+ ["jab","javelin_and_spear_mastery"],["jab","power_strike"],["poison_javelin","lightning_bolt"],["power_strike","lightning_bolt"],["javelin_and_spear_mastery","fend"],["power_strike","charged_strike"],["lightning_bolt","plague_javelin"],["charged_strike","lightning_strike"],["plague_javelin","lightning_fury"]];
+var TREES=[[3,"Bow","Bow and Crossbow"],[2,"Passiv & Magi","Passive and Magic"],[1,"Spyd & Jav","Javelin and Spear"]];
+var MAIN={magic_arrow:1,valkyrie:1};
+var ONE={magic_arrow:"Magisk pil til nesten 0 mana. Hovedskill – alt skalerer herfra.",multiple_shot:"Vifte av piler. Kun 1 poeng: krav for Guided Arrow.",guided_arrow:"Søkende pil. Maxes sist som synergi: +20 % magic dmg til Magic Arrow per lvl.",
+ inner_sight:"Senker forsvaret til fiender rundt deg. Synergi: +20 % magic dmg til Magic Arrow per lvl.",slow_movement:"Bremser fiender i nærheten. Synergi: +20 % magic dmg til Magic Arrow per lvl.",
+ critical_strike:"Sjanse for dobbel fysisk skade. 1 poeng: krav for Pierce, synergi til Valkyrie.",evade:"Unngå angrep mens du beveger deg. 1 poeng: krav for Dodge.",pierce:"Pilen går gjennom fiender. 1 poeng: krav for Penetrate, synergi til Valkyrie.",
+ dodge:"Unngå nærkamp-slag. 1 poeng for overlevelse.",decoy:"Lokkedue som trekker aggro. 1 poeng: krav for Valkyrie (+20 % fysisk skade til Valk).",penetrate:"Mer Attack Rating. 1 poeng: +40 AR til Valkyrie.",valkyrie:"Fast Valkyrie som tanker for deg. Hovedskill nr. 2.",
+ cold_arrow:"Kuldepil. Brukes ikke.",ice_arrow:"Fryser mål. Brukes ikke.",freezing_arrow:"Fryser i område. Brukes ikke.",fire_arrow:"Ildpil. Brukes ikke.",exploding_arrow:"Eksploderende ildpil. Brukes ikke.",immolation_arrow:"Ildteppe på bakken. Brukes ikke.",strafe:"Pil-regn mot flere mål. Brukes ikke.",
+ jab:"Raske spydstikk. Brukes ikke.",poison_javelin:"Jav med giftspor. Brukes ikke.",javelin_and_spear_mastery:"Passiv for spyd/jav. Brukes ikke.",power_strike:"Lyn-stikk. Brukes ikke.",lightning_bolt:"Lyn-jav. Brukes ikke.",fend:"Stikker flere mål. Brukes ikke.",charged_strike:"Ladede lynbolter. Brukes ikke.",plague_javelin:"Giftsky. Brukes ikke.",lightning_strike:"Kjedelyn ved treff. Brukes ikke.",lightning_fury:"Jav som splittes i lyn. Brukes ikke."};
+var I={arrow:'<path d="M3 13L12 4M8 3.5h4.5V8M3 13l1.5-3.5M3 13l3.5-1.5"/>',fan:'<path d="M8 14V4M8 14L3.5 5.5M8 14l4.5-8.5M6.3 5.5L8 3.5l1.7 2M2.8 7.2l.5-2.3 2.2.7M10.5 5.6l2.2-.7.5 2.3"/>',
+ guided:'<path d="M2.5 13c3-1 2-5 5-6s3.5-2.5 4-4"/><path d="M9.3 2.8h3v3"/><circle cx="2.8" cy="13" r=".6" fill="currentColor"/>',flake:'<path d="M8 2v12M2.8 5l10.4 6M2.8 11l10.4-6M6.5 2.8L8 4l1.5-1.2M6.5 13.2L8 12l1.5 1.2"/>',
+ icearr:'<path d="M3 13l7-7M7 5.5h3.5V9"/><path d="M12 10.5v4M10 12.5h4M10.6 11.1l2.8 2.8M13.4 11.1l-2.8 2.8"/>',flame:'<path d="M8 14c-2.8 0-4.3-2-4.3-4.2 0-2.5 2.2-3.6 2.6-6.3 1 .9 1.4 2.1 1.3 3.3C8.6 5.7 9.5 4.6 9.7 3c1.9 1.6 2.6 3.8 2.6 6 0 3-2 5-4.3 5z"/>',
+ burst:'<path d="M8 1.8l1.2 3.6 3.6-1.4-1.6 3.4 3.3 1.6-3.6 1 .8 3.6-3.7-1.9L4.4 14l.8-3.6-3.6-1 3.3-1.6L3.2 4l3.6 1.4z"/>',wall:'<path d="M2 13.5h12M4 13.5c-1-2 .5-3 1-4.5.7 1 1 1.6 1 2.6.8-1.4 1.6-2.4 1.6-4.6 1.6 1.2 2.4 3 2.2 4.4.6-.6.9-1.3 1-2 1.2 1.4 1.4 3 .9 4.1"/>',
+ rain:'<path d="M3 3l3 3M7 2.5l3 3M11 3l3 3M3 8l3 3M8 8.5l3 3M5.5 12.5l2 2"/>',eye:'<path d="M1.8 8S4.2 3.8 8 3.8 14.2 8 14.2 8 11.8 12.2 8 12.2 1.8 8 1.8 8z"/><circle cx="8" cy="8" r="2"/>',
+ crit:'<circle cx="8" cy="8" r="5.5"/><circle cx="8" cy="8" r="2.2"/><path d="M8 1v3M8 12v3M1 8h3M12 8h3"/>',swirl:'<path d="M8 8.5a1.5 1.5 0 101.5-1.5 3 3 0 10-3 3 4.5 4.5 0 104.5-4.5"/>',
+ slow:'<path d="M4 2h8M4 14h8M5 2c0 3.5 6 3.5 6 6s-6 2.5-6 6M11 2c0 3.5-6 3.5-6 6s6 2.5 6 6"/>',pierce:'<path d="M1.5 8h11M10 5.5L12.8 8 10 10.5M6.5 3v10"/>',
+ dodge:'<path d="M3 3l4 3-3 3 5 4M9 3.5l4 1.5M10 8l3.5 1"/>',decoy:'<circle cx="5.5" cy="4.5" r="1.8"/><path d="M2.5 14v-3.5c0-1.7 1.3-3 3-3s3 1.3 3 3V14"/><circle cx="11" cy="5" r="1.6" stroke-dasharray="1.5 1.3"/><path d="M8.6 14v-3c0-1.4 1-2.6 2.4-2.6s2.5 1.2 2.5 2.6v3" stroke-dasharray="1.5 1.3"/>',
+ pen:'<path d="M8 1.8l5 1.8v4c0 3-2.2 5.2-5 6.4-2.8-1.2-5-3.4-5-6.4v-4z"/><path d="M1.5 8.5h13M12 6.3l2.5 2.2-2.5 2.2"/>',valk:'<path d="M4.5 9.5c0-2.8 1.6-4.5 3.5-4.5s3.5 1.7 3.5 4.5V13h-7z"/><path d="M4.5 9C2.5 8.5 1.5 6 1.8 3.2 3 5 4 5.6 5 6M11.5 9c2-.5 3-3 2.7-5.8C13 5 12 5.6 11 6M8 9.5V13"/>',
+ spear:'<path d="M2 14L12.5 3.5M10 3l3.8-1.3L12.5 5.5z"/>',bolt:'<path d="M9.5 1.5L4 9h4l-1.5 5.5L12 7H8z"/>',drop:'<path d="M8 2s4.5 5 4.5 8a4.5 4.5 0 01-9 0C3.5 7 8 2 8 2z"/>',cross:'<path d="M2.5 13.5L13 3M13.5 13.5L3 3M11 2.5h2.5V5M5 2.5H2.5V5"/>',
+ boltc:'<circle cx="8" cy="8" r="6"/><path d="M9 3.8L5.8 8.6h2.6l-1 3.6 3.2-4.8H8z"/>',sparks:'<path d="M8.5 1.5L5 7h3l-1 4 3.5-5.5h-3z"/><path d="M2.5 12l1.5 1M12.5 11l1.5-1M3 3.5l1.2 1M12.8 2.8l-1 1.2M8 14.5v-1.5"/>',
+ cloud:'<path d="M4.5 12a3 3 0 010-6 4 4 0 017.6-1A2.8 2.8 0 0112 12z"/><path d="M6 14.5h4"/>',fend:'<path d="M3 14l3-11M8 14V2.5M13 14L10 3"/>',fork:'<path d="M9 1.5L5.5 7h3l-2 3.5M6.5 10.5L4 14.5M6.5 10.5l3.5 4M8.5 7l3 1.5"/>',fury:'<path d="M2 14l7-7M9 2.5L6.5 7.5h3L8 12"/><path d="M11.5 9l2.5 1.5M11 12l2.5 2"/>'};
+var IC={magic_arrow:"arrow",multiple_shot:"fan",guided_arrow:"guided",cold_arrow:"flake",ice_arrow:"icearr",freezing_arrow:"flake",fire_arrow:"flame",exploding_arrow:"burst",immolation_arrow:"wall",strafe:"rain",inner_sight:"eye",critical_strike:"crit",evade:"swirl",slow_movement:"slow",pierce:"pierce",dodge:"dodge",decoy:"decoy",penetrate:"pen",valkyrie:"valk",jab:"spear",poison_javelin:"drop",javelin_and_spear_mastery:"cross",power_strike:"bolt",lightning_bolt:"boltc",fend:"fend",charged_strike:"sparks",plague_javelin:"cloud",lightning_strike:"fork",lightning_fury:"fury"};
+var TSM={};TS.forEach(function(t){TSM[t[0]]=t;});
+function tIcon(k){return'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">'+(I[IC[k]]||I.arrow)+'</svg>';}
+function tPts(k,i){if(i===5)return(PLAN[ui.lvl].sks[k])||0;return STG[i].sk[k]||0;}
+function used(k){return(STG[4].sk[k]||0)>0;}
+function lvList(k){var c={};for(var l=1;l<=99;l++)PLAN[l].sk.forEach(function(x){if(x[0]===k)c[l]=(c[l]||0)+x[1];});
+ var ls=Object.keys(c).map(Number).sort(function(a,b){return a-b;}),out=[],i=0;
+ while(i<ls.length){var j=i;while(j+1<ls.length&&ls[j+1]===ls[j]+1)j++;out.push(ls[i]===ls[j]?String(ls[i]):ls[i]+"–"+ls[j]);i=j+1;}
+ var dbl=ls.filter(function(l){return c[l]>1;}).map(function(l){return l+" (+"+c[l]+")";});
+ return out.join(", ")+(dbl.length?" · flere poeng: "+dbl.join(", "):"");}
+var RH=84,NW=44;
+function treeTotal(tab,i){var s=0;TS.forEach(function(t){if(t[3]===tab)s+=tPts(t[0],i);});return s;}
+function bSkills(){var i=ui.bst,tr=TREES[ui.btree||0],tab=tr[0];
+ var h='<div class="seg sw">'+STG.map(function(s,j){return'<button class="pill'+(i===j?' on':'')+'" data-bst="'+j+'" title="'+s.n+'">'+s.l+'</button>';}).join("")+'<button class="pill'+(i===5?' on':'')+'" data-bst="5">Nå · lvl '+ui.lvl+'</button></div>';
+ h+='<div class="ttabs">'+TREES.map(function(t,j){return'<button class="ttab'+((ui.btree||0)===j?' on':'')+'" data-tree="'+j+'"><span>'+t[1]+'</span><b>'+treeTotal(t[0],i)+'</b></button>';}).join("")+'</div>';
+ var nodes=TS.filter(function(t){return t[3]===tab;}),svg='';
+ TE.forEach(function(e){var a=TSM[e[0]],b=TSM[e[1]];if(a[3]!==tab)return;var x1=(a[5]-.5)/3*300,x2=(b[5]-.5)/3*300,y1=(a[4]-1)*RH+NW+15,y2=(b[4]-1)*RH-6,ym=y2-8;
+  var on=tPts(e[0],i)>0&&tPts(e[1],i)>0,u=used(e[0])&&used(e[1]);
+  svg+='<path class="ed'+(on?' on':u?' u':'')+'" d="M'+x1+' '+y1+(x1===x2?'':'V'+ym+'H'+x2)+'V'+y2+'"/>';});
+ h+='<div class="tgrid" style="height:'+(6*RH-10)+'px"><svg class="tl" viewBox="0 0 300 '+(6*RH-10)+'" preserveAspectRatio="none">'+svg+'</svg>';
+ nodes.forEach(function(t){var k=t[0],p=tPts(k,i),cls='tn'+(used(k)?'':' off')+(MAIN[k]?' main':'')+(p?' has':'')+(ui.bnode===k?' sel':'')+(TE.some(function(e){return e[1]===k;})?' in':'');
+  h+='<button class="'+cls+'" data-node="'+k+'" title="'+t[1]+' · krever lvl '+t[6]+'" style="left:'+((t[5]-.5)/3*100)+'%;top:'+((t[4]-1)*RH)+'px"><span class="ti">'+tIcon(k)+(used(k)||p?'<i class="bd">'+p+'</i>':'')+'</span><span class="tn2">'+t[2]+'</span></button>';});
+ h+='</div>';
+ var all=treeTotal(3,i)+treeTotal(2,i)+treeTotal(1,i),lab=i===5?'lvl '+ui.lvl+' (min plan)':'planner lvl '+STG[i].l+' · '+STG[i].q;
+ h+='<div class="tsum"><span>Totalt <b>'+all+'</b></span><span class="dt">·</span><span>'+esc(lab)+'</span></div>';
+ if(i===1)h+='<p class="note" style="margin-top:4px"><span class="uv">!</span> Planneren teller Hell-quester (+4) allerede i NM – i praksis Slow Movement ~15 ved 55.</p>';
+ var k=ui.bnode,t=k&&TSM[k];
+ if(t&&t[3]===tab){var req=TE.filter(function(e){return e[1]===k;}).map(function(e){return TSM[e[0]][1];});
+  h+='<div class="tdet'+(MAIN[k]?' main':'')+'"><div class="row"><span class="ti sm">'+tIcon(k)+'</span><div style="flex:1;min-width:0"><div class="tdn">'+t[1]+'</div><div class="tdr">Krever lvl '+t[6]+(req.length?' · '+esc(req.join(", ")):'')+'</div></div></div>'+
+   '<p class="tdo">'+esc(ONE[k]||"")+'</p>'+
+   (used(k)?'<div class="tst">'+STG.map(function(s,j){return'<span'+(i===j?' class="on"':'')+'><i>'+s.l+'</i><b>'+tPts(k,j)+'</b></span>';}).join("")+'<span'+(i===5?' class="on"':'')+'><i>Nå</i><b>'+tPts(k,5)+'</b></span></div><div class="tdl"><b>Poeng på lvl</b> '+esc(lvList(k))+'</div>':'')+'</div>';}
+ else h+='<p class="note" style="text-align:center;margin-top:10px">Trykk en skill for detaljer</p>';
+ return h;}
+
 function bStats(){var h='<div class="tiles">',f=STG[4];
  ["Str","Dex","Vit","Energy"].forEach(function(n,i){h+='<div class="tile"><i>'+n+'</i><b>'+f.st[i]+'</b><span>+'+BASE[i]+' base = '+(f.st[i]+BASE[i])+'</span></div>';});
  h+='</div><p class="note" style="margin-top:4px">Fordelte poeng ved lvl 96 (planner). Base-stats = vanilla Amazon <span class="uv" title="Ikke verifisert i PD2">?</span></p>';
@@ -454,7 +551,7 @@ var KEY="pd2-s14-ezo-magic-arrow-v1",UIK=KEY+"-ui";
 function ld(k,d){try{var s=localStorage.getItem(k);return s?JSON.parse(s):d;}catch(e){return d;}}
 function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
 var st=ld(KEY,{done:{},hist:[]});if(!st||typeof st!=="object")st={};st.done=st.done||{};st.hist=st.hist||[];
-var ui=ld(UIK,{});if(!ui||typeof ui!=="object")ui={};ui.filter=ui.filter||"alle";ui.lvl=ui.lvl||3;ui.gear=ui.gear||0;if(typeof ui.bst!=="number")ui.bst=4;
+var ui=ld(UIK,{});if(!ui||typeof ui!=="object")ui={};ui.filter=ui.filter||"alle";ui.lvl=ui.lvl||3;ui.gear=ui.gear||0;if(typeof ui.bst!=="number"||ui.bst<0||ui.bst>5)ui.bst=4;if(typeof ui.btree!=="number"||ui.btree<0||ui.btree>2)ui.btree=0;
 var open={},just=null;
 function save(){sv(KEY,st);sv(UIK,ui);}
 function $(i){return document.getElementById(i);}
@@ -526,8 +623,8 @@ $("bImp").onclick=function(){var io=$("io");if(io.style.display!=="block"||!io.v
  try{var d=JSON.parse(io.value.trim()),l=Array.isArray(d)?d:d.done;if(!Array.isArray(l))throw 0;var ok={};STEPS.forEach(function(s){ok[s.id]=1;});var nd={},n=0;l.forEach(function(i){if(ok[i]){nd[i]=true;n++;}});st={done:nd,hist:[]};save();render();io.style.display="none";msg("Importert "+n);}catch(e){msg("Ugyldig kode");}};
 function setLv(v){ui.lvl=Math.max(1,Math.min(99,v));save();top();if($("bo").classList.contains("on"))bRender();}
 $("bBuild").onclick=function(){bOpen();};$("bX").onclick=bClose;$("lvT").onclick=function(){bOpen("lvl");};$("bAll").onclick=function(e){e.preventDefault();bOpen("lvl");};
-$("bo").addEventListener("click",function(e){if(e.target===$("bo")){bClose();return;}var b=e.target.closest("[data-bt],[data-bst],[data-bg],[data-l]");if(!b)return;
- if(b.hasAttribute("data-bt"))ui.btab=b.getAttribute("data-bt");else if(b.hasAttribute("data-bst"))ui.bst=+b.getAttribute("data-bst");else if(b.hasAttribute("data-bg")){ui.gear=+b.getAttribute("data-bg");gear();}else{ui.lvl=+b.getAttribute("data-l");top();}
+$("bo").addEventListener("click",function(e){if(e.target===$("bo")){bClose();return;}var b=e.target.closest("[data-bt],[data-bst],[data-bg],[data-l],[data-tree],[data-node]");if(!b)return;
+ if(b.hasAttribute("data-tree")){ui.btree=+b.getAttribute("data-tree");ui.bnode=null;}else if(b.hasAttribute("data-node")){var nk=b.getAttribute("data-node");ui.bnode=ui.bnode===nk?null:nk;}else if(b.hasAttribute("data-bt"))ui.btab=b.getAttribute("data-bt");else if(b.hasAttribute("data-bst"))ui.bst=+b.getAttribute("data-bst");else if(b.hasAttribute("data-bg")){ui.gear=+b.getAttribute("data-bg");gear();}else{ui.lvl=+b.getAttribute("data-l");top();}
  save();var sc=$("bBody").scrollTop;bRender();if(!b.hasAttribute("data-bt"))$("bBody").scrollTop=sc;});
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&$("bo").classList.contains("on"))bClose();});
 $("lvM").onclick=function(){setLv(ui.lvl-1);};$("lvP").onclick=function(){setLv(ui.lvl+1);};
